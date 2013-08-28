@@ -91,6 +91,6 @@ session_cache_expire(30);
                 echo " </div>";
                 include('footer.inc');
                 ?>      
-        </div>
+        </div></div>
     </body>
 </html>
