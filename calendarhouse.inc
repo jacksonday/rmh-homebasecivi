@@ -71,7 +71,8 @@ function show_week($days, $week, $edit, $year, $doy, $venue) {
         echo ("<tr><td class=\"hour\">" . show_hours($venue, $hour) . "</td>");
         for ($i = 0; $i < 7; $i++) {
             $shiftid = $days[$i]->get_shift_id($hour, $venue);
-            if ($shiftid) {
+            // Saturday (i==5) 9-10am and 4-6pm have no shifts, and Sunday (i==6) 12-2pm has no shift
+            if ($shiftid and (!($i==5 and ($hour==9 or $hour==16))) and !($i==6 and ($hour==12))) {
             	$shift_length = get_shift_end($shiftid) - get_shift_start($shiftid);
             	echo do_shift($days[$i], substr($shiftid, 9), $shift_length, $edit, $venue);
                 for ($j = $hour; $j < $hour + $shift_length; $j++)
@@ -93,7 +94,7 @@ function show_week($days, $week, $edit, $year, $doy, $venue) {
 }
 
 function show_hours($venue, $hour) {
-    $d = 3;
+    $d = 1;
     if ($hour==21) {
     	return "overnight";
     }
