@@ -21,7 +21,7 @@
         echo('<li>If you are a volunteer logging in for the first time, your Username is your first name followed by your phone number. ' .
         'After you have logged in, you can change your password.  ');
         echo('(If you are having difficulty logging in or if you have forgotten your Password, please contact the <a href="mailto:housemgr@rmhportland.org"><i>House Manager</i></a>.) ');
-        echo ('<li><i>If you need to cancel your volunteer shift, you may do so here (after logging in), or else you may the House at 207-780-6282.</i>');
+        echo ('<li><i>If you need to cancel your volunteer shift, you may do so here (after logging in), or else you may call the House at 207-780-6282.</i>');
         echo '</ul>';
         echo('<p><table><form method="post"><input type="hidden" name="_submit_check" value="true"><tr><td>Username:</td><td><input type="text" name="user" tabindex="1"></td></tr><tr><td>Password:</td><td><input type="password" name="pass" tabindex="2"></td></tr><tr><td colspan="2" align="center"><input type="submit" name="Login" value="Login"></td></tr></table>');
     } else {
