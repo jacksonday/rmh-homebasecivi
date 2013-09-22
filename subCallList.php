@@ -97,14 +97,16 @@
 		$query="SELECT * FROM dbSCL ORDER BY time";
 		$result=mysql_query($query);
 		mysql_close();
-		$cur_time=date("Ymd",time())."0";
+		$cur_date=date("Ymd",time());
 		if(array_key_exists('_shiftid',$_POST))
 			show_back_navigation($_POST['_shiftid'],494,$venue);
 		echo "<p><table width=\"600\" align=\"center\" border=\"1px\"><tr><td align=\"center\" colspan=\"3\"><b>Index of Sub Call Lists with Vacancies</b></td></tr>
 		<tr><td>&nbsp;Shift<br>&nbsp;</td><td>&nbsp;Vacancies<br>&nbsp;</td><td>&nbsp;Status <br>&nbsp;</td></tr>";
 		for($i=0;$i<mysql_num_rows($result);++$i) {
 			$row=mysql_fetch_row($result);
-			if($row[2]=="open" && $row[4]<$cur_time) {
+			$scl_date_formatted=substr($row[4], 0, strlen(date("Ymd",time())));
+//			echo "<br>debug: curtime=".$cur_time.", scl_row_time=".$scl_row_time.", row[4]=".$row[4].", substr=".$substr;
+			if($row[2]=="open" && $scl_date_formatted<=$cur_date) {
 				$scl=select_dbSCL($row[0]);
 				$scl->set_status("closed");
 				echo "<br><br><br>";
