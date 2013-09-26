@@ -131,6 +131,7 @@ function select_dbDates($id) {
     mysql_close();
     if (!$result) {
         echo 'Could not select from dbDates: ' . $id;
+        error_log('Could not select from dbDates: '. $id);
         return null;
     } 
     else {
@@ -148,8 +149,10 @@ function select_dbDates($id) {
             $d = new RMHdate($result_row[0], $s, $result_row[2]);
             return $d;
         }
-        else
-            return null;
+        else {
+        	error_log("Could not fetch from dbDates ". $id);
+			return null;        	
+        }
     }
 }
 

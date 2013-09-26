@@ -83,7 +83,7 @@ class RMHdate {
         	  for ($i = 0; $i < sizeof($master); $i++) {
                 $t = $master[$i]->get_time();
                 $this->shifts[$t] = new Shift(
-                    $this->id . "-" . $t, $venue, $master[$i]->get_slots(), null, "", "");
+                    $this->id . "-" . $t, $venue, $master[$i]->get_slots(), null, null, "", "");
               }
         	}
         }
