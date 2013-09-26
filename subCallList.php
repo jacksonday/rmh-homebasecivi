@@ -21,8 +21,8 @@
 					include_once('database/dbLog.php');
 					include_once('database/dbPersons.php');
 					$id=$_GET['shift'];
+					generate_scl($_POST['_shiftid']);
 					if(array_key_exists('_submit_generate_scl',$_POST)) {
-						generate_scl($_POST['_shiftid']);
 						$id=$_POST['_shiftid'];
 					}
 					else if (array_key_exists('_submit_view_scl',$_POST)) {
@@ -66,23 +66,22 @@
 			array_shift($shift_persons);
 		connect();
 		$query="SELECT * FROM dbPersons WHERE (status = 'active' AND type LIKE '%sub%' AND availability LIKE '%".$day.":".$time."%') ORDER BY last_name,first_name";
-		$result=mysql_query($query);
+		$persons_result=mysql_query($query);
 		mysql_close(); 
-		// echo "<br>".mysql_num_rows($result). " rows";
-		for($i=0;$i<mysql_num_rows($result);++$i) {
-			$row=mysql_fetch_row($result);
-			$value=$row[0]."+".$row[1]."+".$row[2];
+		for($i=0;$i<mysql_num_rows($persons_result);++$i) {
+			$row=mysql_fetch_row($persons_result);
+			$id_and_name=$row[0]."+".$row[1]."+".$row[2];
 			$match=false;
-			for($j=0;$j<count($shift_persons);++$j) {
-				if($value==$shift_persons[$j]) {
-					$match=true;
-				}
-			}
-			if(!$match) {
-				$persons[]=array($row[0],$row[1],$row[2],$row[9],$row[10],"","","?");
+//			for($j=0;$j<count($shift_persons);++$j) {
+//				if($id_and_name==$shift_persons[$j] || in_array($id_and_name, )) {
+//					$match=true;
+//				}
+//			}
+			if (!in_array($id_and_name, $shift_persons) && !in_array($id_and_name, $shift->get_removed_persons())) {
+				$persons[]=array($row[0], $row[1], $row[2], $row[9], $row[10], "", "", "?");
 			}
 		}
-		$new_scl=new SCL($id,$persons,"open",$vacancies,get_sub_call_list_timestamp($id));
+		$new_scl=new SCL($id, $persons, "open", $vacancies, get_sub_call_list_timestamp($id));
 		if (select_dbSCL($id))
 		   delete_dbSCL($new_scl);
 		insert_dbSCL($new_scl);
@@ -110,7 +109,6 @@
 		for($i=0;$i<mysql_num_rows($result);++$i) {
 			$row=mysql_fetch_row($result);
 			$scl_date_formatted=substr($row[4], 0, strlen(date("Ymd",time())));
-//			echo "<br>debug: curtime=".$cur_time.", scl_row_time=".$scl_row_time.", row[4]=".$row[4].", substr=".$substr;
 			if($row[2]=="open" && $scl_date_formatted<=$cur_date) {
 				$scl=select_dbSCL($row[0]);
 				$scl->set_status("closed");

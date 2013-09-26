@@ -27,7 +27,6 @@ session_cache_expire(30);
                 include_once('domain/RMHdate.php');
                 include_once('domain/Week.php');
                 include_once('domain/Person.php');
-                
                 // Check to see if there are already weeks in the db
                 // connects to the database to see if there are any weeks in the dbWeeks table
                 $result = get_all_dbWeeks();
@@ -36,7 +35,6 @@ session_cache_expire(30);
                     $firstweek = true;
                 else
                     $firstweek = false;
-                
                 // publishes a week if the user is a manager
                 if ($_GET['publish'] && $_SESSION['access_level'] >= 2) {
                     $id = $_GET['publish'];
@@ -154,7 +152,7 @@ session_cache_expire(30);
                     // calculates vacancies
                     $vacancies = get_total_slots($venue, $group, $day, $time) - count($people);
                     // makes a new shift filled with people found above
-                    $newShift = new Shift($day_id . "-" . $time, $venue, $vacancies, $people, "", $note);
+                    $newShift = new Shift($day_id . "-" . $time, $venue, $vacancies, $people, array(), "", $note);
                     return $newShift;
                     
                 }

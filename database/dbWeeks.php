@@ -157,8 +157,10 @@ function get_dbWeeks($id) {
         foreach ($dates as $date) {
         	$d[] = select_dbDates($date);
         }
+        
         $w = new Week($d, "weekly", $result_row['weekday_group'],
                         $result_row['weekend_group'], $result_row['status']);
+        error_log("3");
         return $w;
     }
     else
@@ -176,6 +178,7 @@ function get_all_dbWeeks() {
 	mysql_close();
     $weeks = array();
     while ($result_row = mysql_fetch_assoc($result)) {
+    	error_log($result_row['id']);
     	$w = get_dbWeeks($result_row['id']);
     	$weeks[] = $w;
     }

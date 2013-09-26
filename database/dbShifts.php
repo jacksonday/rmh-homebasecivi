@@ -40,7 +40,7 @@ function create_dbShifts() {
     mysql_query("DROP TABLE IF EXISTS dbShifts");
     $result = mysql_query("CREATE TABLE dbShifts (id CHAR(20) NOT NULL, " .
             "start_time INT, end_time INT, venue TEXT, vacancies INT, " .
-            "persons TEXT, sub_call_list TEXT, notes TEXT, PRIMARY KEY (id))");
+            "persons TEXT, removed_persons TEXT, sub_call_list TEXT, notes TEXT, PRIMARY KEY (id))");
     if (!$result) {
         echo mysql_error();
         return false;
@@ -67,7 +67,8 @@ function insert_dbShifts($s) {
     $query = "INSERT INTO dbShifts VALUES (\"" . $s->get_id() . "\",\"" .
             $s->get_start_time() . "\",\"" . $s->get_end_time() . "\",\"" . $s->get_venue() . "\"," .
             $s->num_vacancies() . ",\"" .
-            implode("*", $s->get_persons()) . "\",\"" . $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\")";
+            implode("*", $s->get_persons()) . "\",\"" .implode("*", $s->get_removed_persons()) . "\",\"" .
+            $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\")";
     $result = mysql_query($query);
     if (!$result) {
         echo "unable to insert into dbShifts " . $s->get_id() . mysql_error();
@@ -102,6 +103,7 @@ function delete_dbShifts($s) {
  * @param $s the shift to update
  */
 function update_dbShifts($s) {
+	error_log("updating shift in database");
     if (!$s instanceof Shift)
         die("Invalid argument for dbShifts->replace_shift function call");
     delete_dbShifts($s);
@@ -126,9 +128,12 @@ function select_dbShifts($id) {
         $result_row = mysql_fetch_row($result);
         if ($result_row != null) {
         	$persons = array();
-        	if ($result_row[5]!="")
+        	$removed_persons = array();
+        	if ($result_row[5] != "")
             	$persons = explode("*", $result_row[5]);
-        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, null, $result_row[7]);
+            if ($result_row[6] != "")
+            	$removed_persons = explode("*", $result_row[6]);
+        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, $removed_persons, null, $result_row[8]);
         }
     }
     return $s;

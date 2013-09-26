@@ -25,6 +25,7 @@ class Shift {
     private $venue;         //  "weekly" or "monthly"
     private $vacancies;     // number of vacancies in this shift
     private $persons;       // array of person ids filling slots, followed by their name, ie "malcom1234567890+Malcom+Jones"
+    private $removed_persons; // array of persons who have previously been removed from this shift.
     private $sub_call_list; // SCL if sub call list exists, otherwise null
     private $day;         // string name of day "Monday"...
     private $id;            // "mm-dd-yy-ss-ee" is a unique key for this shift
@@ -34,7 +35,7 @@ class Shift {
      * construct an empty shift with a certain number of vacancies
      */
 
-    function __construct($id, $venue, $vacancies, $persons, $sub_call_list, $notes) {
+    function __construct($id, $venue, $vacancies, $persons, $removed_persons, $sub_call_list, $notes) {
     	$this->mm_dd_yy = substr($id, 0, 8);
         $this->name = substr($id, 9);
         $i = strpos($this->name, "-");
@@ -49,6 +50,7 @@ class Shift {
         $this->venue = $venue;
         $this->vacancies = $vacancies;
         $this->persons = $persons;
+        $this->removed_persons = $removed_persons;
         $this->sub_call_list = $sub_call_list;
         $this->day = date("D", mktime(0, 0, 0, substr($this->mm_dd_yy, 0, 2), substr($this->mm_dd_yy, 3, 2), "20" . substr($this->mm_dd_yy, 6, 2)));
         $this->id = $id;
@@ -154,6 +156,10 @@ class Shift {
     function get_persons() {
         return $this->persons;
     }
+    
+    function get_removed_persons() {
+    	return $this->removed_persons;
+    }
 
     function get_sub_call_list() {
         return $this->sub_call_list;
@@ -176,9 +182,15 @@ class Shift {
     }
 
     function assign_persons($p) {
+    	foreach ($this->persons as $person) {
+    		if (!in_array($person, $p)) {
+    			error_log("adding ".$person." to removed persons");
+    			$this->removed_persons[] = $person;
+    		}
+    	}
         $this->persons = $p;
     }
-
+    
 }
 
 ?>

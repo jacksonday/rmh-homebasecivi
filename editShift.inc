@@ -126,6 +126,7 @@ include_once('database/dbLog.php');
 				}
 				if(count($p2)==0)
 					$p2=array();
+				error_log("removing ". $name);
 				$shift->assign_persons($p2);
 				$shift->add_vacancy();
 				fix_SCL($shift);
@@ -162,7 +163,7 @@ include_once('database/dbLog.php');
 			   		    $_SESSION['l_name'].'</a> deleted a <a href=\"subCallList.php?shift='.$shift->get_id().'\">sub call list</a> for the shift: <a href=\"editShift.php?shift='.
 			   		    $shift->get_id().'\">'.get_shift_name_from_id($shift->get_id()).'</a>.');
 			}
-			$shift = new Shift($shift->get_id(),"weekly",$shift->num_slots(), null, "", "");
+			$shift = new Shift($shift->get_id(), "weekly", $shift->num_slots(), null, null, "", "");
 			update_dbShifts($shift);
 			add_log_entry('<a href=\"personEdit.php?id='.$_SESSION['_id'].'\">'.$_SESSION['f_name'].' '.
 			    $_SESSION['l_name'].'</a> cleared the shift: <a href=\"editShift.php?shift='.$shift->get_id().'\">'.
