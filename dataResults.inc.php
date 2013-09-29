@@ -14,14 +14,44 @@
  * 	@version 4/2/2012
  */
 ?>
+<head>
+    <style type="text/css">
+        #result-description {
+        	width: 700px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	font-size:14px;
+        }
+        
+        #tempid {
+        	width: 650px;
+        	height: 300px;
+        	font-size: 14px;
+        }
+        
+        #b_export {
+        	font-size: 16px;
+        }
+        
+        #all_export {
+        	font-size: 16px;
+        }
+    </style>
+</head>
+
 <form name="data_results" method="post">
     <input type="hidden" name="_form_submit" value="2" />
-    <p style="text-align:center"><b>Here are the results.</b>  (Select one or more names and then hit <br> 
-                            'Export Data' to choose attributes to export.)</p>
+    <div id="result-description">
+	    <p><b>Found <?php echo count($returned_people);?> matches.</b></p> 
+	    <ul>
+	    	<li> If you just want to export one or more names, select them and hit 'Export selected attributes'. </li>
+	    	<li> If you want to export all, hit 'Export all'. </li>
+	    </ul>  
+    </div>
+
     <table align="center">
     	
         <td valign="top"><table>
-                <td><h4>Selection Criteria:</h4>
                     <?php
                     session_start();
                     session_cache_expire(30);
@@ -39,9 +69,8 @@
             </table></td>
            <td> </td>
         <td valign="top"><table>
-                <td><h4>Search Results:</h4>
                 <tr><td>
-                        <select multiple name="results_list[]" id="tempid" style="width:250px;height:150px;font-size:15px"
+                        <select multiple name="results_list[]" id="tempid"
                                 onmouseup="if(this.value!=''){document.getElementById('b_details').disabled=false;
                                     document.getElementById('b_export').disabled=false}
                                 else{document.getElementById('b_details').disabled=true;
@@ -55,8 +84,8 @@
                         </select></td></tr>
                 <tr><td></td></tr></td>
         <tr><td><br />
-                <input type="submit" style="margin-left: 35px" id="b_export" name="b_export" value="Export Data" />
-
+                <input type="submit" id="b_export" name="b_export" value="Export Data" />
+				<input type="submit" id="all_export" name="all_export" value="Export All" />
             </td></tr>
     </table></td>
 </table>
