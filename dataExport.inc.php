@@ -16,65 +16,144 @@
 ?>
 
 <head>
-    <style type="text/css">
-        td {padding-bottom: 8px; padding-left: 40px;}
-    </style>
-</head>
-<?php
-session_start();
-session_cache_expire(30);
-$checked_array = $_SESSION['checked'];
-echo('<body onload="');
-foreach ($checked_array as $check_num) {
-    echo('document.getElementById(\'e_check' . $check_num . '\').checked=true;');
+<style type="text/css">
+td {
+	padding-bottom: 8px;
+	padding-left: 40px;
 }
-echo('">');
-?>
 
-<form name="export_data" method="post">
-    <input type="hidden" name="_form_submit" value="3" />
-    <p style="margin-left:20px"><b>Step 2. Select the attributes to be exported for these people, and then hit 'Export to CSV':</h4></b>
-    <?php
-    $select_list = "";
-    foreach ($select_people_array as $dude) {
-        $select_list .= $dude . ", ";
-    }
-    echo('<p style="font-size:15px;margin-left:20px">' . substr($select_list, 0, -2) . '</p>');
-    ?>
-    <table>
-        <td valign="top"><table>
-                <td><input type="checkbox" id="e_check1" name="e_check1" /> First Name </td>
-                <tr><td><input type="checkbox" id="e_check2" name="e_check2" /> Last Name </td></tr>
-                <tr><td><input type="checkbox" id="e_check3" name="e_check3"/> Gender </td></tr>
-                <tr><td><input type="checkbox" id="e_check4" name="e_check4" /> Type </td></tr>
-                <tr><td><input type="checkbox" id="e_check5" name="e_check5" /> Status </td></tr>
-                <tr><td><input type="checkbox" id="e_check6" name="e_check6" /> Start Date </td></tr>
-                <tr><td><input disabled type="checkbox" id="e_check7" name="e_check7" /> Hours worked </td></tr>
-                <tr><td><input disabled type="checkbox" id="e_check8" name="e_check8" /> Day of the week </td></tr>
-                <tr><td><input disabled type="checkbox" id="e_check9" name="e_check9" /> Month </td></tr>
-                <tr><td><input disabled type="checkbox" id="e_check10" name="e_check10" /> Employer/School </td></tr>
-            </table></td>
-        <td valign="top"><table>
-                <td><input type="checkbox" id="e_check11" name="e_check11" /> Street Address </td>
-                <tr><td><input type="checkbox" id="e_check12" name="e_check12" /> City </td></tr>
-                <tr><td><input type="checkbox" id="e_check13" name="e_check13" /> County </td></tr>
-                <tr><td><input type="checkbox" id="e_check14" name="e_check14" /> State </td></tr>
-                <tr><td><input type="checkbox" id="e_check15" name="e_check15" /> Zip </td></tr>
-                <tr><td><input type="checkbox" id="e_check16" name="e_check16" /> Phone 1 </td></tr>
-                <tr><td><input type="checkbox" id="e_check17" name="e_check17" /> Phone 2 </td></tr>
-                <tr><td><input type="checkbox" id="e_check18" name="e_check18" /> Email </td></tr>
-                <tr><td><input type="checkbox" id="e_check19" name="e_check19" /> Notes </td></tr>
-            </table></td>
-    </table>
-    <table>
-        <td><input style="font-size:10px;margin-left:120px" type="button" id="check_all" name="check_all" value="Check All" 
-                   onclick="<?php for ($i = 1; $i < 20; $i++) {
-        if ($i < 7 || $i > 10) { ?>document.getElementById('e_check<?php echo($i); ?>').checked=true;<?php }
-    } ?>"/><br /></td>
-        <td><input style="font-size:10px; margin-left:-20px" type="reset" id="uncheck_all" name="uncheck_all" 
-                   value="Uncheck All" /><br /></td>
-    </table>
+#export-attr {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-    <input style="font-size:15px;margin-left:180px" type="submit" id="export_data" name="export_data" value="Export to CSV" />
+#download-form {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	visibility: hidden;
+}
+
+#download-button {
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+
+<script>
+	
+	$(function () {
+    	$('#export_data').on('click', function (e) {
+    		$.ajax({
+            	type: 'post',
+            	url: 'dataSearch.php',
+            	data: $('#export-attr').serialize(),
+            	success: function () {
+            		$('#download-button').trigger('click');
+            	}
+        	});
+    		e.preventDefault();
+    	});
+   	});
+</script>
+</head>
+
+<body>
+<form id="export-attr" name="export_data" method="post"><input type="hidden" name="_form_submit" value="3" />
+	<p style="margin-left: 20px"><b>Select the attributes to be exported for these people, and then hit 'Export to CSV': </b></p>
+	<table>
+		<td valign="top">
+		<table>
+			<td><input type="checkbox" id="e_check1" name="export_attr[]" value="first_name"/> First Name
+			</td>
+			<tr>
+				<td><input type="checkbox" id="e_check2" name="export_attr[]" value="last_name"/> Last Name
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check3" name="export_attr[]" value="gender"/> Gender</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check4" name="export_attr[]" value="type"/> Type</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check5" name="export_attr[]" value="status"/> Status</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check6" name="export_attr[]" value="start_date"/> Start
+				Date</td>
+			</tr>
+			<tr>
+				<td><input disabled type="checkbox" id="e_check7" name="export_attr[]" />
+				Hours worked</td>
+			</tr>
+			<tr>
+				<td><input disabled type="checkbox" id="e_check8" name="export_attr[]" />
+				Day of the week</td>
+			</tr>
+			<tr>
+				<td><input disabled type="checkbox" id="e_check9" name="export_attr[]" />
+				Month</td>
+			</tr>
+			<tr>
+				<td><input disabled type="checkbox" id="e_check10" name="export_attr[]" />
+				Employer/School</td>
+			</tr>
+		</table>
+		</td>
+		<td valign="top">
+		<table>
+			<td><input type="checkbox" id="e_check11" name="export_attr[]" value="address"/> Street
+			Address</td>
+			<tr>
+				<td><input type="checkbox" id="e_check12" name="export_attr[]" value="city"/> City</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check13" name="export_attr[]" value="county"/> County
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check14" name="export_attr[]" value="state"/> State</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check15" name="export_attr[]" value="zip"/> Zip</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check16" name="export_attr[]" value="phone1"/> Phone 1
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check17" name="export_attr[]" value="phone2"/> Phone 2
+				</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check18" name="export_attr[]" value="email"/> Email</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="e_check19" name="export_attr[]" value="notes"/> Notes</td>
+			</tr>
+		</table>
+		</td>
+	</table>
+	<table>
+		<td><input style="font-size: 10px; margin-left: 120px" type="button"
+			id="check_all" name="check_all" value="Check All"
+			onclick="<?php for ($i = 1; $i < 20; $i++) {
+	        if ($i < 7 || $i > 10) { ?>document.getElementById('e_check<?php echo($i); ?>').checked=true;<?php }
+	    } ?>" /><br />
+		</td>
+		<td><input style="font-size: 10px; margin-left: -20px" type="reset"
+			id="uncheck_all" name="uncheck_all" value="Uncheck All" /><br />
+		</td>
+	</table>
+	
+	<input style="font-size: 15px; margin-left: 180px" type="submit" id="export_data" name="export_data" value="Export Data" />
 </form>
+
+<form id="download-form" action="exportDownload.php">
+	<button id="download-button">Download Exported File</button>
+</form>
+
+
 </body>

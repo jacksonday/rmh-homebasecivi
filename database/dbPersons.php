@@ -260,23 +260,49 @@ function phone_edit($phone) {
 	else return "";
 }
 
-function get_people_for_export($first_name, $last_name, $gender, $type, $status, $start_date, $street, $city, $county, $state, $zip, $phone1, $phone2, $email, $notes) {
-    connect();
-    //hours_worked, day_of_the_week, month, employer_school...
-    $query = "SELECT * FROM dbPersons WHERE first_name LIKE '%" . $first_name . "%' AND last_name LIKE '%" .
-            $last_name . "%' AND gender LIKE '%" . $gender . "%' AND type LIKE '%" . $type . "%' AND status LIKE '%" .
-            $status . "%' AND start_date LIKE '%" . $start_date . "%' AND address LIKE '%" . $street . "%' AND city LIKE '%" .
-            $city . "%' AND county LIKE '%" . $county . "%' AND state LIKE '%" . $state . "%' AND zip LIKE '%" . $zip .
-            "%' AND phone1 LIKE '%" . $phone1 . "%' AND phone2 LIKE '%" . $phone2 . "%' AND email LIKE '%" . $email .
-            "%' AND notes LIKE '%" . $notes . "%' ORDER BY last_name,first_name";
-    $result = mysql_query($query);
-    $thePersons = array();
-    while ($result_row = mysql_fetch_assoc($result)) {
-        $thePerson = make_a_person($result_row);
-        $thePersons[] = $thePerson;
+function get_people_for_export($attr, $first_name, $last_name, $gender, $type, $status, $start_date, $city, $zip, $phone, $email) {
+	$first_name = "'".$first_name."'";
+	$last_name = "'".$last_name."'";
+	$gender = "'".$gender."'";
+	$status = "'".$status."'";
+	$start_date = "'".$start_date."'";
+	$city = "'".$city."'";
+	$zip = "'".$zip."'";
+	$phone = "'".$phone."'";
+	$email = "'".$email."'";
+	$select_all_query = "'.'";
+	if ($gender == $select_all_query) $gender = $gender." or gender=''";	
+	if ($start_date == $select_all_query) $start_date = $start_date." or start_date=''";
+	if ($email == $select_all_query) $email = $email." or email=''";
+    
+	$type_query = "";
+    if (!isset($type) || count($type) == 0) $type_query = "'.'";
+    else {
+    	$type_query = implode("|", $type);
+    	$type_query = "'.*($type_query).*'";
     }
-//    mysql_close();
-    return $thePersons;
+    
+    error_log("query for start date is ". $start_date);
+    error_log("query for gender is ". $gender);
+    error_log("query for type is ". $type_query);
+    
+   	connect();
+    $query = "SELECT ". $attr ." FROM dbPersons WHERE 
+    			first_name REGEXP ". $first_name . 
+    			" and last_name REGEXP ". $last_name . 
+    			" and (gender REGEXP ". $gender . ")" .
+    			" and (type REGEXP ". $type_query .")". 
+    			" and status REGEXP ". $status . 
+    			" and (start_date REGEXP ". $start_date . ")" .
+    			" and city REGEXP ". $city .
+    			" and zip REGEXP ". $zip .
+    			" and (phone1 REGEXP ". $phone ." or phone2 REGEXP ". $phone . " )" .
+    			" and (email REGEXP ". $email .") ORDER BY last_name, first_name";
+	error_log("Querying database for exporting");
+	error_log("query = " .$query);
+    $result = mysql_query($query);
+    return $result;
+
 }
 
 ?>

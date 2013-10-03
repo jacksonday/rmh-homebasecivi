@@ -1,3 +1,193 @@
-"Export date: July 20, 2013, 11:25 am"
-"Based on"
- First_Name Last_Name Gender Type Status Start_Date Address City County State Zip Phone_1 Phone_2 Email Notes
+"Export date: October 3, 2013, 9:50 pm"
+first_name,last_name,gender,type,status,start_date,address,city,county,state,zip,phone1,phone2,email,notes,id
+Admin,Admin,unspecified,manager,active,unspecified,"14 Way St",Portland,unspecified,ME,04044,1112345678,unspecified,unspecified,unspecified,Admin1112345678
+AaronandLindsey,Jones,unspecified,volunteer,active,01-01-00,"14 Way Street",Portland,unspecified,ME,04103,2074150642,2076711796,unspecified,unspecified,AaronandLindsey2074150642
+Alaina,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Tamworth,unspecified,NH,03886,6034528562,unspecified,unspecified,unspecified,Alaina6034528562
+Alayna,Jones,unspecified,"sub,volunteer",active,09-11-00,"14 Way Street",Portland,unspecified,ME,04101,2076598232,unspecified,unspecified,unspecified,Alayna2076598232
+Allen,Jones,unspecified,manager,active,unspecified,"14 Way Street",Harpswell,unspecified,ME,04079,2077298111,unspecified,unspecified,unspecified,Allen2077298111
+Allison,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078465375,unspecified,unspecified,unspecified,Allison2078465375
+Allyson,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2074410528,unspecified,unspecified,unspecified,Allyson2074410528
+Amanda,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Tamworth,unspecified,NH,03886,6034528008,unspecified,unspecified,unspecified,Amanda6034528008
+Amber,Jones,unspecified,"volunteer,cleaning",active,unspecified,"14 Way Street",Port;and,unspecified,ME,04102,2077737446,4137171668,unspecified,unspecified,Amber2077737446
+Amy,Jones,unspecified,"sub,volunteer,guestchef",active,01-01-09,"14 Way Street",Gorham,unspecified,ME,04038,2078394383,2077569038,unspecified,unspecified,Amy2078394383
+Amy,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2078784497,2077497161,unspecified,"Am generally available for shifts during the week after 4pm and Sunday evenings.",Amy2078784497
+"Andy and Lisa",Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Norridgewock,unspecified,ME,04957,2076344868,unspecified,unspecified,unspecified,"Andy and Lisa2076344868"
+Ann,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078317519,unspecified,unspecified,unspecified,Ann2078317519
+Anna,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2073308133,unspecified,unspecified,unspecified,Anna2073308133
+Anne,Jones,unspecified,volunteer,active,06-16-09,"14 Way Street",Bath,unspecified,ME,04530,2074432321,2078410004,unspecified,unspecified,Anne2074432321
+Ashley,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2076109291,unspecified,unspecified,unspecified,Ashley2076109291
+"Aurelie and Edward",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2077817472,unspecified,unspecified,unspecified,"Aurelie and Edward2077817472"
+Avanel,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Bath,unspecified,ME,04530,2074420555,unspecified,unspecified,unspecified,Avanel2074420555
+Aynne,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04101,2072328782,2078990282,unspecified,unspecified,Aynne2072328782
+Barbara,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077733174,unspecified,unspecified,unspecified,Barbara2077733174
+Barbara,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2078318187,2075758586,unspecified,unspecified,Barbara2078318187
+Becky,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077725009,unspecified,unspecified,unspecified,Becky2077725009
+Becky,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078463827,unspecified,unspecified,unspecified,Becky2078463827
+Ben,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2078392795,unspecified,unspecified,unspecified,Ben2078392795
+Beth,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Lebanon,unspecified,ME,04027,2073399448,unspecified,unspecified,unspecified,Beth2073399448
+Betsy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078464935,2077761254,unspecified,unspecified,Betsy2078464935
+Betsy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2077121896,unspecified,unspecified,unspecified,Betsy2077121896
+Bette,Jones,unspecified,sub,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078832177,unspecified,unspecified,unspecified,Bette2078832177
+"Betty Jane and Carl",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2077815270,unspecified,unspecified,unspecified,"Betty Jane and Carl2077815270"
+Beverly,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2078542683,unspecified,unspecified,unspecified,Beverly2078542683
+Carolyn,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2077812771,unspecified,unspecified,unspecified,Carolyn2077812771
+Cathy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Cumberland,unspecified,ME,04021,2078295422,unspecified,unspecified,unspecified,Cathy2078295422
+Cathy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2078784455,unspecified,unspecified,unspecified,Cathy2078784455
+Chelsea,Jones,unspecified,"volunteer,manager",active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,4848855050,unspecified,unspecified,unspecified,Chelsea4848855050
+Cheryl,Jones,unspecified,guestchef,active,unspecified,"14 Way Street",Windham,unspecified,ME,04062,2078920033,2074003513,unspecified,unspecified,Cheryl2078920033
+Cheryl,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2072821358,unspecified,unspecified,unspecified,Cheryl2072821358
+Cheryl,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077760561,unspecified,unspecified,unspecified,Cheryl2077760561
+Chris,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2078788512,unspecified,unspecified,unspecified,Chris2078788512
+Chris,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Windham,unspecified,ME,04062,2072297633,unspecified,unspecified,unspecified,Chris2072297633
+Chris,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2078784497,unspecified,unspecified,unspecified,Chris2078784497
+"Christine and Duane",Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Jay,unspecified,ME,04239,2078977040,unspecified,unspecified,unspecified,"Christine and Duane2078977040"
+Cindy,Jones,unspecified,"sub,volunteer",active,0:morning-09,"14 Way Street",Walpole,unspecified,ME,04573,2075631089,2074461549,unspecified,unspecified,Cindy2075631089
+Cindy,Jones,unspecified,"sub,volunteer,weekendmanager",active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077122120,unspecified,unspecified,unspecified,Cindy2077122120
+Cindy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2077813251,2078315697,unspecified,unspecified,Cindy2077813251
+Claudia,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2078783984,unspecified,unspecified,unspecified,Claudia2078783984
+Connie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2077673521,unspecified,unspecified,unspecified,Connie2077673521
+Craig,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",York,unspecified,ME,03909,2073633667,unspecified,unspecified,unspecified,Craig2073633667
+Crystal,Jones,unspecified,volunteer,active,05-22-00,"14 Way Street",Standish,unspecified,ME,04084,2079079483,unspecified,unspecified,unspecified,Crystal2079079483
+Daniel,Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Bowdoinham,unspecified,ME,04008,2076668904,2077295182,unspecified,unspecified,Daniel2076668904
+David,Jones,unspecified,manager,active,unspecified,"14 Way Street",Portland,unspecified,ME,04101,2074157061,unspecified,unspecified,unspecified,David2074157061
+David,Jones,unspecified,sub,active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2072054842,2072831520,unspecified,unspecified,David2072054842
+Deb,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2077813821,unspecified,unspecified,unspecified,Deb2077813821
+Debbie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2075189784,2078314562,unspecified,unspecified,Debbie2075189784
+Debbie,Jones,unspecified,volunteer,applicant,unspecified,"14 Way Street","West Bath",unspecified,ME,04530,2075229744,2077580047,unspecified,unspecified,Debbie2075229744
+Deborah,Jones,unspecified,"volunteer,weekendmanager,tab_top_volunteer,cleaning,guestchef",active,unspecified,"14 Way Street",Tamworth,unspecified,NH,03886,6033237889,8002582000,unspecified,unspecified,Deborah6033237889
+Deborah,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Shapleigh,unspecified,ME,04076,2076362555,unspecified,unspecified,unspecified,Deborah2076362555
+Dee,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Casco,unspecified,ME,04015,2076553052,unspecified,unspecified,unspecified,Dee2076553052
+Derek,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",portland,unspecified,ME,04102,2077806282,unspecified,unspecified,unspecified,Derek2077806282
+"Dianne Natalie Julianne Samuel",Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078463695,unspecified,unspecified,unspecified,"Dianne Natalie Julianne Samuel2078463695"
+Donna,Jones,unspecified,cleaning,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078834579,unspecified,unspecified,unspecified,Donna2078834579
+Dottie,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078834792,unspecified,unspecified,unspecified,Dottie2078834792
+Ellen,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077973568,unspecified,unspecified,unspecified,Ellen2077973568
+Ellen,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078855822,unspecified,unspecified,unspecified,Ellen2078855822
+Ellen,Jones,unspecified,sub,active,unspecified,"14 Way Street",11,unspecified,ME,04102,2078857768,unspecified,unspecified,unspecified,Ellen2078857768
+Ellen,Jones,unspecified,sub,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078855447,unspecified,unspecified,unspecified,Ellen2078855447
+Estelle,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077720647,unspecified,unspecified,unspecified,Estelle2077720647
+Evelyn,Jones,unspecified,sub,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2076505443,unspecified,unspecified,unspecified,Evelyn2076505443
+Fran,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2077996057,unspecified,unspecified,unspecified,Fran2077996057
+"Frank and Bette",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street","South Paris",unspecified,ME,04281,2077436859,unspecified,unspecified,unspecified,"Frank and Bette2077436859"
+Gabrielle,Jones,unspecified,manager,active,unspecified,"14 Way Street",Windham,unspecified,ME,04062,2074004594,unspecified,unspecified,unspecified,Gabrielle2074004594
+Gail,Jones,unspecified,"sub,volunteer,weekendmanager,manager",active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077750842,unspecified,unspecified,unspecified,Gail2077750842
+Gaye,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","East Waterboro",unspecified,ME,04030,2072476985,unspecified,unspecified,unspecified,Gaye2072476985
+Gerry,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077721447,unspecified,unspecified,unspecified,Gerry2077721447
+"Gil and Bonnie",Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Auburn,unspecified,ME,04210,2077820198,unspecified,unspecified,unspecified,"Gil and Bonnie2077820198"
+Glenn,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04112,2078070082,unspecified,unspecified,unspecified,Glenn2078070082
+"Glenn and Deborah",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Shapliegh,unspecified,ME,04076,2076362555,unspecified,unspecified,unspecified,"Glenn and Deborah2076362555"
+Heather,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077763117,unspecified,unspecified,unspecified,Heather2077763117
+Iola,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Old Orchard Beach",unspecified,ME,04064,2074006114,unspecified,unspecified,unspecified,Iola2074006114
+Jaimee,Jones,unspecified,sub,active,09-17-08,"14 Way Street",Portland,unspecified,ME,04103,2078387810,unspecified,unspecified,unspecified,Jaimee2078387810
+James,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2075901566,unspecified,unspecified,unspecified,James2075901566
+James,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04101,2076598232,unspecified,unspecified,unspecified,James2076598232
+"James and Penny",Jones,unspecified,"volunteer,weekendmanager",active,03-18-01,"14 Way Street",Saco,unspecified,ME,04072,2075901566,2075903668,unspecified,unspecified,"James and Penny2075901566"
+Jana,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2077817472,unspecified,unspecified,unspecified,Jana2077817472
+Jane,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","North Yarmouth",unspecified,ME,04097,2078293469,unspecified,unspecified,unspecified,Jane2078293469
+Jane,Jones,unspecified,"sub,volunteer,manager",active,02-10-02,"14 Way Street",Scarborough,unspecified,ME,04074,2078859127,2078319015,unspecified,unspecified,Jane2078859127
+Jayne,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077492262,unspecified,unspecified,unspecified,Jayne2077492262
+Jeanette,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077615825,unspecified,unspecified,unspecified,Jeanette2077615825
+Jeannie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077970345,unspecified,unspecified,unspecified,Jeannie2077970345
+Jennifer,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2078921509,2076505940,unspecified,unspecified,Jennifer2078921509
+Jessica,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Springvale,unspecified,ME,04083,2074599473,unspecified,unspecified,unspecified,Jessica2074599473
+Jill,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077739540,unspecified,unspecified,unspecified,Jill2077739540
+Jill,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077979576,unspecified,unspecified,unspecified,Jill2077979576
+"Jill and Peter",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077979576,2075758038,unspecified,unspecified,"Jill and Peter2077979576"
+Joan,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077975211,unspecified,unspecified,unspecified,Joan2077975211
+Joanie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",portland,unspecified,ME,04102,2077806282,unspecified,unspecified,unspecified,Joanie2077806282
+Jody,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2073294089,2076621454,unspecified,unspecified,Jody2073294089
+John,Jones,unspecified,"sub,volunteer",active,01-01-00,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2077812536,2077815800,unspecified,unspecified,John2077812536
+Joyce,Jones,unspecified,cleaning,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078832107,unspecified,unspecified,unspecified,Joyce2078832107
+Judy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2078990374,unspecified,unspecified,unspecified,Judy2078990374
+"Judy and Rod",Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Windham,unspecified,ME,04062,2078945447,unspecified,unspecified,unspecified,"Judy and Rod2078945447"
+Kara,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2075953232,unspecified,unspecified,unspecified,Kara2075953232
+Kathleen,Jones,unspecified,sub,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2072724955,unspecified,unspecified,unspecified,Kathleen2072724955
+Katie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2076503601,unspecified,unspecified,unspecified,Katie2076503601
+"Kevin and Nathalie",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Freeport,unspecified,ME,04032,2078659650,unspecified,unspecified,unspecified,"Kevin and Nathalie2078659650"
+Kim,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077744081,unspecified,unspecified,unspecified,Kim2077744081
+Kirsten,Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Bowdoinham,unspecified,ME,04008,2076668904,2074499200,unspecified,unspecified,Kirsten2076668904
+Kristine,Jones,unspecified,volunteer,active,04-07-02,"14 Way Street",Portland,unspecified,ME,04102,2076996023,unspecified,unspecified,unspecified,Kristine2076996023
+Kym,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077970345,unspecified,unspecified,unspecified,Kym2077970345
+Lance,Jones,unspecified,volunteer,active,09-01-00,"14 Way Street",Westbrook,unspecified,ME,04092,2072528780,unspecified,unspecified,unspecified,Lance2072528780
+Laurie,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2077128886,2078780597,unspecified,unspecified,Laurie2077128886
+LeeAnn,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Windham,unspecified,ME,04062,2078922717,unspecified,unspecified,unspecified,LeeAnn2078922717
+"Leigh and Anthony",Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Sebago,unspecified,ME,04029,2077878876,unspecified,unspecified,unspecified,"Leigh and Anthony2077878876"
+Leslie,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",York,unspecified,ME,03909,2073633667,unspecified,unspecified,unspecified,Leslie2073633667
+Libby,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2077812854,unspecified,unspecified,unspecified,Libby2077812854
+Linda,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2076711597,unspecified,unspecified,unspecified,Linda2076711597
+Linda,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077568845,unspecified,unspecified,unspecified,Linda2077568845
+Lindsey,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2074150642,unspecified,unspecified,unspecified,Lindsey2074150642
+Lisa,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2073296707,unspecified,unspecified,unspecified,Lisa2073296707
+Liset,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",Lewiston,unspecified,ME,04240,2077831932,unspecified,unspecified,unspecified,Liset2077831932
+"Liset and David",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Lewiston,unspecified,ME,04240,2077831932,unspecified,unspecified,unspecified,"Liset and David2077831932"
+Liz,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2072320516,unspecified,unspecified,unspecified,Liz2072320516
+Marguerite,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2077671267,unspecified,unspecified,unspecified,Marguerite2077671267
+Marilee,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Readfield,unspecified,ME,04074,2078836719,unspecified,unspecified,unspecified,Marilee2078836719
+Marilyn,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Casco,unspecified,ME,04015,2076506687,unspecified,unspecified,unspecified,Marilyn2076506687
+Mary,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","Steep Falls",unspecified,ME,04085,2076423647,unspecified,unspecified,unspecified,Mary2076423647
+Mary,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078469107,unspecified,unspecified,unspecified,Mary2078469107
+Mary,Jones,unspecified,tab_top_volunteer,active,05-01-02,"14 Way Street",Portland,unspecified,ME,04103,2078789475,unspecified,unspecified,unspecified,Mary2078789475
+Mary,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Gray,unspecified,ME,04039,2074283640,unspecified,unspecified,unspecified,Mary2074283640
+Mary,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2074097629,unspecified,unspecified,unspecified,Mary2074097629
+Mary,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","Cumberland Center",unspecified,ME,04021,2078293321,2072336873,unspecified,unspecified,Mary2078293321
+"Mary Ann",Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078833212,unspecified,unspecified,unspecified,"Mary Ann2078833212"
+MaryMurray,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2077412944,unspecified,unspecified,unspecified,MaryMurray2077412944
+Maxine,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2078926343,unspecified,unspecified,unspecified,Maxine2078926343
+Meg,Jones,unspecified,"volunteer,sub",active,unspecified,"14 Way Street",Harpswell,unspecified,ME,04079,2077298111,unspecified,unspecified,"Hey Gabrielle--Were back in Maine now.  Im looking at the calendar and see that Im scheduled for Wednesdays with 2 other people.  Rather than that, wouldnt it be better if I filled a :earlypm vacancy (or :morning) on any other day of the week?  Meg",Meg2077298111
+Melissa,Jones,unspecified,"sub,volunteer",active,09-01-00,"14 Way Street",Westbrook,unspecified,ME,04093,2076501479,unspecified,unspecified,unspecified,Melissa2076501479
+Michelle,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2077721656,2075951031,unspecified,unspecified,Michelle2077721656
+Michelle,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2074153303,unspecified,unspecified,unspecified,Michelle2074153303
+Mims,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2076532970,unspecified,unspecified,unspecified,Mims2076532970
+Nan,Jones,unspecified,"sub,volunteer",active,08-01-08,"14 Way Street",Portland,unspecified,ME,04102,2075413741,2075537153,unspecified,unspecified,Nan2075413741
+Nancy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","No. Berwick",unspecified,ME,03906,2076769033,unspecified,unspecified,unspecified,Nancy2076769033
+Nancy,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2072210332,unspecified,unspecified,unspecified,Nancy2072210332
+Nancy,Jones,unspecified,weekendmanager,active,07-01-09,"14 Way Street",Windham,unspecified,ME,04062,2076716853,unspecified,unspecified,unspecified,Nancy2076716853
+Nancy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2078392795,unspecified,unspecified,unspecified,Nancy2078392795
+Nancy,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","Peaks Island",unspecified,ME,04108,2075615086,5854517243,unspecified,unspecified,Nancy2075615086
+Nicki,Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2078788443,unspecified,unspecified,unspecified,Nicki2078788443
+Nonie,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04102,2077812392,unspecified,unspecified,unspecified,Nonie2077812392
+Orminia,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2077616560,unspecified,unspecified,unspecified,Orminia2077616560
+Pat,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078836782,unspecified,unspecified,unspecified,Pat2078836782
+Pat,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Hollis,unspecified,ME,04042,2077275523,unspecified,unspecified,unspecified,Pat2077275523
+Pat,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04098,2078319787,unspecified,unspecified,unspecified,Pat2078319787
+Patricia,Jones,unspecified,volunteer,applicant,09-01-02,"14 Way Street",Westbrook,unspecified,ME,04092,2076502651,unspecified,unspecified,unspecified,Patricia2076502651
+Paul,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Westbrook,unspecified,ME,04092,2072323414,unspecified,unspecified,unspecified,Paul2072323414
+Paula,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Yarmouth,unspecified,ME,04096,2078465256,unspecified,unspecified,unspecified,Paula2078465256
+Peter,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2077991786,unspecified,unspecified,unspecified,Peter2077991786
+Peter,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street","Old Orchard Beach",unspecified,ME,04094,2078999578,unspecified,unspecified,unspecified,Peter2078999578
+"Peter and Suzanne",Jones,unspecified,"sub,weekendmanager",active,02-25-08,"14 Way Street","Old Orchard Beach",unspecified,ME,04064,2078999578,2072831486,unspecified,unspecified,"Peter and Suzanne2078999578"
+Phyllis,Jones,unspecified,"sub,volunteer,weekendmanager",active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2072325963,unspecified,unspecified,unspecified,Phyllis2072325963
+Polly,Jones,unspecified,"sub,volunteer",active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078834875,2076530727,unspecified,unspecified,Polly2078834875
+Rita,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,2077998431,unspecified,unspecified,unspecified,Rita2077998431
+Rob,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2078392795,unspecified,unspecified,unspecified,Rob2078392795
+Robin,Jones,unspecified,manager,active,unspecified,"14 Way Street",123,unspecified,ME,04102,2077806282,unspecified,unspecified,unspecified,Robin2077806282
+Ron,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",portland,unspecified,ME,04102,2077806282,unspecified,unspecified,unspecified,Ron2077806282
+Rose,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2072324146,unspecified,unspecified,unspecified,Rose2072324146
+Rosemary,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Kennebunk,unspecified,ME,04043,2079674818,unspecified,unspecified,unspecified,Rosemary2079674818
+Russ,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078317519,unspecified,unspecified,unspecified,Russ2078317519
+"Russ and Ann",Jones,unspecified,sub,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078317519,unspecified,unspecified,unspecified,"Russ and Ann2078317519"
+Rusty,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cumberland Foreside",unspecified,ME,04110,2078295101,unspecified,unspecified,unspecified,Rusty2078295101
+Sally,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","Cape Elizabeth",unspecified,ME,04107,2077993827,unspecified,unspecified,unspecified,Sally2077993827
+Sally,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04102,2077562196,unspecified,unspecified,unspecified,Sally2077562196
+Samantha,Jones,unspecified,"sub,volunteer",active,09-09-02,"14 Way Street",Portland,unspecified,ME,04102,2074365290,unspecified,unspecified,unspecified,Samantha2074365290
+Seth,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",11,unspecified,ME,04102,1112223333,unspecified,unspecified,unspecified,Seth1112223333
+"Shanna and Matthew",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2073300522,unspecified,unspecified,unspecified,"Shanna and Matthew2073300522"
+Sherry,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Gorham,unspecified,ME,04038,2076713434,unspecified,unspecified,unspecified,Sherry2076713434
+Stacey,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Falmouth,unspecified,ME,04105,2072333522,unspecified,unspecified,unspecified,Stacey2072333522
+Stacy,Jones,unspecified,sub,active,09-01-08,"14 Way Street","South Portland",unspecified,ME,04106,2072106030,unspecified,unspecified,unspecified,Stacy2072106030
+Star,Jones,unspecified,sub,active,unspecified,"14 Way Street",Portland,unspecified,ME,04103,2078782913,unspecified,unspecified,unspecified,Star2078782913
+Steve,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street","Bar Mills",unspecified,ME,04004,2079293544,2072525014,unspecified,unspecified,Steve2079293544
+Steve,Jones,unspecified,weekendmanager,active,unspecified,"14 Way Street",Brunswick,unspecified,ME,04011,2072331033,unspecified,unspecified,unspecified,Steve2072331033
+Sue,Jones,unspecified,volunteer,active,09-12-01,"14 Way Street","Old Orchard Beach",unspecified,ME,04064,2075903845,unspecified,unspecified,unspecified,Sue2075903845
+Susan,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Scarborough,unspecified,ME,04074,2078830238,unspecified,unspecified,unspecified,Susan2078830238
+Susan,Jones,unspecified,volunteer,active,07-01-01,"14 Way Street",falmouth,unspecified,ME,04105,2077817946,unspecified,unspecified,unspecified,Susan2077817946
+"Susan and Dennis",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street",Freeport,unspecified,ME,04032,2079391240,unspecified,unspecified,unspecified,"Susan and Dennis2079391240"
+Suzanne,Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street","Old Orchard Beach",unspecified,ME,04094,2078999578,unspecified,unspecified,unspecified,Suzanne2078999578
+Suzanne,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",Saco,unspecified,ME,04072,2077018778,unspecified,unspecified,unspecified,Suzanne2077018778
+"Tara and Nat",Jones,unspecified,"volunteer,weekendmanager",active,unspecified,"14 Way Street",Limerick,unspecified,ME,04048,2077934474,unspecified,unspecified,unspecified,"Tara and Nat2077934474"
+Teri,Jones,unspecified,sub,active,01-10-09,"14 Way Street",Portland,unspecified,ME,04103,2078380003,unspecified,unspecified,unspecified,Teri2078380003
+Thorne,Jones,unspecified,volunteer,active,09-09-09,"14 Way Street",Bath,unspecified,ME,04530,2074439654,2073891773,unspecified,unspecified,Thorne2074439654
+Tracy,Jones,unspecified,volunteer,active,unspecified,"14 Way Street","South Portland",unspecified,ME,04106,4015801402,unspecified,unspecified,unspecified,Tracy4015801402
+"Troy and Judi",Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street","North Anson",unspecified,ME,04958,2076532120,unspecified,unspecified,unspecified,"Troy and Judi2076532120"
+Vida,Jones,unspecified,"sub,weekendmanager",active,unspecified,"14 Way Street","Bar Mills",unspecified,ME,04004,2079293544,2072294221,unspecified,unspecified,Vida2079293544
+volunteer,Jones,unspecified,volunteer,active,unspecified,"14 Way Street",portland,unspecified,ME,04102,2077806282,unspecified,unspecified,unspecified,volunteer2077806282

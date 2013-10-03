@@ -50,24 +50,6 @@
     </div>
 
     <table align="center">
-    	
-        <td valign="top"><table>
-                    <?php
-                    session_start();
-                    session_cache_expire(30);
-                    $checked = array();
-                    for ($i = 0; $i <= count($attribute_array); $i++) {
-                        if ($attribute_array[$i][1] == 'on') {
-                            $checked[] = $i;
-                            echo('<tr><td>' .
-                            $attribute_array[$i][2] . ': <b>' . $attribute_array[$i][3] . '</b></td></tr>');
-                        }
-                    }
-                    $_SESSION['checked'] = $checked;
-                    ?>
-                </td>
-            </table></td>
-           <td> </td>
         <td valign="top"><table>
                 <tr><td>
                         <select multiple name="results_list[]" id="tempid"
