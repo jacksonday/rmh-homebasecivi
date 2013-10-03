@@ -45,7 +45,7 @@ session_cache_expire(30);
                             $weekid = date("m-d-y", time());
                         $week = get_dbWeeks($weekid); // get the week
                         // if invalid week or unpublished week and not a manager
-                        if (!$week instanceof Week || $week->get_status() == "unpublished" && $_SESSION['access_level'] < 2) {
+                        if (!$week instanceof Week || $week->get_status() == "unpublished" && $_SESSION['access_level'] < 1.5) {
                             echo 'This week\'s calendar is not available for viewing. ';
                             if ($_SESSION['access_level'] >= 2)
                                 echo ('<a href="addWeek.php?archive=false"> <br> Manage weeks</a>');
@@ -55,7 +55,7 @@ session_cache_expire(30);
                             $year = date("Y", time());
                             $doy = date("z", time()) + 1;
                             // if notes were edited, processes notes
-                            if (array_key_exists('_submit_check_edit_notes', $_POST) && $_SESSION['access_level'] >= 2) {
+                            if (array_key_exists('_submit_check_edit_notes', $_POST) && $_SESSION['access_level'] >= 1.5) {
                                 process_edit_notes($week, $venue, $_POST, $year, $doy);
                                 $week = get_dbWeeks($weekid);
                             }
@@ -67,7 +67,7 @@ session_cache_expire(30);
                                 $edit = false;
                             echo '<form method="POST">';
                             show_week($days, $week, $edit, $year, $doy, $venue);
-                            if ($edit == true && !($days[6]->get_year() < $year || ($days[6]->get_year() == $year && $days[6]->get_day_of_year() < $doy) ) && $_SESSION['access_level'] >= 2)
+                            if ($edit == true && !($days[6]->get_year() < $year || ($days[6]->get_year() == $year && $days[6]->get_day_of_year() < $doy) ) && $_SESSION['access_level'] >= 1.5)
                                 echo "<p align=\"center\"><input type=\"submit\" value=\"Save changes to all notes\" name=\"submit\">";
                             echo '</form>';
                         }

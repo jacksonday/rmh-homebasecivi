@@ -84,6 +84,10 @@
             echo('<a href="' . $path . 'calendar.php?venue=activities">activities | </a>');
             echo('<a href="https://sites.google.com/site/rmhvolunteersite"><strong>around the house</strong> </a>');
         }
+        if ($_SESSION['access_level'] == 1.5) {
+            echo('<br>');
+            echo('<strong>volunteers :</strong> <a href="' . $path . 'personSearch.php">search</a>');
+        }
         if ($_SESSION['access_level'] >= 2) {
             echo('<br><a href="' . $path . 'viewSchedule.php?frequency=weekly"><strong>master schedules</strong></a> | ');
             echo('<strong>volunteers :</strong> <a href="' . $path . 'personSearch.php">search</a>, 

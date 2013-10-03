@@ -135,7 +135,7 @@ session_cache_expire(30);
                                 echo('</ul><p>If you need to cancel an upcoming shift, please contact House Manager (207-980-6282 or <a href="mailto:housemgr@rmhportland.org>">housemgr@rmhportland.org</a>).</p></div>');
                             }
                         }
-
+                        
                         if ($_SESSION['access_level'] == 2) {
                             //We have a manager authenticated
                             //log box
