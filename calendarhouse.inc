@@ -134,7 +134,7 @@ function do_shift($day, $shift, $length, $edit, $venue) {
     if ($edit && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() )) {
         $s = $s . "</a>";
         // if manager, adds shift notes
-        if ($_SESSION['access_level'] >= 2) {
+        if ($_SESSION['access_level'] >= 2 || $_SESSION['access_level'] >= 1.5) {
             $s = $s . "</td></tr><tr><td class=\"notes\" align=\"center\">" .
                     "<textarea id=\"shift_notes\" rows=\"1\" name=\"shift_notes_" . $day->get_shift($shift)->get_id() . "\">"
                     . $day->get_shift($shift)->get_notes() . "</textarea>";
@@ -178,7 +178,7 @@ function get_people_for_shift($day, $key) {
 }
 
 function do_day_notes($days, $edit, $year, $doy) {
-    if ($edit == false || $_SESSION['access_level'] < 2) {
+    if ($edit == false || $_SESSION['access_level'] < 1.5) {
         $s = "<tr><td class=\"hour\">manager notes&nbsp;</td>";
         for ($i = 0; $i < 7; ++$i) {
             $s = $s . "<td class=\"note\" colspan=\"2\">" . $days[$i]->get_mgr_notes() . "</td>";
@@ -201,7 +201,7 @@ function do_day_notes($days, $edit, $year, $doy) {
 
 function process_edit_notes($week, $venue, $post) {
     $days = $week->get_dates();
-    for ($i = 0; $i < 7; ++$i) {
+    for ($i = date("N")-1; $i < 7; ++$i) {
         $shifts = $days[$i]->get_shifts();
         foreach ($shifts as $key => $shift) {
        //   if ($shift->get_venue()==$venue) {
