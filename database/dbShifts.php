@@ -34,13 +34,14 @@ include_once('dbinfo.php');
  * 5 persons: list of people ids, followed by their name, ie "max1234567890+Max+Palmer"
  * 6 sub_call_list: yes/no if shift has SCL
  * 7 notes: shift notes
+ * 8 datasaved: "yes" for all shifts whose data has been saved in dbPersons records
  */
 function create_dbShifts() {
     connect();
     mysql_query("DROP TABLE IF EXISTS dbShifts");
     $result = mysql_query("CREATE TABLE dbShifts (id CHAR(20) NOT NULL, " .
             "start_time INT, end_time INT, venue TEXT, vacancies INT, " .
-            "persons TEXT, removed_persons TEXT, sub_call_list TEXT, notes TEXT, PRIMARY KEY (id))");
+            "persons TEXT, removed_persons TEXT, sub_call_list TEXT, notes TEXT, datasaved TEXT, PRIMARY KEY (id))");
     if (!$result) {
         echo mysql_error();
         return false;
@@ -68,7 +69,7 @@ function insert_dbShifts($s) {
             $s->get_start_time() . "\",\"" . $s->get_end_time() . "\",\"" . $s->get_venue() . "\"," .
             $s->num_vacancies() . ",\"" .
             implode("*", $s->get_persons()) . "\",\"" .implode("*", $s->get_removed_persons()) . "\",\"" .
-            $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\")";
+            $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\",\"" . $s->get_datasaved(). "\")";
     $result = mysql_query($query);
     if (!$result) {
         echo "unable to insert into dbShifts " . $s->get_id() . mysql_error();

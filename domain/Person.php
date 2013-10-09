@@ -44,7 +44,7 @@ class Person {
     private $specialties;  // App: special interests and hobbies related to RMH
     private $availability; // array of frequency:week:day:shift quads; e.g., weekly:odd:Mon:morning
     private $schedule;     // array of scheduled shifts; e.g.,  weekly:odd:Mon:morning
-    private $history;     // array of recent shifts worked; e.g., 03-12-08morning
+    private $history;     // array of shifts worked; e.g., 03-12-08-9-12, 08-21-13-overnight
     private $birthday;     // format: 03-12-64
     private $start_date;   // format: 03-12-99
     private $notes;        // notes that only the manager can see and edit

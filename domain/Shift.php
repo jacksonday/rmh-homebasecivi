@@ -30,6 +30,7 @@ class Shift {
     private $day;         // string name of day "Monday"...
     private $id;            // "mm-dd-yy-ss-ee" is a unique key for this shift
     private $notes;  // notes written by the manager
+    private $datasaved;		// "yes" if this shift's data has been saved to the volunteer records
 
     /*
      * construct an empty shift with a certain number of vacancies
@@ -55,6 +56,7 @@ class Shift {
         $this->day = date("D", mktime(0, 0, 0, substr($this->mm_dd_yy, 0, 2), substr($this->mm_dd_yy, 3, 2), "20" . substr($this->mm_dd_yy, 6, 2)));
         $this->id = $id;
         $this->notes = $notes;	
+        $this->datasaved = "";
     }
 
     /**
@@ -177,8 +179,16 @@ class Shift {
         return $this->notes;
     }
 
+	function get_datasaved() {
+        return $this->datasaved;
+    }
+    
     function set_notes($notes) {
         $this->notes = $notes;
+    }
+    
+    function set_datasaved ($ds) {
+    	$this->datasaved = $ds;
     }
 
     function assign_persons($p) {
