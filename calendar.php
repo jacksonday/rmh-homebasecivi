@@ -63,8 +63,8 @@ session_cache_expire(30);
                             $week_nav = do_week_nav($week, $edit, $venue);
                             echo $week_nav;
                             // prevents archived weeks from being edited by anyone
-                            if ($week->get_status() == "archived")
-                                $edit = false;
+                        //    if ($week->get_status() == "archived")
+                        //        $edit = false;
                             echo '<form method="POST">';
                             show_week($days, $week, $edit, $year, $doy, $venue);
                             if ($edit == true && !($days[6]->get_year() < $year || ($days[6]->get_year() == $year && $days[6]->get_day_of_year() < $doy) ) && $_SESSION['access_level'] >= 1.5)

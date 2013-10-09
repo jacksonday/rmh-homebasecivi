@@ -125,13 +125,13 @@ function do_shift($day, $shift, $length, $edit, $venue) {
     // checks that the shift is not in the past
     $year = date("Y", time());
     $doy = date("z", time()) + 1;
-    if ($edit && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() ))
+    if ($edit) // && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() ))
         $s = $s . "e";
     $s = $s . "\"><table id=\"shiftbox\"><tr><td class=\"persons\">";
-    if ($edit && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() ))
+    if ($edit) // && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() ))
         $s = $s . "<a id=\"shiftlink\" href=\"editShift.php?shift=" . $day->get_id() . "-" . $shift . "&venue=" . $venue . "\">";
     $s = $s . get_people_for_shift($day, $shift);
-    if ($edit && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() )) {
+    if ($edit) { // && ($year < $day->get_year() || $year == $day->get_year() && $doy <= $day->get_day_of_year() )) {
         $s = $s . "</a>";
         // if manager, adds shift notes
         if ($_SESSION['access_level'] >= 2 || $_SESSION['access_level'] >= 1.5) {
@@ -142,10 +142,12 @@ function do_shift($day, $shift, $length, $edit, $venue) {
             $shiftnote = $day->get_shift($shift)->get_notes();
             $s = $s . "</td></tr><tr><td class=\"notes\"><p id=\"shift\">" . $shiftnote . "</p>";
         }
-    } else {
+    } 
+    else {
         $shiftnote = $day->get_shift($shift)->get_notes();
         $s = $s . "</td></tr><tr><td class=\"notes\"><p id=\"shift\">" . $shiftnote . "</p>";
     }
+    
     $s = $s . "</td></tr></table></td>";
     return $s;
 }
