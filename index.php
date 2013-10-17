@@ -17,6 +17,11 @@ session_cache_expire(30);
             RMH Homebase
         </title>
         <link rel="stylesheet" href="styles.css" type="text/css" />
+        <style>
+        	#appLink:visited {
+        		color: gray; 
+        	}
+        </style> 
     </head>
     <body>
         <div id="container">
@@ -178,10 +183,11 @@ session_cache_expire(30);
                             connect();
                             $app_query = "SELECT first_name,last_name,id FROM dbPersons WHERE status LIKE '%applicant%' order by last_name";
                             $applicants_tab = mysql_query($app_query);
+                            $numLines = 0;
                          //   if (mysql_num_rows($applicants_tab) > 0) {
                                 echo('<div class="applicantsBox"><p><strong>Open Applications:</strong><ul>');
                                 while ($thisRow = mysql_fetch_array($applicants_tab, MYSQL_ASSOC)) {
-                                    echo('<li type="circle"><a href="' . $path . 'personEdit.php?id=' . $thisRow['id'] . '">' . $thisRow['first_name'] . ' ' . $thisRow['last_name'] . '</a></li>');
+                                    echo('<li type="circle"><a href="' . $path . 'personEdit.php?id=' . $thisRow['id'] .'" id = "appLink">' . $thisRow['first_name'] . ' ' . $thisRow['last_name'] . '</a></li>');
                                 }
                                 echo('</ul></p></div><br>');
                         //    }

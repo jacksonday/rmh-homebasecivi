@@ -21,6 +21,7 @@ include_once('database/dbApplicantScreenings.php');
 include_once('domain/ApplicantScreening.php');
 include_once('database/dbLog.php');
 $id = str_replace("_"," ",$_GET["id"]);
+
 if ($id == 'new') {
     $person = new Person('new', 'applicant', null, null, null, null, null, null, null, null, null, null, null, null,
                     null, null, "applicant", null, null, null, null, null, null, null, null, null, null, null, null, md5("new"));
