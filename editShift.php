@@ -25,9 +25,6 @@
 						$shift=select_dbShifts($shiftid);
 						if(!$shift instanceof Shift)
 							echo "<p>Invalid Shift ID Supplied.  Click on \"Calendar\" above to edit shifts.</p>";
-						else if (mktime(23,59,59,substr($shiftid,0,2),substr($shiftid,3,2),substr($shiftid,6,2))<time()) {
-							echo "<p>This shift is over, and cannot be edited.  Click on \"Calendar\" above to edit other shifts.</p>";
-						}
 						else {
 							if(!process_fill_vacancy($_POST,$shift,$venue) &&
 							   !process_add_volunteer($_POST,$shift,$venue) &&

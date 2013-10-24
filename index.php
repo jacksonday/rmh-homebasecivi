@@ -204,10 +204,12 @@ session_cache_expire(30);
 
                                 echo('<table class="searchResults"><tr><td class="searchResults"><u>Name</u></td><td class="searchResults"><u>Birthday</u></td><td class="searchResults"><u>Start Date</u></td></tr>');
                                 while ($thisRow = mysql_fetch_array($anniversaries, MYSQL_ASSOC)) {
-                                	$birthday_val = mktime(0, 0, 0, substr($thisRow['birthday'], 0, 2), substr($thisRow['birthday'], 3, 2), date('y'));
-                                	$startdate_val = mktime(0, 0, 0, substr($thisRow['start_date'], 0, 2), substr($thisRow['start_date'], 3, 2), date('y'));
-                                    if (($birthday_val >= $today && $birthday_val <= $two_weeks) || ($startdate_val >= $today && $startdate_val <= $two_weeks))
-                                        echo('<tr><td class="searchResults"><a href="personEdit.php?id=' . $thisRow['id'] . '">' . $thisRow['first_name'] . ' ' . $thisRow['last_name'] . '</a></td><td class="searchResults">' . $thisRow['birthday'] . '</td><td class="searchResults">' . $thisRow['start_date'] . '</td></tr>');
+                                	if ($thisRow['birthday'] != null && $thisRow['start_date'] != null) {
+	                                	$birthday_val = mktime(0, 0, 0, (int) substr($thisRow['birthday'], 0, 2), (int) substr($thisRow['birthday'], 3, 2), date('y'));
+	                                	$startdate_val = mktime(0, 0, 0,(int) substr($thisRow['start_date'], 0, 2), (int) substr($thisRow['start_date'], 3, 2), date('y'));
+	                                    if (($birthday_val >= $today && $birthday_val <= $two_weeks) || ($startdate_val >= $today && $startdate_val <= $two_weeks))
+	                                        echo('<tr><td class="searchResults"><a href="personEdit.php?id=' . $thisRow['id'] . '">' . $thisRow['first_name'] . ' ' . $thisRow['last_name'] . '</a></td><td class="searchResults">' . $thisRow['birthday'] . '</td><td class="searchResults">' . $thisRow['start_date'] . '</td></tr>');
+                                	}
                                 }
                                 echo('</table></p></div><br>');
                             }
