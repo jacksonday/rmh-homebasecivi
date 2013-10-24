@@ -240,6 +240,17 @@ class Person {
     function set_county ($county){
         $this->county = $county;
     }
+    function set_history($history){
+    	$this->history = $history;
+    	update_history($this->id, implode(",", $history));
+    }
+    function add_to_history($shift_id){
+    	if (!in_array($shift_id, $this->history)) {
+	    	$this->history[] = $shift_id;
+	    	$history = implode(",", $this->history);
+	    	update_history($this->id, $history);
+    	}
+    }
     function compute_county () {
         if ($this->state=="ME") {
             $countydata = false;
@@ -255,6 +266,8 @@ class Person {
         }
         return "";
     }
+    
 }
+
 
 ?>

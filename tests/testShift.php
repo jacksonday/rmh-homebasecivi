@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__).'/../domain/Shift.php');
 class testShift extends UnitTestCase {
       function testShiftModule() {
-         $noonshift = new Shift("03-28-08-12-15", "Rec", 3, array(), array(), "", "");
+         $noonshift = new Shift("03-28-08-12-15", "Rec", 3, array(), array(), "", "", "no");
          $this->assertEqual($noonshift->get_name(), "12-15");
          $this->assertTrue($noonshift->get_id() == "03-28-08-12-15");
          

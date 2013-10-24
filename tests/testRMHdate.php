@@ -3,7 +3,7 @@
 include_once(dirname(__FILE__).'/../domain/RMHdate.php');
 class testRMHdate extends UnitTestCase {
       function testRMHdateModule() {
-        $my_shifts[] = new Shift("02-28-10-9-13", "Rec", 1, array(), array(), null ,"");
+        $my_shifts[] = new Shift("02-28-10-9-13", "Rec", 1, array(), array(), null ,"", "no");
  		$my_date = new RMHdate("02-28-10",$my_shifts,"");
 		$my_shifts = $my_date->get_shifts();
         foreach ($my_shifts as $value)

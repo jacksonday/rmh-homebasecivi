@@ -25,6 +25,8 @@ session_cache_expire(30);
 <body>
 <div id="container"><?php include_once('header.php'); ?>
 <div id="content"><?php
+include_once('domain/Shift.php');
+include_once('database/dbShifts.php');
 include_once('domain/Person.php');
 include_once('database/dbPersons.php');
 
@@ -32,6 +34,7 @@ if ($_POST['_form_submit'] != 1 && $_POST['_form_submit'] != 2 && $_POST['_form_
 include('dataSearch.inc.php'); // the form has not been submitted, so show it
 
 process_form();
+pull_shift_data();
 include('footer.inc');
 
 function process_form() {
@@ -120,11 +123,14 @@ function process_form() {
 		error_log("Exporting data step 3");
 		$_POST['export_attr'][] = 'id';
 		$all_attrs_concat = implode(", ", $_POST['export_attr']);
+		
 		error_log("All attributes = " .$all_attrs_concat);
 		foreach ($_POST['export_attr'] as $attr) { error_log("attr to be exported ".$attr); }
+		
 		$result = get_people_for_export($all_attrs_concat, $_SESSION['first_name'], $_SESSION['last_name'], $_SESSION['gender'],
-		$_SESSION['type'], $_SESSION['status'], $_SESSION['start_date'], $_SESSION['city'], $_SESSION['zip'],
-		$_SESSION['phone'], $_SESSION['email']);
+										$_SESSION['type'], $_SESSION['status'], $_SESSION['start_date'], $_SESSION['city'], 
+										$_SESSION['zip'], $_SESSION['phone'], $_SESSION['email']);
+		
 		$export_data = array();
 		while ($result_row = mysql_fetch_assoc($result)) {
 			if (in_array($result_row['id'], $_SESSION['selected_people'])){
@@ -151,6 +157,37 @@ function export_data($current_time, $search_attr, $export_data) {
 	}
 	fclose($handle);
 }
+
+function pull_shift_data() {
+	connect();
+	$query = "SELECT id, persons, data_saved FROM dbShifts";
+	$result = mysql_query($query);
+	if (!$result) {
+		echo 'Could not run query2: ' . mysql_error();
+	} else {
+		while($result_row = mysql_fetch_row($result)) {
+			$shift_id = $result_row[0];
+			$shift_persons = $result_row[1];
+			$data_saved = $result_row[2];
+			if ($data_saved != "yes" && $shift_persons != null) {
+				$shift = select_dbShifts($shift_id);
+				$shift->set_datasaved("yes");
+				update_dbShifts($shift);
+				$persons = explode("*", $shift_persons);
+				foreach($persons as $p) {
+					$person_id_and_name = explode("+", $p);
+					$person_id = $person_id_and_name[0];
+					error_log("Updating history for ". $person_id ." with shift id ". $shift_id);
+					$person = retrieve_person($person_id);
+					if ($person != null) $person->add_to_history($shift_id);
+				}
+			} else {
+				error_log("shift ".$shift_id." already saved or doesn't have any person.");
+			}
+		}
+	}
+}
+
 ?></div>
 </div>
 </body>

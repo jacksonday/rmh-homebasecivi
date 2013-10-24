@@ -6,7 +6,7 @@
  * RMH Homebase is free software.  It comes with absolutely no warranty.
  * You can redistribute it and/or modify it under the terms of the GNU
  * General Public License as published by the Free Software Foundation
- * (see <http://www.gnu.org/licenses/ for more information).
+ * (see <http://www.gnu.org/licenses/ for more information). new Shift
  */
 
 /*
@@ -36,7 +36,7 @@ class Shift {
      * construct an empty shift with a certain number of vacancies
      */
 
-    function __construct($id, $venue, $vacancies, $persons, $removed_persons, $sub_call_list, $notes) {
+    function __construct($id, $venue, $vacancies, $persons, $removed_persons, $sub_call_list, $notes, $data_saved) {
     	$this->mm_dd_yy = substr($id, 0, 8);
         $this->name = substr($id, 9);
         $i = strpos($this->name, "-");
@@ -56,7 +56,7 @@ class Shift {
         $this->day = date("D", mktime(0, 0, 0, substr($this->mm_dd_yy, 0, 2), substr($this->mm_dd_yy, 3, 2), "20" . substr($this->mm_dd_yy, 6, 2)));
         $this->id = $id;
         $this->notes = $notes;	
-        $this->datasaved = "";
+        $this->datasaved = $data_saved;
     }
 
     /**
@@ -182,6 +182,7 @@ class Shift {
 	function get_datasaved() {
         return $this->datasaved;
     }
+    
     
     function set_notes($notes) {
         $this->notes = $notes;

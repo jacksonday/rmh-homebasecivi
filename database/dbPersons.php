@@ -136,6 +136,14 @@ function set_county($id, $county) {
     return $result;
 }
 
+function update_history($id, $history) {
+	connect();
+	$query = 'UPDATE dbPersons SET history = "'. $history . '" WHERE id = "' . $id . '"';
+	$result = mysql_query($query);
+	mysql_close();
+	return $result;
+}
+
 
 /*
  * @return all rows from dbPersons table ordered by last name
@@ -304,5 +312,6 @@ function get_people_for_export($attr, $first_name, $last_name, $gender, $type, $
     return $result;
 
 }
+
 
 ?>

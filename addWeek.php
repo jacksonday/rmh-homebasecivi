@@ -152,7 +152,7 @@ session_cache_expire(30);
                     // calculates vacancies
                     $vacancies = get_total_slots($venue, $group, $day, $time) - count($people);
                     // makes a new shift filled with people found above
-                    $newShift = new Shift($day_id . "-" . $time, $venue, $vacancies, $people, array(), "", $note);
+                    $newShift = new Shift($day_id . "-" . $time, $venue, $vacancies, $people, array(), "", $note, "no");
                     return $newShift;
                     
                 }

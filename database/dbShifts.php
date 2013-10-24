@@ -50,6 +50,8 @@ function create_dbShifts() {
     return true;
 }
 
+
+
 /**
  * Inserts a shift into the db
  * @param $s the shift to insert
@@ -134,7 +136,7 @@ function select_dbShifts($id) {
             	$persons = explode("*", $result_row[5]);
             if ($result_row[6] != "")
             	$removed_persons = explode("*", $result_row[6]);
-        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, $removed_persons, null, $result_row[8]);
+        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, $removed_persons, null, $result_row[8], $result_row[9]);
         }
     }
     return $s;
