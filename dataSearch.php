@@ -158,6 +158,10 @@ function export_data($current_time, $search_attr, $export_data) {
 	fclose($handle);
 }
 
+// This function should not be here. It should be in either dbShifts or dbPersons.
+// Making use of this function is not a good choice, for any kind of report has to call this function
+// to make sure the database is up-to-date. TODO: keeping the databse up-to-date on the fly i.e. instead of 
+// using this function, change the database when the shift table in the database is edited.
 function pull_shift_data() {
 	connect();
 	$query = "SELECT id, persons, data_saved FROM dbShifts";

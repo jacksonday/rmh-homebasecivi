@@ -15,6 +15,9 @@
  * @version May 1, 2008, modified 2/15/2012
  */
 include_once(dirname(__FILE__).'/../database/dbZipCodes.php');
+include_once(dirname(__FILE__).'/../database/dbShifts.php');
+include_once('Shift.php');
+
 class Person {
     private $id;    // id (unique key) = first_name . phone1
     private $first_name; // first name as a string
@@ -265,6 +268,41 @@ class Person {
 	        }
         }
         return "";
+    }
+    // return an integer representing the total number of hours the person have worked.
+    function total_hours_worked () {
+    	$total = 0;
+    	foreach ($this->history as $shift_id) {
+    		$s = select_dbShifts($shift_id);
+    		$total += $s->duration();
+    	}
+    	return $total;
+    }
+    // return a dictionary reporting total number hours worked by days of the week with
+    // a given date range. $from and $to are strings of the form 'm/d/y', if one of the strings
+    // is the empty string, then the range is unbounded in that direction.
+    // the dictionary is of the form {'Mon' => , 'Tue' => }.
+    function hours_report ($from, $to) {
+    	$min_date = "01/01/1000";
+    	$max_date = "01/01/3000";
+    	if ($from == '') $from = $min_date;
+    	if ($to == '') $to = $max_date;
+    	error_log("from date = " . $from);
+    	error_log("to date = ". $to);
+    	$from_date = date_create_from_format("m/d/Y", $from); 
+    	$to_date   = date_create_from_format("m/d/Y", $to);
+    	$report = array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0, 
+    					'Fri' => 0, 'Sat' => 0, 'Sun' => 0);
+    	foreach ($this->history as $shift_id) {
+    		$s = select_dbShifts($shift_id);
+    		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
+    		if ($shift_date >= $from_date && $shift_date <= $to_date) {
+    			if ($report[$s->get_day()] == 0) $report[$s->get_day()] = $s->duration();
+    			else $report[$s->get_day()] += $s->duration();
+    		}
+    	}
+    	return $report;
+    	
     }
     
 }

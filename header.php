@@ -53,6 +53,8 @@
         $permission_array['addWeek.php'] = 2;
         $permission_array['rmh.php'] = 2;
         $permission_array['log.php'] = 2;
+        $permission_array['dataSearch.php'] = 2;
+        $permission_array['reports.php'] = 2;
 
         //Check if they're at a valid page for their access level.
         $current_page = substr($_SERVER['PHP_SELF'], 1);
@@ -93,6 +95,7 @@
             echo('<br><a href="' . $path . 'viewSchedule.php?frequency=weekly"><strong>master schedules</strong></a> | ');
             echo('<strong>volunteers :</strong> <a href="' . $path . 'personSearch.php">search</a>, 
 			        <a href="personEdit.php?id=' . 'new' . '">add, </a> <a href="viewScreenings.php?type=new">screenings</a>');
+            echo(' | <strong><a href="' . $path . 'reports.php">reports</a> </strong>');
             echo(' | <strong>data :</strong> <a href="' . $path . 'dataSearch.php">search and export</a> ');
         }
         echo(' | <a href="' . $path . 'logout.php"><b>logout</b></a>');

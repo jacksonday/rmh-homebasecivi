@@ -119,6 +119,23 @@ function retrieve_person($id) {
 //    mysql_close();
     return $thePerson;
 }
+// Name is first concat with last name. Example 'James Jones'
+// return array of Persons.
+function retrieve_persons_by_name ($name) {
+	$persons = array();
+	if (!isset($name) || $name == "" || $name == null) return $persons;
+	connect();
+	$name = explode(" ", $name);
+	$first_name = $name[0];
+	$last_name = $name[1];
+    $query = "SELECT * FROM dbPersons WHERE first_name = '" . $first_name . "' AND last_name = '". $last_name ."'";
+    $result = mysql_query($query);
+    while ($result_row = mysql_fetch_assoc($result)) {
+        $the_person = make_a_person($result_row);
+        $persons[] = $the_person;
+    }
+    return $persons;	
+}
 
 function change_password($id, $newPass) {
     connect();
@@ -168,6 +185,23 @@ function getall_dbPersons() {
     return $thePersons;
 }
 
+function getall_volunteer_names() {
+	connect();
+	$query = "SELECT first_name, last_name FROM dbPersons ORDER BY last_name,first_name";
+    $result = mysql_query($query);
+    if ($result == null || mysql_num_rows($result) == 0) {
+        mysql_close();
+        return false;
+    }
+    $result = mysql_query($query);
+    $names = array();
+    while ($result_row = mysql_fetch_assoc($result)) {
+        $names[] = $result_row['first_name'].' '.$result_row['last_name'];
+    }
+    mysql_close();
+    return $names;   	
+}
+
 function make_a_person($result_row) {
     $thePerson = new Person(
                     $result_row['first_name'],
@@ -203,6 +237,7 @@ function make_a_person($result_row) {
     return $thePerson;
 }
 
+// what??
 function getall_names($status, $type) {
     connect();
     $result = mysql_query("SELECT id,first_name,last_name,type FROM dbPersons " .

@@ -123,6 +123,9 @@ class Shift {
     /*
      * getters and setters
      */
+    function get_mm_dd_yy() {
+    	return $this->mm_dd_yy;
+    }
 
     function get_name() {
         return $this->name;
@@ -200,6 +203,13 @@ class Shift {
     		}
     	}
         $this->persons = $p;
+    }
+    
+    function duration () {
+    	if ($this->end_time == 1 && $this->start_time == 0) {
+    		// overnight shift
+    		return 12;
+    	} else return $this->end_time - $this->start_time;
     }
     
 }

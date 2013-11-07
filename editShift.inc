@@ -79,6 +79,8 @@ include_once('database/dbLog.php');
 	}
 
 	function process_add_volunteer($post,$shift,$venue) {
+		$shift->data_saved = "no";
+		update_dbShifts($shift);
 		if(!array_key_exists('_submit_add_volunteer',$post))
 			return false;
 		if($post['all_vol']=="0" && $post['scheduled_vol']=="0")
@@ -112,6 +114,8 @@ include_once('database/dbLog.php');
 	}
 
 	function process_unfill_shift($post,$shift,$venue) {
+		$shift->data_saved = "no";
+		update_dbShifts($shift);
 		$persons=$shift->get_persons();
 		if(!$persons[0])
 			array_shift($persons);
