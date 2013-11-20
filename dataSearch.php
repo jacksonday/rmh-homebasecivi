@@ -158,40 +158,6 @@ function export_data($current_time, $search_attr, $export_data) {
 	fclose($handle);
 }
 
-// This function should not be here. It should be in either dbShifts or dbPersons.
-// Making use of this function is not a good choice, for any kind of report has to call this function
-// to make sure the database is up-to-date. TODO: keeping the databse up-to-date on the fly i.e. instead of 
-// using this function, change the database when the shift table in the database is edited.
-function pull_shift_data() {
-	connect();
-	$query = "SELECT id, persons, data_saved FROM dbShifts";
-	$result = mysql_query($query);
-	if (!$result) {
-		echo 'Could not run query2: ' . mysql_error();
-	} else {
-		while($result_row = mysql_fetch_row($result)) {
-			$shift_id = $result_row[0];
-			$shift_persons = $result_row[1];
-			$data_saved = $result_row[2];
-			if ($data_saved != "yes" && $shift_persons != null) {
-				$shift = select_dbShifts($shift_id);
-				$shift->set_datasaved("yes");
-				update_dbShifts($shift);
-				$persons = explode("*", $shift_persons);
-				foreach($persons as $p) {
-					$person_id_and_name = explode("+", $p);
-					$person_id = $person_id_and_name[0];
-					error_log("Updating history for ". $person_id ." with shift id ". $shift_id);
-					$person = retrieve_person($person_id);
-					if ($person != null) $person->add_to_history($shift_id);
-				}
-			} else {
-				error_log("shift ".$shift_id." already saved or doesn't have any person.");
-			}
-		}
-	}
-}
-
 ?></div>
 </div>
 </body>

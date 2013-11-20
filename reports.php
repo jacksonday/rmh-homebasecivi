@@ -9,7 +9,7 @@
  */
 /*
  * reports page for RMH homebase.
- * @author JerrickHoang Coster
+ * @author Jerrick Hoang
  * @version 11/5/2013
  */
 session_start();
@@ -28,6 +28,9 @@ include_once('header.php');
 include_once('reports.inc.php');
 include_once('database/dbPersons.php');
 include_once('domain/Person.php');
+
+
+pull_shift_data();
 ?> 
 </div>
 

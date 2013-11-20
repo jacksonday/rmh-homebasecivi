@@ -16,7 +16,9 @@
  */
 include_once(dirname(__FILE__).'/../database/dbZipCodes.php');
 include_once(dirname(__FILE__).'/../database/dbShifts.php');
+include_once(dirname(__FILE__).'/../database/dbPersons.php');
 include_once('Shift.php');
+include_once('Person.php');
 
 class Person {
     private $id;    // id (unique key) = first_name . phone1
@@ -282,7 +284,7 @@ class Person {
     // a given date range. $from and $to are strings of the form 'm/d/y', if one of the strings
     // is the empty string, then the range is unbounded in that direction.
     // the dictionary is of the form {'Mon' => , 'Tue' => }.
-    function hours_report ($from, $to) {
+    function report_hours ($from, $to) {
     	$min_date = "01/01/1000";
     	$max_date = "01/01/3000";
     	if ($from == '') $from = $min_date;
@@ -297,15 +299,80 @@ class Person {
     		$s = select_dbShifts($shift_id);
     		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
     		if ($shift_date >= $from_date && $shift_date <= $to_date) {
-    			if ($report[$s->get_day()] == 0) $report[$s->get_day()] = $s->duration();
-    			else $report[$s->get_day()] += $s->duration();
+    			$report[$s->get_day()] += $s->duration();
     		}
     	}
     	return $report;
-    	
     }
-    
 }
 
+function report_hours_by_day($persons, $from, $to) {
+	$min_date = "01/01/1000";
+	$max_date = "01/01/3000";
+	if ($from == '') $from = $min_date;
+	if ($to == '') $to = $max_date;
+	error_log("from date = " . $from);
+	error_log("to date = ". $to);
+	$from_date = date_create_from_format("m/d/Y", $from);
+	$to_date   = date_create_from_format("m/d/Y", $to);
+	$reports = array(
+		'morning' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0), 
+		'earlypm' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0),
+		'latepm' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0),
+		'evening' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0),
+		'overnight' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0)
+	);
+	foreach($persons as $person) {
+		foreach ($person->get_history() as $shift_id) {
+			$s = select_dbShifts($shift_id);
+			$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
+			if ($shift_date >= $from_date && $shift_date <= $to_date) {
+				$reports[$s->get_time_of_day()][$s->get_day()] += $s->duration();
+    		}
+		}
+	}
+	return $reports;
+}
+
+
+
+
+// Making use of this function is not a good choice, for any kind of report has to call this function
+// to make sure the database is up-to-date. TODO: keeping the databse up-to-date on the fly i.e. instead of
+// using this function, change the database when the shift table in the database is edited.
+function pull_shift_data() {
+	connect();
+	$query = "SELECT id, persons, data_saved FROM dbShifts";
+	$result = mysql_query($query);
+	if (!$result) {
+		echo 'Could not run query2: ' . mysql_error();
+	} else {
+		while($result_row = mysql_fetch_row($result)) {
+			$shift_id = $result_row[0];
+			$shift_persons = $result_row[1];
+			$data_saved = $result_row[2];
+			if ($data_saved != "yes" && $shift_persons != null) {
+				$shift = select_dbShifts($shift_id);
+				$shift->set_datasaved("yes");
+				update_dbShifts($shift);
+				$persons = explode("*", $shift_persons);
+				foreach($persons as $p) {
+					$person_id_and_name = explode("+", $p);
+					$person_id = $person_id_and_name[0];
+					error_log("Updating history for ". $person_id ." with shift id ". $shift_id);
+					$person = retrieve_person($person_id);
+					if ($person != null) $person->add_to_history($shift_id);
+				}
+			} else {
+				error_log("shift ".$shift_id." already saved or doesn't have any person.");
+			}
+		}
+	}
+}
 
 ?>

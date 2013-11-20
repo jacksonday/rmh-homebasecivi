@@ -181,7 +181,7 @@ function getall_dbPersons() {
         $thePerson = make_a_person($result_row);
         $thePersons[] = $thePerson;
     }
-    mysql_close();
+
     return $thePersons;
 }
 

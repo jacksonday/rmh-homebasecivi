@@ -33,8 +33,7 @@
 			<select multiple name="report-types[]" id = "report-type">
 	  		<option value="volunteer-names">Volunteer Names (and total hours)</option>
 	  		<option value="volunteer-hours">Volunteer Hours (by day)</option>
-	  		<option value="shifts-staffed">Shifts Staffed (by day)</option>
-	  		<option value="shifts-vacent">Shifts Vacant (by day)</option>
+	  		<option value="shifts-staffed-vacant">Shifts Staffed/Vacant (by day)</option>
 			</select>
 		</div>
 		<div class = "search-description" >

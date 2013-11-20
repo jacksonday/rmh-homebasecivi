@@ -280,4 +280,38 @@ function timeslots_overlap($s1_start, $s1_end, $s2_start, $s2_end) {
         return false;
 }
 
+function make_a_shift($result_row) {
+    $the_shift = new Shift(
+    				$result_row['id'],
+                    $result_row['venue'],
+                    $result_row['vacancies'],
+                    $result_row['persons'],
+                    $result_row['removed_persons'],
+                    $result_row['sub_call_list'],
+                    $result_row['notes'],
+                    $result_row['data_saved']
+                 );
+
+    return $the_shift;
+}
+
+function get_all_shifts() {
+    connect();
+    $query = "SELECT * FROM dbShifts";
+    $result = mysql_query($query);
+    if ($result == null || mysql_num_rows($result) == 0) {
+        mysql_close();
+        return false;
+    }
+    $result = mysql_query($query);
+    $shifts = array();
+    while ($result_row = mysql_fetch_assoc($result)) {
+        $shift = make_a_shift($result_row);
+        $shifts[] = $shift;
+    }
+
+    return $shifts;
+}
+
+
 ?>

@@ -11,11 +11,11 @@ if (isset($_POST['_form_submit']) && $_POST['_form_submit'] == 'report') {
 }
 
 function show_report() {
-	//pull_shift_data()
+
 	$names = $_POST['volunteer-names'];
 	$from = "";
 	$to = "";
-	if($_POST['date'] != "") {
+	if(isset($_POST['date']) && $_POST['date'] != "") {
 		if ($_POST['date'] == "last-week") {
 			$from = date("m/d/y", strtotime("last week"));
 			$to   = date("m/d/y", strtotime("this week"));
@@ -27,16 +27,24 @@ function show_report() {
 			$to   = $_POST["to"];
 		}
 	}
-	error_log($from);
-	error_log($to);
-	//error_log(''.$_POST['from']);
-	//error_log(''.$_POST['to']);
-	report_by_volunteer_names($names, $from, $to);
-	//foreach ($_POST['report-types'] as $t) error_log(''.$t);
-	//error_log(''.$_POST['volunteer-name']);
+
+	if (isset($_POST['report-types'])) {
+		if (in_array('volunteer-names', $_POST['report-types'])) {
+			report_by_volunteer_names($names, $from, $to);
+		} 
+		if (in_array('volunteer-hours', $_POST['report-types'])) {
+			report_volunteer_hours_by_day($from, $to);
+		}
+		if (in_array('shifts-staffed-vacant', $_POST['report-types'])) {
+			report_shifts_staffed_vacant_by_day($from, $to);
+		}
+		
+	}
+
 }
 
 function report_by_volunteer_names($names, $from, $to) {
+	error_log("volunteer names");
 	$the_persons = array();
 	foreach ($names as $name) $the_persons = array_merge($the_persons, retrieve_persons_by_name($name));
 	$reports = array();
@@ -44,19 +52,46 @@ function report_by_volunteer_names($names, $from, $to) {
 	foreach ($the_persons as $p) {
 		if ($p != null) {
 			$names[] = $p->get_first_name() . " " . $p->get_last_name();
-			$reports[] = $p->hours_report($from, $to);
+			$reports[] = $p->report_hours($from, $to);
 		}
 	}
 	echo display_table_reports($names, $reports);
 	
 }
 
-function display_table_reports ($names, $reports) {
+function report_volunteer_hours_by_day($from, $to) {
+	error_log("volunteer hours");
+	$all_volunteers = getall_dbPersons();
+	$labels = array(
+				"Morning",
+				"Early Afternoon",
+				"Late Afternoon",
+				"Evenng",
+				"Overnight"
+			);
+	$reports = report_hours_by_day($all_volunteers, $from, $to);
+	echo display_table_reports($labels, $reports);
+}
+
+function report_shifts_staffed_vacant_by_day($from, $to) {
+	error_log("shifts hours");
+	$labels = array(
+				"Morning",
+				"Early Afternoon",
+				"Late Afternoon",
+				"Evening",
+				"Overnight"
+			);
+	$reports = report_shifts_staffed_vacant($from, $to);
+	echo display_table_reports($labels, $reports);
+}
+
+function display_table_reports ($labels, $reports) {
 	$res = "
-		<table id = 'hours-report'> 
+		<table id = 'report'> 
 			<thead>
 			<tr>
-				<th>Name</th>
+				<th></th>
 				<th>Monday</th>
 				<th>Tuesday</th>
 				<th>Wednesday</th>
@@ -69,21 +104,25 @@ function display_table_reports ($names, $reports) {
 			</thead>
 			<tbody>
 	";
-	for ($i = 0; $i < count($reports); $i++) $res .= display_table_report($names[$i], $reports[$i]);
+	foreach (array_combine($labels, $reports) as $label => $report) $res .= display_table_report($label, $report);
 	$res = $res . "</tbody></table>";
 	return $res;
 }
 
-function display_table_report ($name, $report) {
+function display_table_report ($label, $report) {
 
 	$row = "<tr>";
-	$row .= "<td>" . $name . "</td>";
+	$row .= "<td>" . $label . "</td>";
 	$total = 0;
 	foreach($report as $hours) {
-		$total += $hours;
-		$row .= "<td>" . $hours. "</td>";	
+		if (is_array($hours)) {
+			$hours = implode('/', $hours);
+		} else {
+			$total += $hours;
+		}
+		$row .= "<td>" . $hours. "</td>";
 	}
-	$row .= "<td>".$total."</td>";
+	if (isset($total)) $row .= "<td>".$total."</td>";
 	$row .= "</tr>";
 	return $row;
 }

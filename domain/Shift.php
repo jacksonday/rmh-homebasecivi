@@ -16,6 +16,9 @@
  * @author Allen Tucker and Maxwell Palmer
  */
 
+include_once(dirname(__FILE__).'/../database/dbShifts.php');
+include_once(dirname(__FILE__).'/../database/dbPersons.php');
+
 class Shift {
 
     private $mm_dd_yy;      // String: "mm-dd-yy".
@@ -186,6 +189,10 @@ class Shift {
         return $this->datasaved;
     }
     
+    function get_vacancies() {
+    	return $this->vacancies;
+    }
+    
     
     function set_notes($notes) {
         $this->notes = $notes;
@@ -212,6 +219,38 @@ class Shift {
     	} else return $this->end_time - $this->start_time;
     }
     
+}
+
+function report_shifts_staffed_vacant($from, $to) {
+	$min_date = "01/01/1000";
+	$max_date = "01/01/3000";
+	if ($from == '') $from = $min_date;
+	if ($to == '') $to = $max_date;
+	error_log("from date = " . $from);
+	error_log("to date = ". $to);
+	$from_date = date_create_from_format("m/d/Y", $from);
+	$to_date   = date_create_from_format("m/d/Y", $to);
+	$reports = array(
+		'morning' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)), 
+		'earlypm' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
+		'latepm' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
+		'evening' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
+		'overnight' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
+	);
+	$all_shifts = get_all_shifts();
+	foreach ($all_shifts as $s) {
+		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
+		if ($shift_date >= $from_date && $shift_date <= $to_date) {
+			$reports[$s->get_time_of_day()][$s->get_day()][0] += count($s->get_persons());
+			$reports[$s->get_time_of_day()][$s->get_day()][1] += $s->get_vacancies();
+		}
+	}
+	return $reports;
 }
 
 ?>
