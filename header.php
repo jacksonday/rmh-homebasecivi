@@ -1,6 +1,7 @@
 <?php
 /*
- * Copyright 2012 by Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
+ * Copyright 2012 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
  * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
  * This program is part of RMH Homebase, which is free software.  It comes with 
  * absolutely no warranty. You can redistribute and/or modify it under the terms 
