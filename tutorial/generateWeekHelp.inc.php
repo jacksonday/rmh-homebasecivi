@@ -59,8 +59,7 @@
 	<a href="tutorial/screenshots/managecal3.png" class="image"
 		title="managecal3.png" horizontalalign="center"> &nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/managecal3.png" width="10%"
-		border="1px" align="middle">
-	</a>
+		border="1px" align="middle"> </a>
 <p>
 	This form asks you to select the Month, Day, Year, Weekday Group,
 	Weekend Group, and Family Room Group that will be used to populate the
@@ -76,8 +75,7 @@
 	<a href="tutorial/screenshots/managecal4.png" class="image"
 		title="manageCal4.png"> &nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/manageCal4.png" width="10%" border="1px"
-		align="middle">
-	</a>
+		align="middle"> </a>
 <p>
 	<B>Step 1:</B> At any time in the future, you can use the <strong>Add
 		new week</strong> button to generate and populate the next successive
@@ -86,8 +84,7 @@
 	<a href="tutorial/screenshots/managecal4.png" class="image"
 		title="managecal4.png" target="tutorial/screenshots/managecal4.png">
 		&nbsp&nbsp&nbsp&nbsp <img src="tutorial/screenshots/managecal4.png"
-		width="10%" border="1px" align="bottom">
-	</a>
+		width="10%" border="1px" align="bottom"> </a>
 <p>
 	<B>Step 2:</B> So here is the result of adding the next calendar week
 	following the week of September 29.
@@ -96,8 +93,7 @@
 		title="managecal5.png" horizontalalign="center"
 		target="tutorial/screenshots/managecal5.png"> &nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/managecal5.png" width="10%" border="1px"
-		align="middle">
-	</a>
+		align="middle"> </a>
 <p>
 	&nbsp&nbsp&nbsp Notice that this new week is populated with a different
 	Weekday/Weekend/Family Room group from the Master Schedule. Since there
@@ -145,8 +141,7 @@
 	<a href="tutorial/screenshots/managecal6.png" class="image"
 		title="managecal6.png" target="tutorial/screenshots/managecal6.png">
 		&nbsp&nbsp&nbsp&nbsp<img src="tutorial/screenshots/managecal6.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		width="10%" border="1px" align="middle"> </a>
 <p>
 	Hitting the <b>Back</b> button will return you to where you left off,
 	like this:
@@ -154,5 +149,4 @@
 	<a href="tutorial/screenshots/managecal7.png" class="image"
 		title="managecal7.png" target="tutorial/screenshots/managecal7.png">
 		&nbsp&nbsp&nbsp&nbsp<img src="tutorial/screenshots/managecal7.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		width="10%" border="1px" align="middle"> </a>

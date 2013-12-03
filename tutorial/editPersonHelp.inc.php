@@ -7,14 +7,13 @@
 	tutorial is mainly for the House Manager.
 <p>
 	<strong>Step 1:</strong> First you need to <strong>search</strong> for
-	the person whose information you want to edit. <BR>
-	<BR> <a href="tutorial/screenshots/editpersonstep1.png" class="image"
+	the person whose information you want to edit. <BR> <BR> <a
+		href="tutorial/screenshots/editpersonstep1.png" class="image"
 		title="editpersonstep1.png"
 		target="tutorial/screenshots/editpersonstep1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/editpersonstep1.png" width="10%"
-		border="1px" align="middle">
-	</a>
+		border="1px" align="middle"> </a>
 </p>
 <p>
 	To see more information on searching, <a
@@ -62,14 +61,13 @@
 	corrections, repeat <B>Step 4</B>.
 <p>
 	<B>Step 6:</B> If you have no errors or omissions, you will see a page
-	telling you the edit was successful, like this:<BR>
-	<BR> <a href="tutorial/screenshots/editpersonstep6.png" class="image"
+	telling you the edit was successful, like this:<BR> <BR> <a
+		href="tutorial/screenshots/editpersonstep6.png" class="image"
 		title="editpersonstep6.png"
 		target="tutorial/screenshots/editpersonstep6.png"
 		horizontalalign="center"> &nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/editpersonstep6.png" width="10%"
-		border="1px" align="middle">
-	</a>
+		border="1px" align="middle"> </a>
 <p>
 	<B>Step 7:</B> When you finish, you can return to any other function by
 	selecting it on the navigation bar.
