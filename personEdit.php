@@ -256,4 +256,4 @@ if ($id == 'new') {
             <?PHP include('footer.inc'); ?>
         </div>
     </body>
-</html>
+</html> 
