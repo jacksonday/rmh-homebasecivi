@@ -3,6 +3,7 @@
 	margin: 10px;
 	border: solid 1px;
 	height: 100%;
+	overflow: scroll;
 }
 
 #report-table #search-fields-container {
