@@ -1,11 +1,13 @@
-<?PHP
+<?php
 /*
- * Copyright 2008 by Oliver Radwan, Maxwell Palmer, Nolan McNair,
- * Taylor Talmage, and Allen Tucker.  This program is part of RMH Homebase.
- * RMH Homebase is free software.  It comes with absolutely no warranty.
- * You can redistribute it and/or modify it under the terms of the GNU
- * General Public License as published by the Free Software Foundation
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
+ * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
+ * This program is part of RMH Homebase, which is free software.  It comes with 
+ * absolutely no warranty. You can redistribute and/or modify it under the terms 
+ * of the GNU General Public License as published by the Free Software Foundation
  * (see <http://www.gnu.org/licenses/ for more information).
+ * 
  */
 session_start();
 session_cache_expire(30);
@@ -19,6 +21,10 @@ session_cache_expire(30);
 		<strong>Homebase Help Pages</strong>
 	</p>
 	<ol>
+		<li><a href="?helpPage=quickStartGuide.php">Quick Start Guide</a>
+		</li>
+		<br>
+	
 		<li><a href="?helpPage=login.php">Signing in and out of the System</a>
 		</li>
 		<br>
@@ -52,6 +58,8 @@ session_cache_expire(30);
 						volunteer</a></li>
 				<li><a href="help.php?helpPage=addSlotToShift.php">Adding/removing a
 						slot</a></li>
+				<li><a href="help.php?helpPage=addPersonToShift.php">Adding/removing a
+						person from a shift</a></li>
 				<li><a href="help.php?helpPage=subCallList.php">Using a Sub Call
 						List</a></li>
 			</ul>
@@ -59,6 +67,7 @@ session_cache_expire(30);
 			
 			
 			<li><a href="?helpPage=addNotes.php">Adding notes</a></li>
+			<li><a href="?helpPage=navigateThroughWeeks.php">Navigate to Different Weeks</a></li>
 
 		</ul>
 		<br>

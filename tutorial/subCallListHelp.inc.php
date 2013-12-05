@@ -1,3 +1,16 @@
+<?php
+/*
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
+ * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
+ * This program is part of RMH Homebase, which is free software.  It comes with 
+ * absolutely no warranty. You can redistribute and/or modify it under the terms 
+ * of the GNU General Public License as published by the Free Software Foundation
+ * (see <http://www.gnu.org/licenses/ for more information).
+ * 
+ */
+?>
+
 
 <p>
 	<strong>How to Use the Sub Call List</strong>
@@ -11,13 +24,13 @@
 	To begin, you must have already selected <strong>(edit this week)</strong>
 	at the top of the calendar.
 <p>
-	<B>Step 1:</B> Click on am editable calendar shift that has a vacancy,
+	<B>Step 1:</B> Click on an editable calendar shift that has a vacancy,
 	like this:<BR>
-	<BR> <a href="tutorial/screenshots/subcallliststep1.gif" class="image"
-		title="subcallliststep1.gif" horizontalalign="center"
-		target="tutorial/screenshots/subcallliststep1.gif">
+	<BR> <a href="tutorial/screenshots/quickStartGuideHelp_step1.pnf" class="image"
+		title="quickStartGuideHelp_step1.png" horizontalalign="center"
+		target="tutorial/screenshots/quickStartGuideHelp_step1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep1.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step1.png" width="10%"
 		border="1px" align="center">
 	</a> <br>
 	<br> (Each upcoming calendar shift will turn gray whenever the mouse
@@ -25,21 +38,21 @@
 	in this way.)
 <p>
 	<B>Step 2:</B> This will give you a shift form that looks like this:<BR>
-	<BR> <a href="tutorial/screenshots/subcallliststep2.gif" class="image"
-		title="subcallliststep2.png" horizontalalign="center"
-		target="tutorial/screenshots/subcallliststep2.gif">
+	<BR> <a href="tutorial/screenshots/quickStartGuideHelp_step2.png" class="image"
+		title="quickStartGuideHelp_step2.png" horizontalalign="center"
+		target="tutorial/screenshots/quickStartGuideHelp_step2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep2.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step2.png" width="10%"
 		border="1px" align="center">
 	</a>
 <p>
 	<B>Step 3:</B> If you are the first to try to fill a vacancy for this
 	shift, click on the <B>Generate Sub Call List</B> button, like this:<BR>
-	<BR> <a href="tutorial/screenshots/subcallliststep3.gif" class="image"
-		title="subcalllistStep3.png" horizontalalign="center"
-		target="tutorial/screenshots/subcallliststep3.gif">
+	<BR> <a href="tutorial/screenshots/quickStartGuideHelp_step3.png" class="image"
+		title="quickStartGuideHelp_step3.png" horizontalalign="center"
+		target="tutorial/screenshots/quickStartGuideHelp_step3.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep3.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step3.png" width="10%"
 		border="1px" align="center">
 	</a> <BR>
 	<br>&nbsp&nbsp&nbsp NOTE: If you are not the first, a sub call list
@@ -50,11 +63,11 @@
 	<B>Step 4:</B> You will now see a page that lists everyone available to
 	fill that shift, their phone number, a 'Date Called' box, a 'Notes'
 	box, and an 'Accepted' box, like this: <br>
-	<br> <a href="tutorial/screenshots/subcallliststep4.gif" class="image"
-		title="subcalllistStep4.png"
-		target="tutorial/screenshots/subcallliststep4.gif">
+	<br> <a href="tutorial/screenshots/quickStartGuideHelp_step4.png" class="image"
+		title="quickStartGuideHelp_step4.png"
+		target="tutorial/screenshots/quickStartGuideHelp_step4.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep4.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step4.png" width="10%"
 		border="1px" align="middle">
 	</a>
 <p>
@@ -63,11 +76,11 @@
 	the call. In this example, if I call William Talley on August 17 and
 	leave a message, I might enter the following on that shift's sub call
 	list:<BR>
-	<BR> <a href="tutorial/screenshots/subcallliststep5.gif" class="image"
-		title="subcalllistStep5.png"
-		target="tutorial/screenshots/subcallliststep5.gif">
+	<BR> <a href="tutorial/screenshots/quickStartGuideHelp_step5.png" class="image"
+		title="quickStartGuideHelp_step5.png"
+		target="tutorial/screenshots/quickStartGuideHelp_step5.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep5.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step5.png" width="10%"
 		border="1px" align="middle">
 	</a> <br>
 	<br> &nbsp&nbsp&nbsp If they accept or reject your request, select
@@ -75,11 +88,11 @@
 <p>
 	<B>Step 6:</B> When you are finished with the sub call list for that
 	shift, click on the <B>Assign Subs/Save Changes</B> button, like this.<BR>
-	<BR> <a href="tutorial/screenshots/subcallliststep6.gif" class="image"
-		title="subcalllistStep6.png"
-		target="tutorial/screenshots/subcallliststep6.gif">
+	<BR> <a href="tutorial/screenshots/quickStartGuideHelp_step6.png" class="image"
+		title="quickStartGuideHelp_step6.png"
+		target="tutorial/screenshots/quickStartGuideHelp_step6.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep6.gif" width="10%"
+		src="tutorial/screenshots/quickStartGuideHelp_step6.png" width="10%"
 		border="1px" align="middle">
 	</a> <br>
 	<br>&nbsp&nbsp&nbsp NOTE: If you fail to save your changes, any work
