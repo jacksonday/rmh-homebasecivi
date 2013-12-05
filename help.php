@@ -24,7 +24,6 @@
 
 	<body>
 		<div id="container">
-			<?PHP include('header.php');?>
 			<div id="content">
 				<div align="center"><p><a href="?">Help Home</a></p></div>
 
