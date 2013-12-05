@@ -23,18 +23,17 @@
 	and if you scroll down you will see seven tables. The first shows the
 	persons scheduled for the <strong>odd weeks</strong> of the year, and
 	the second shows the persons scheduled for the even weeks. Here is an <strong>odd
-		weeks</strong> sample table with the persons already scheduled: <br>
-	<br>
+		weeks</strong> sample table with the persons already scheduled: <br> <br>
 	<a href="tutorial/screenshots/schedulingstep1.png" class="image"
-		title="schedulingstep1.png" horizontalalign="center"> <img
-		src="tutorial/screenshots/schedulingstep1.png" width="10%"
-		border="1px" align="middle">
-	</a> <br>
-	<br> A "shift" is shown as a box associated with a particular day
-	(e.g., Thursday) and time slot (e.g., 6-9pm). If a shift has vacancies,
-	the number of vacancies is shown in <strong>boldface</strong>. For
-	example, the Friday 12-3pm shift has one vacancy in the <strong>odd
-		week</strong> schedule shown above.
+		title="schedulingstep1.png" horizontalalign="center"
+		target="tutorial/screenshots/schedulingstep1.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep1.png" width="10%"
+		border="1px" align="middle"> </a> <br> <br> A "shift" is shown as a
+	box associated with a particular day (e.g., Thursday) and time slot
+	(e.g., 6-9pm). If a shift has vacancies, the number of vacancies is
+	shown in <strong>boldface</strong>. For example, the Friday 12-3pm
+	shift has one vacancy in the <strong>odd week</strong> schedule shown
+	above.
 <p>
 	<B>Step 2:</B> If you want to fill a vacancy for a shift, you must
 	first select it. For example, suppose you want to add a person to fill
@@ -42,52 +41,52 @@
 <p>
 	<B>Step 3:</B> Now you will see a shift worksheet for the Friday 12-3pm
 	shift. You can find out who's available for that shift by selecting the
-	<strong>Assign Volunteer</strong> button, like this: <br>
-	<br> <a href="tutorial/screenshots/schedulingstep3.png" class="image"
-		title="schedulingstep3.png"> <img
-		src="tutorial/screenshots/schedulingstep3.png" width="10%"
-		border="1px" align="middle">
-	</a>
+	<strong>Assign Volunteer</strong> button, like this: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep3.png" class="image"
+		title="schedulingstep3.png"
+		target="tutorial/screenshots/schedulingstep3.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep3.png" width="10%"
+		border="1px" align="middle"> </a>
 <p>
 	<B>Step 4:</B> You can either select from the group of volunteers with
-	Friday 12-3pm availability or select from all volunteers: <br>
-	<br> <a href="tutorial/screenshots/schedulingstep4.png" class="image"
-		title="schedulingstep4.png"> <img
-		src="tutorial/screenshots/schedulingstep4.png" width="10%"
-		border="1px" align="middle">
-	</a>
+	Friday 12-3pm availability or select from all volunteers: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep4.png" class="image"
+		title="schedulingstep4.png"
+		target="tutorial/screenshots/schedulingstep4.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep4.png" width="10%"
+		border="1px" align="middle"> </a>
 <p>
 	To select a volunteer, click on the appropriate drop down menu and then
-	click on his/her name. <br>
-	<br> <a href="tutorial/screenshots/schedulingstep4-2.png" class="image"
-		title="schedulingstep4-2.png"> <img
-		src="tutorial/screenshots/schedulingstep4-2.png" width="10%"
-		border="1px" align="middle">
-	</a>
+	click on his/her name. <br> <br> <a
+		href="tutorial/screenshots/schedulingstep4-2.png" class="image"
+		title="schedulingstep4-2.png"
+		target="tutorial/screenshots/schedulingstep4-2.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep4-2.png" width="10%"
+		border="1px" align="middle"> </a>
 <p>
 	<B>Step 5:</B> You can select, say, Evelyn Jones to fill that shift and
-	then select <strong>Add Volunteer</strong>, like this: <br>
-	<br> <a href="tutorial/screenshots/schedulingstep5.png" class="image"
-		title="schedulingstep5.png"> <img
-		src="tutorial/screenshots/schedulingstep5.png" width="10%"
-		border="1px" align="middle">
-	</a>
+	then select <strong>Add Volunteer</strong>, like this: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep5.png" class="image"
+		title="schedulingstep5.png"
+		target="tutorial/screenshots/schedulingstep5.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep5.png" width="10%"
+		border="1px" align="middle"> </a>
 <p>
 	<B>Step 6:</B> Upon clicking <B>Add Volunteer</B>, you have now
 	successfully added Evelyn Jones to the Friday 12-3pm shift, and the
-	name should appear here: <br>
-	<br> <a href="tutorial/screenshots/schedulingstep6.png" class="image"
-		title="schedulingstep6.png" horizontalalign="center"> <img
-		src="tutorial/screenshots/schedulingstep6.png" width="10%"
-		border="1px" align="middle">
-	</a> <br>
-	<br> Selecting <strong>Back to Master Schedule</strong> will also show
-	Evelyn Jones on the Master Schedule: <br>
-	<br> <a href="tutorial/screenshots/schedulingstep6-2.png" class="image"
-		title="schedulingstep6-2.png" horizontalalign="center"> <img
-		src="tutorial/screenshots/schedulingstep6-2.png" width="10%"
-		border="1px" align="middle">
-	</a>
+	name should appear here: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep6.png" class="image"
+		title="schedulingstep6.png" horizontalalign="center"
+		target="tutorial/screenshots/schedulingstep6.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep6.png" width="10%"
+		border="1px" align="middle"> </a> <br> <br> Selecting <strong>Back to
+		Master Schedule</strong> will also show Evelyn Jones on the Master
+	Schedule: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep6-2.png" class="image"
+		title="schedulingstep6-2.png" horizontalalign="center"
+		target="tutorial/screenshots/schedulingstep6-2.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep6-2.png" width="10%"
+		border="1px" align="middle"> </a>
 <p>
 	<B>Step 7:</B> Five other <strong>Master Schedule</strong> functions
 	are available. You can add or remove an entire shift, remove a person
@@ -99,10 +98,14 @@
 	
 	<li>To remove an existing shift from the Master Schedule, select <strong>Remove
 			Entire Shift</strong> on top of the worksheet shown in <B>Step 3</B>.
+
+
 	
 	
 	<li>To remove a person from a shift, select <strong>Remove
 			Person/Create Vacancy</strong> on the worksheet shown in <B>Step 3</B>.
+
+
 	
 	
 	<li>To add a new slot to a shift, select <strong>Add Slot</strong> on
@@ -118,12 +121,15 @@
 	You can remove the vacant slot by selecting <strong>Remove Vacant Slot</strong>,
 	which leaves this: <br> <br> <a
 		href="tutorial/screenshots/schedulingstep7.png" class="image"
-		title="schedulingstep7.png" horizontalalign="center"> <img
-		src="tutorial/screenshots/schedulingstep7.png" width="10%"
+		title="schedulingstep7.png" horizontalalign="center"
+		target="tutorial/screenshots/schedulingstep7.png">&nbsp&nbsp&nbsp&nbsp
+		<img src="tutorial/screenshots/schedulingstep7.png" width="10%"
 		border="1px" align="middle"> </a> <br>
-<p> And on the master schedule:
-	<br> <br> <a href="tutorial/screenshots/schedulingstep7-2.png"
-		class="image" title="schedulingstep7-2.png" horizontalalign="center">
+<p>
+	And on the master schedule: <br> <br> <a
+		href="tutorial/screenshots/schedulingstep7-2.png" class="image"
+		title="schedulingstep7-2.png" horizontalalign="center"
+		target="tutorial/screenshots/schedulingstep7-2.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep7-2.png" width="10%"
 		border="1px" align="middle"> </a>
 <p>

@@ -58,9 +58,17 @@ session_cache_expire(30);
 				(207)-123-4567, your Username would be <strong>John2071234567</strong>.
 
 
+
+
+
+
 			
 			
 			<li>Remember that your Username and Password are <em>case-sensitive</em>.
+
+
+
+
 
 
 			

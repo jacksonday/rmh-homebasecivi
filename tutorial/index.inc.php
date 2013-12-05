@@ -30,13 +30,16 @@ session_cache_expire(30);
 		<br>
 		<ul>
 			<li><a href="?helpPage=index.php">About your Personal Home Page</a></li>
+			<li><a href="?helpPage=cancelShift.php">Volunteers: Canceling a Shift</a>
+			</li>
 		</ul>
 		<br>
 		<li><strong>Working with the Volunteer Database</strong> (Managers
 			Only)</li>
 		<br>
 		<ul>
-			<li><a href="?helpPage=searchPeople.php">Searching for People</a></li>
+			<li><a href="?helpPage=searchPeople.php">Searching for People (and
+					Phone Numbers)</a></li>
 			<li><a href="?helpPage=edit.php">Editing People</a></li>
 			<li><a href="?helpPage=rmh.php">Adding People </a></li>
 		</ul>

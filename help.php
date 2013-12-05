@@ -46,6 +46,7 @@
 					$assocHelp['edit.php']='editPersonHelp.inc.php';
 					$assocHelp['rmh.php']='addPersonHelp.inc.php';
 					$assocHelp['viewPerson.php']='viewPersonHelp.inc.php';
+					$assocHelp['cancelShift.php']='cancelPersonShift.inc.php';
 
 					//schedule managing
 					$assocHelp['calendar.php']='viewCalendarHelp.inc.php';

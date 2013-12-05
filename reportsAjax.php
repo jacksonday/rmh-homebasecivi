@@ -55,6 +55,7 @@ function show_report() {
 }
 
 function report_by_volunteer_names($names, $from, $to) {
+	echo ("<p>Volunteer names and total hours</p>");
 	error_log("volunteer names");
 	$the_persons = array();
 	foreach ($names as $name) $the_persons = array_merge($the_persons, retrieve_persons_by_name($name));
@@ -71,13 +72,14 @@ function report_by_volunteer_names($names, $from, $to) {
 }
 
 function report_volunteer_hours_by_day($from, $to) {
+	echo ("<p>Volunteer hours by day</p>");
 	error_log("volunteer hours");
 	$all_volunteers = getall_dbPersons();
 	$labels = array(
 				"Morning",
 				"Early Afternoon",
 				"Late Afternoon",
-				"Evenng",
+				"Evening",
 				"Overnight"
 			);
 	$reports = report_hours_by_day($all_volunteers, $from, $to);
@@ -85,6 +87,7 @@ function report_volunteer_hours_by_day($from, $to) {
 }
 
 function report_shifts_staffed_vacant_by_day($from, $to) {
+	echo ("<p>Shifts staffed/vacant by day</p>");
 	error_log("shifts hours");
 	$labels = array(
 				"Morning",
@@ -103,13 +106,13 @@ function display_table_reports ($labels, $reports) {
 			<thead>
 			<tr>
 				<th></th>
-				<th>Monday</th>
-				<th>Tuesday</th>
-				<th>Wednesday</th>
-				<th>Thursday</th>
-				<th>Friday</th>
-				<th>Saturday</th>
-				<th>Sunday</th>
+				<th>Mon</th>
+				<th>Tue</th>
+				<th>Wed</th>
+				<th>Thu</th>
+				<th>Fri</th>
+				<th>Sat</th>
+				<th>Sun</th>
 				<th>Total</th>
 			</tr>
 			</thead>
