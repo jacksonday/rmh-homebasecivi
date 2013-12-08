@@ -10,7 +10,51 @@
  * 
  */
 ?>
+<script src="lib/jquery-1.9.1.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
 
+<script >
+	$(function () {
+		$('img[rel=popover]').popover({
+			  html: true,
+			  trigger: 'hover',
+			  placement: 'right',
+			  content: function(){return '<img src="'+$(this).data('img') + '" width="60%"/>';}
+			});
+		/*
+		$('img[rel=popover]').mouseenter(function(){
+			$('#invisible-placeholder').css('visibility', 'visible');
+			$('#invisible-placeholder').html('<img class="large-img" src="'+$(this).data('img') + '" width="50%"/>');
+		}).mouseleave(function(){
+			$('#invisible-placeholder').css('visibility', 'hidden');
+			$('#invisible-placeholder').html('');
+			console.log('leaving');
+		});*/
+		
+	});
+</script>
+
+<style>
+	/*#invisible-placeholder {
+		z-index: 1;
+		visibility: hidden;
+		position: fixed;
+		width: 90%;
+		height: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		
+	}
+	
+	img {
+		z-index: 1000;
+	}
+	
+	.large-img {
+		float:right;
+	}*/
+</style>
 
 <p>
 	<strong>How to Add People to the Database</strong>
@@ -22,6 +66,7 @@
 		target="tutorial/screenshots/addpersonhelpstep1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/addpersonhelpstep1.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/addpersonhelpstep1.png"
 		border="1px" align="center"> </a>
 <p>
 	<B>Step 2:</B> You should now see a long form with information like
@@ -31,6 +76,7 @@
 		target="tutorial/screenshots/addpersonhelpstep2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/addpersonhelpstep2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/addpersonhelpstep2.png"
 		border="1px" align="middle"> </a> <BR> Now you can fill in these
 	fields with the correct information. <br>(NOTE:&nbsp All fields marked
 	by <font color="#FF0000">*</font> are required before a person can be
@@ -45,6 +91,7 @@
 		target="tutorial/screenshots/addpersonhelpstep3.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/addpersonhelpstep3.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/addpersonhelpstep3.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 4:</B> If you make a mistake or omit a required field, <font
