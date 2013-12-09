@@ -76,6 +76,9 @@ session_cache_expire(30);
 		<br>
 		<li><a href="?helpPage=masterSchedule.php">Working with the Master
 				Schedule</a> (Managers Only)</li>
+				<br>
+		<li><a href="?helpPage=reports.php">Generating Reports</a> 
+			(Managers Only)</li>
 	</ol>
 	<p>
 		If these help pages don't answer your questions, please contact the <a

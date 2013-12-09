@@ -62,6 +62,7 @@
 					$assocHelp['addPersonToShift.php']='addPersonToShiftHelp.inc.php';
 					$assocHelp['navigateThroughWeeks.php']='navigateThroughWeeksHelp.inc.php';
 					$assocHelp['quickStartGuide.php']='quickStartGuideHelp.inc.php';
+					$assocHelp['reports.php']='reportsHelp.inc.php';
 
 					//personal home page
 					$assocHelp['index.php']='indexHelp.inc.php';
