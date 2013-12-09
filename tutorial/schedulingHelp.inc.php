@@ -1,16 +1,30 @@
 <?php
 /*
- * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
- * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
- * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
- * This program is part of RMH Homebase, which is free software.  It comes with 
- * absolutely no warranty. You can redistribute and/or modify it under the terms 
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook,
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan,
+ * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker.
+ * This program is part of RMH Homebase, which is free software.  It comes with
+ * absolutely no warranty. You can redistribute and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Foundation
  * (see <http://www.gnu.org/licenses/ for more information).
- * 
+ *
  */
 ?>
 
+<script src="lib/jquery-1.9.1.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+
+<script>
+	$(function () {
+		$('img[rel=popover]').popover({
+			  html: true,
+			  trigger: 'hover',
+			  placement: 'right',
+			  content: function(){return '<img src="'+$(this).data('img') + '" width="60%"/>';}
+			});
+	});
+</script>
 
 <p>
 	<strong>How to Manage the Master Schedule</strong>
@@ -28,6 +42,7 @@
 		title="schedulingstep1.png" horizontalalign="center"
 		target="tutorial/screenshots/schedulingstep1.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep1.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep1.png"
 		border="1px" align="middle"> </a> <br> <br> A "shift" is shown as a
 	box associated with a particular day (e.g., Thursday) and time slot
 	(e.g., 6-9pm). If a shift has vacancies, the number of vacancies is
@@ -46,6 +61,7 @@
 		title="schedulingstep3.png"
 		target="tutorial/screenshots/schedulingstep3.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep3.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep3.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 4:</B> You can either select from the group of volunteers with
@@ -54,6 +70,7 @@
 		title="schedulingstep4.png"
 		target="tutorial/screenshots/schedulingstep4.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep4.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep4.png"
 		border="1px" align="middle"> </a>
 <p>
 	To select a volunteer, click on the appropriate drop down menu and then
@@ -62,6 +79,7 @@
 		title="schedulingstep4-2.png"
 		target="tutorial/screenshots/schedulingstep4-2.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep4-2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep4-2.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 5:</B> You can select, say, Evelyn Jones to fill that shift and
@@ -70,6 +88,7 @@
 		title="schedulingstep5.png"
 		target="tutorial/screenshots/schedulingstep5.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep5.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep5.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 6:</B> Upon clicking <B>Add Volunteer</B>, you have now
@@ -79,6 +98,7 @@
 		title="schedulingstep6.png" horizontalalign="center"
 		target="tutorial/screenshots/schedulingstep6.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep6.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep6.png"
 		border="1px" align="middle"> </a> <br> <br> Selecting <strong>Back to
 		Master Schedule</strong> will also show Evelyn Jones on the Master
 	Schedule: <br> <br> <a
@@ -86,6 +106,7 @@
 		title="schedulingstep6-2.png" horizontalalign="center"
 		target="tutorial/screenshots/schedulingstep6-2.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep6-2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep6-2.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 7:</B> Five other <strong>Master Schedule</strong> functions
@@ -100,10 +121,14 @@
 			Entire Shift</strong> on top of the worksheet shown in <B>Step 3</B>.
 
 
+
+
 	
 	
 	<li>To remove a person from a shift, select <strong>Remove
 			Person/Create Vacancy</strong> on the worksheet shown in <B>Step 3</B>.
+
+
 
 
 	
@@ -124,6 +149,7 @@
 		title="schedulingstep7.png" horizontalalign="center"
 		target="tutorial/screenshots/schedulingstep7.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep7.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep7.png"
 		border="1px" align="middle"> </a> <br>
 <p>
 	And on the master schedule: <br> <br> <a
@@ -131,6 +157,7 @@
 		title="schedulingstep7-2.png" horizontalalign="center"
 		target="tutorial/screenshots/schedulingstep7-2.png">&nbsp&nbsp&nbsp&nbsp
 		<img src="tutorial/screenshots/schedulingstep7-2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/schedulingstep7-2.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 8:</B> When you finish, you can return to any other function by

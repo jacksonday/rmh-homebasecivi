@@ -1,16 +1,30 @@
 <?php
 /*
- * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
- * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
- * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
- * This program is part of RMH Homebase, which is free software.  It comes with 
- * absolutely no warranty. You can redistribute and/or modify it under the terms 
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook,
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan,
+ * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker.
+ * This program is part of RMH Homebase, which is free software.  It comes with
+ * absolutely no warranty. You can redistribute and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Foundation
  * (see <http://www.gnu.org/licenses/ for more information).
- * 
+ *
  */
 ?>
 
+<script src="lib/jquery-1.9.1.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+
+<script>
+	$(function () {
+		$('img[rel=popover]').popover({
+			  html: true,
+			  trigger: 'hover',
+			  placement: 'right',
+			  content: function(){return '<img src="'+$(this).data('img') + '" width="60%"/>';}
+			});
+	});
+</script>
 
 <p>
 	<strong>How to Edit a Person's Information in the Database</strong>
@@ -26,6 +40,7 @@
 		target="tutorial/screenshots/editpersonstep1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/editpersonstep1.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/editpersonstep1.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -42,6 +57,7 @@
 		target="tutorial/screenshots/editpersonstep2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/editpersonstep2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/editpersonstep2.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -58,20 +74,24 @@
 		href="tutorial/screenshots/editpersonstep4.png" class="image"
 		title="editpersonstep4.png"
 		target="tutorial/screenshots/editpersonstep4.png">
-		&nbsp&nbsp&nbsp&nbsp<img src="tutorial/screenshots/addpersonstep3.png"
-		width="10%" border="1px" align="middle"> </a>
+		&nbsp&nbsp&nbsp&nbsp<img
+		src="tutorial/screenshots/editpersonstep4.png" rel="popover"
+		data-img="tutorial/screenshots/editpersonstep4.png" width="10%"
+		border="1px" align="middle"> </a>
 </p>
 
 <p>
 	<B>Step 5:</B> If errors occur, <font color=#FF0000>red</font> warnings
 	will tell you what you need to correct, like this:<BR> <BR> <a
-		href="tutorial/screenshots/addpersonstep4.png" class="image"
-		title="addPersonStep4.png"
-		target="tutorial/screenshots/searchPersonStep4.png"
+		href="tutorial/screenshots/editpersonstep5.png" class="image"
+		title="editpersonstep5.png"
+		target="tutorial/screenshots/editpersonstep5.png"
 		horizontalalign="center"> &nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/addpersonstep4.png" width="10%" border="1px"
-		align="middle"> </a> <BR>&nbsp&nbsp&nbsp *After you have make these
-	corrections, repeat <B>Step 4</B>.
+		src="tutorial/screenshots/editpersonstep5.png" width="10%"
+		border="1px" rel="popover"
+		data-img="tutorial/screenshots/editpersonstep5.png" align="middle"> </a>
+	<BR>&nbsp&nbsp&nbsp *After you have make these corrections, repeat <B>Step
+		4</B>.
 <p>
 	<B>Step 6:</B> If you have no errors or omissions, you will see a page
 	telling you the edit was successful, like this:<BR> <BR> <a
@@ -80,6 +100,7 @@
 		target="tutorial/screenshots/editpersonstep6.png"
 		horizontalalign="center"> &nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/editpersonstep6.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/editpersonstep6.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 7:</B> When you finish, you can return to any other function by

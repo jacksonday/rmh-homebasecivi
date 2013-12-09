@@ -1,15 +1,31 @@
 <?php
 /*
- * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
- * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
- * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
- * This program is part of RMH Homebase, which is free software.  It comes with 
- * absolutely no warranty. You can redistribute and/or modify it under the terms 
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook,
+ * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan,
+ * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker.
+ * This program is part of RMH Homebase, which is free software.  It comes with
+ * absolutely no warranty. You can redistribute and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Foundation
  * (see <http://www.gnu.org/licenses/ for more information).
- * 
+ *
  */
 ?>
+
+
+<script src="lib/jquery-1.9.1.js"></script>
+<script src="lib/jquery-ui.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+
+<script>
+	$(function () {
+		$('img[rel=popover]').popover({
+			  html: true,
+			  trigger: 'hover',
+			  placement: 'right',
+			  content: function(){return '<img src="'+$(this).data('img') + '" width="60%"/>';}
+			});
+	});
+</script>
 
 <p>
 	<strong>How to Search for People in the Database</strong>
@@ -20,7 +36,8 @@
 		title="searchpersonstep1.png"
 		target="tutorial/screenshots/searchpersonstep1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/searchPersonStep1.png" width="10%"
+		src="tutorial/screenshots/searchpersonstep1.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep1.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -34,7 +51,8 @@
 		title="searchpersonstep2.png" horizontalalign="center"
 		target="tutorial/screenshots/searchpersonstep2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/searchPersonStep2.png" width="10%"
+		src="tutorial/screenshots/searchpersonstep2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep2.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -44,7 +62,8 @@
 		title="searchpersonstep2-2.png" horizontalalign="center"
 		target="tutorial/screenshots/searchpersonstep2-2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/searchPersonStep2-2.png" width="10%"
+		src="tutorial/screenshots/searchpersonstep2-2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep2-2.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -54,7 +73,8 @@
 		title="searchpersonstep2-3.png" horizontalalign="center"
 		target="tutorial/screenshots/searchpersonstep2-3.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/searchPersonStep2-3.png" width="10%"
+		src="tutorial/screenshots/searchpersonstep2-3.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep2-3.png"
 		border="1px" align="middle"> </a>
 </p>
 
@@ -65,7 +85,8 @@
 		title="searchpersonstep3.png"
 		target="tutorial/screenshots/searchpersonstep3.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/searchPersonStep3.png" width="10%"
+		src="tutorial/screenshots/searchpersonstep3.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep3.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
@@ -76,6 +97,7 @@
 		target="tutorial/screenshots/searchpersonstep4.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/searchpersonstep4.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep4.png"
 		border="1px" align="middle"> </a>
 <p>
 	Note that the person's phone number will appear next to his/her name: <BR>
@@ -84,6 +106,7 @@
 		target="tutorial/screenshots/searchpersonstep4-2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/searchpersonstep4-2.png" width="10%"
+		rel="popover" data-img="tutorial/screenshots/searchpersonstep4-2.png"
 		border="1px" align="middle"> </a>
 </p>
 <p>
