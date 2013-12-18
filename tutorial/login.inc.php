@@ -22,8 +22,12 @@ session_cache_expire(30);
 		
 		
 		<p>Access to Homebase requires a Username and a Password. The form
-			looks like this:	
+			looks like this:
+		
+		
 		<p>
+		
+		
 		<table align="center">
 			<tr>
 				<td>Username:</td>
@@ -46,12 +50,22 @@ session_cache_expire(30);
 		
 		<p>
 			If you are a <i>volunteer or staff member</i>, your Username is your
-			first name followed by your phone number with no spaces.	
+			first name followed by your phone number with no spaces.
+		
+		
 		<ul>
 			<li>For example, if your first name is John and your phone number is
 				(207)-123-4567, your Username would be <strong>John2071234567</strong>.
-		
-			<li>Remember that your Username and Password are <em>case-sensitive</em>.			
+
+
+
+			
+			
+			<li>Remember that your Username and Password are <em>case-sensitive</em>.
+
+
+			
+			
 			<li>If you mistype your Username or Password, the following error
 				message will appear:
 				<p class="error">
@@ -63,11 +77,13 @@ session_cache_expire(30);
 			
 			<li>If all else fails, or if you do not remember your password,
 				please contact the <a href="mailto:housemgr@rmhportland.org">House
-					Manager</a>.	
+					Manager</a>.
+		
 		</ul>
 		<p>
 			Remember to <strong>logout</strong> when you are finished using
 			Homebase.
+
 </body>
 </html>
 

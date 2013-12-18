@@ -13,7 +13,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -46,7 +47,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step1.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step1.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step1.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step1.png"
 		border="1px" align="center"> </a> <br> <br> (Each upcoming calendar
 	shift will turn gray whenever the mouse passes over it. Shifts for
 	prior days on the calendar cannot be edited in this way.)
@@ -58,7 +60,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step2.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step2.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step2.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step2.png"
 		border="1px" align="center"> </a>
 <p>
 	<B>Step 3:</B> If you are the first to try to fill a vacancy for this
@@ -69,7 +72,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step3.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step3.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step3.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step3.png"
 		border="1px" align="center"> </a> <BR> <br>&nbsp&nbsp&nbsp NOTE: If
 	you are not the first, a sub call list will already have been created,
 	so you should click on <B>View Sub Call List</B> button instead. (If
@@ -84,7 +88,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step4.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step4.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step4.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step4.png"
 		border="1px" align="middle"> </a>
 <p>
 	<B>Step 5:</B> When you call a person to find out if they can fill in,
@@ -97,7 +102,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step5.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step5.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step5.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step5.png"
 		border="1px" align="middle"> </a> <br> <br> &nbsp&nbsp&nbsp If they
 	accept or reject your request, select "Yes" or "No" in the 'Accepted'
 	box.
@@ -109,7 +115,8 @@
 		target="tutorial/screenshots/quickStartGuideHelp_step6.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/quickStartGuideHelp_step6.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/quickStartGuideHelp_step6.png"
+		rel="popover"
+		data-img="tutorial/screenshots/quickStartGuideHelp_step6.png"
 		border="1px" align="middle"> </a> <br> <br>&nbsp&nbsp&nbsp NOTE: If
 	you fail to save your changes, any work you have done with this list
 	will be lost. So this is a very important step; you don't want other
@@ -123,7 +130,7 @@
 		title="subcalllistStep7.png"
 		target="tutorial/screenshots/subcallliststep7.gif">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/subcallliststep7.gif" width="10%"		
+		src="tutorial/screenshots/subcallliststep7.gif" width="10%"
 		rel="popover" data-img="tutorial/screenshots/subcallliststep7.gif"
 		border="1px" align="middle"> </a> <br> <br>If you had selected "Yes"
 	in <b>Step 5</b>, the vacancy will automatically be filled on the

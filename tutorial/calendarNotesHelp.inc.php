@@ -12,7 +12,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -35,40 +36,40 @@
 	at the top of the calendar.
 <p>
 	<B>Step 1:</B> At the bottom of each shift there's a place to enter
-	notes for that shift. <BR>
-	<BR> <a href="tutorial/screenshots/calendarNotesHelp_note_slots.png"
+	notes for that shift. <BR> <BR> <a
+		href="tutorial/screenshots/calendarNotesHelp_note_slots.png"
 		class="image" title="calendarNotesHelp_note_slots.png"
 		horizontalalign="center"
 		target="tutorial/screenshots/calendarNotesHelp_note_slots.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/calendarNotesHelp_note_slots.png"
-		rel="popover" data-img="tutorial/screenshots/calendarNotesHelp_note_slots.png"
-		width="10%" border="1px" align="center">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/calendarNotesHelp_note_slots.png"
+		width="10%" border="1px" align="center"> </a>
 <p>
 	<B>Step 2:</B> Below all the shifts, there is an additional row marked
-	"manager notes".<BR>
-	<BR> <a href="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
+	"manager notes".<BR> <BR> <a
+		href="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
 		class="image" title="calendarNotesHelp_manager_notes.png"
 		horizontalalign="center"
 		target="tutorial/screenshots/calendarNotesHelp_manager_notes.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
-		rel="popover" data-img="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
-		width="10%" border="1px" align="center">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
+		width="10%" border="1px" align="center"> </a>
 <p>
 	<B>Step 3:</B> Once you have entered the notes, scroll down to the
 	bottom of the calendar and click the button <strong>Save changes to all
-		notes</strong>, like this:<BR>
-	<BR> <a href="tutorial/screenshots/calendarNotesHelp_save_notes.png"
+		notes</strong>, like this:<BR> <BR> <a
+		href="tutorial/screenshots/calendarNotesHelp_save_notes.png"
 		class="image" title="calendarNotesHelp_save_notes.png"
 		target="tutorial/screenshots/calendarNotesHelp_save_notes.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/calendarNotesHelp_save_notes.png"
-		rel="popover" data-img="tutorial/screenshots/calendarNotesHelp_save_notes.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/calendarNotesHelp_save_notes.png"
+		width="10%" border="1px" align="middle"> </a>
 <p>The notes you entered will now appear whenever someone views that
 	week on the calendar.
 <p>

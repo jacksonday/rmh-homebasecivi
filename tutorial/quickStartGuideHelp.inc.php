@@ -12,7 +12,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -28,14 +29,17 @@
 <body>
 	<div align="left">
 		<p>
-			<h1> Signing in and out of the System</h1>
 		
 		
+		<h1>Signing in and out of the System</h1>
+
+
 		<p>Access to Homebase requires a Username and a Password. The form
 			looks like this:
 		
 		
 		<p>
+		
 		
 		<table align="center">
 			<tr>
@@ -68,6 +72,10 @@
 
 
 
+
+
+
+
 			
 			
 			<li>Remember that your Username and Password are <em>case-sensitive</em>.
@@ -80,9 +88,11 @@
 		
 		
 		<p>
-			<h1>How to Use the Sub Call List</h1>
 		
 		
+		<h1>How to Use the Sub Call List</h1>
+
+
 		<p>
 			Each shift that has a vacancy may have an associated <i>sub call list</i>.
 			This list keeps track of all subs who are available and have/have not
@@ -184,20 +194,22 @@
 				target="tutorial/screenshots/subcallliststep7.gif">
 				&nbsp&nbsp&nbsp&nbsp<img
 				src="tutorial/screenshots/subcallliststep7.gif" width="55%"
-				data-img="tutorial/screenshots/subcallliststep7.gif"
-				border="1px" align="middle"> </a> <br> <br>If you had selected "Yes"
-			in <b>Step 4</b>, the vacancy will automatically be filled on the
-			active calendar. If that is the last vacancy to be filled on this
-			shift, its sub call list will be "closed." Otherwise, its sub call
-			list will remain "open." <br> <br>You can now click on any other
-			"open" sub call list on this list to find out its current status and
-			try to fill another vacancy.
+				data-img="tutorial/screenshots/subcallliststep7.gif" border="1px"
+				align="middle"> </a> <br> <br>If you had selected "Yes" in <b>Step 4</b>,
+			the vacancy will automatically be filled on the active calendar. If
+			that is the last vacancy to be filled on this shift, its sub call
+			list will be "closed." Otherwise, its sub call list will remain
+			"open." <br> <br>You can now click on any other "open" sub call list
+			on this list to find out its current status and try to fill another
+			vacancy.
 		
 		
 		<p>
-			<h1>Adding/Removing a Volunteer from a Shift</h1>
 		
 		
+		<h1>Adding/Removing a Volunteer from a Shift</h1>
+
+
 		<p>
 			To begin, you must have already selected <strong>(edit this week)</strong>
 			at the top of the calendar:
@@ -216,7 +228,8 @@
 				horizontalalign="center"
 				target="tutorial/screenshots/addPersonToShiftHelp_removing_volunteer.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/addPersonToShiftHelp_removing_volunteer.png" width="30%" 
+				src="tutorial/screenshots/addPersonToShiftHelp_removing_volunteer.png"
+				width="30%"
 				data-img="tutorial/screenshots/addPersonToShiftHelp_removing_volunteer.png"
 				border="1px" align="center"> </a> <br> <br> Click that <b>Remove
 				Person</b> button to remove that volunteer from that shift's slot,
@@ -233,8 +246,9 @@
 				horizontalalign="center"
 				target="tutorial/screenshots/addPersonToShiftHelp_assign_volunteer.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/addPersonToShiftHelp_assign_volunteer.png" width="30%" 
-				data-img="tutorial/screenshots/addPersonToShiftHelp_assign_volunteer.png" 
+				src="tutorial/screenshots/addPersonToShiftHelp_assign_volunteer.png"
+				width="30%"
+				data-img="tutorial/screenshots/addPersonToShiftHelp_assign_volunteer.png"
 				border="1px" align="center"> </a> <br> <br> Click the <b>Assign
 				Volunteer</b> button to come to a page where you can choose a new
 			volunteer: <br> <br> <a
@@ -243,29 +257,33 @@
 				horizontalalign="center"
 				target="tutorial/screenshots/addPersonToShiftHelp_add_view.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/addPersonToShiftHelp_add_view.png" width="40%" 
+				src="tutorial/screenshots/addPersonToShiftHelp_add_view.png"
+				width="40%"
 				data-img="tutorial/screenshots/addPersonToShiftHelp_add_view.png"
-				border="1px" align="center"> </a> <br> <br> Select a
-			Volunteer using the drop down lists. The first list contains
-			volunteers who have listed that time as available, the second list
-			contains every volunteer. Once you've chosen a volunteer, click the <b>Add
-				Volunteer</b> button: <br> <br> <a
+				border="1px" align="center"> </a> <br> <br> Select a Volunteer using
+			the drop down lists. The first list contains volunteers who have
+			listed that time as available, the second list contains every
+			volunteer. Once you've chosen a volunteer, click the <b>Add Volunteer</b>
+			button: <br> <br> <a
 				href="tutorial/screenshots/addPersonToShiftHelp_add_view_volunteer.png"
 				class="image" title="addPersonToShiftHelp_add_view_volunteer.png"
 				horizontalalign="center"
 				target="tutorial/screenshots/addPersonToShiftHelp_add_view_volunteer.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/addPersonToShiftHelp_add_view_volunteer.png" width="40%" 
+				src="tutorial/screenshots/addPersonToShiftHelp_add_view_volunteer.png"
+				width="40%"
 				data-img="tutorial/screenshots/addPersonToShiftHelp_add_view_volunteer.png"
-				border="1px" align="center"> </a> <br> <br> This brings
-			you back to the shift form, and the selected volunteer will
-			be displayed. <br> <br> <br> <br>
+				border="1px" align="center"> </a> <br> <br> This brings you back to
+			the shift form, and the selected volunteer will be displayed. <br> <br>
+			<br> <br>
 		
 		
 		<p>
-			<h1>How to Add Notes</h1>
 		
 		
+		<h1>How to Add Notes</h1>
+
+
 		<p>Managers can record notes on any shift that will be read by all
 			volunteers viewing the calendar. Managers may also enter a note for
 			an entire day at the bottom of that day on the calendar.
@@ -284,7 +302,8 @@
 				horizontalalign="center"
 				target="tutorial/screenshots/calendarNotesHelp_note_slots.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/calendarNotesHelp_note_slots.png" width="55%" 
+				src="tutorial/screenshots/calendarNotesHelp_note_slots.png"
+				width="55%"
 				data-img="tutorial/screenshots/calendarNotesHelp_note_slots.png"
 				border="1px" align="center"> </a>
 		
@@ -297,7 +316,8 @@
 				horizontalalign="center"
 				target="tutorial/screenshots/calendarNotesHelp_manager_notes.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/calendarNotesHelp_manager_notes.png" width="55%" 
+				src="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
+				width="55%"
 				data-img="tutorial/screenshots/calendarNotesHelp_manager_notes.png"
 				border="1px" align="center"> </a>
 		
@@ -310,8 +330,9 @@
 				class="image" title="calendarNotesHelp_save_notes.png"
 				target="tutorial/screenshots/calendarNotesHelp_save_notes.png">
 				&nbsp&nbsp&nbsp&nbsp<img
-				src="tutorial/screenshots/calendarNotesHelp_save_notes.png" width="55%" 
-				data-img="tutorial/screenshots/calendarNotesHelp_save_notes.png" 
+				src="tutorial/screenshots/calendarNotesHelp_save_notes.png"
+				width="55%"
+				data-img="tutorial/screenshots/calendarNotesHelp_save_notes.png"
 				border="1px" align="middle"> </a>
 		
 		

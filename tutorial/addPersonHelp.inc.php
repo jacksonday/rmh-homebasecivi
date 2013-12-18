@@ -23,39 +23,8 @@
 			  placement: 'right',
 			  content: function(){return '<img border="3" src="'+$(this).data('img') + '" width="60%"/>';}
 			});
-		/*
-		$('img[rel=popover]').mouseenter(function(){
-			$('#invisible-placeholder').css('visibility', 'visible');
-			$('#invisible-placeholder').html('<img class="large-img" src="'+$(this).data('img') + '" width="50%"/>');
-		}).mouseleave(function(){
-			$('#invisible-placeholder').css('visibility', 'hidden');
-			$('#invisible-placeholder').html('');
-			console.log('leaving');
-		});*/
-		
 	});
 </script>
-
-<style>
-/*#invisible-placeholder {
-		z-index: 1;
-		visibility: hidden;
-		position: fixed;
-		width: 90%;
-		height: 70%;
-		margin-left: auto;
-		margin-right: auto;
-		
-	}
-	
-	img {
-		z-index: 1000;
-	}
-	
-	.large-img {
-		float:right;
-	}*/
-</style>
 
 <p>
 	<strong>How to Add People to the Database</strong>
@@ -79,8 +48,8 @@
 		src="tutorial/screenshots/addpersonhelpstep2.png" width="10%"
 		rel="popover" data-img="tutorial/screenshots/addpersonhelpstep2.png"
 		border="1px" align="middle"> </a> <BR> Now you can fill in these
-	fields with the correct information. <br>(NOTE:&nbsp All fields marked
-	by <font color="#FF0000">*</font> are required before a person can be
+		fields with the correct information. <br>(NOTE:&nbsp All fields marked
+		by <font color="#FF0000">*</font> are required before a person can be
 	added to the database.)
 </p>
 
@@ -105,7 +74,7 @@
 		src="tutorial/screenshots/addpersonhelpstep4.png" width="10%"
 		rel="popover" data-img="tutorial/screenshots/addpersonhelpstep4.png"
 		border="1px" align="middle"> </a> <br>After you make these
-	corrections, repeat <B>Step 3</B>.
+		corrections, repeat <B>Step 3</B>.
 <p>
 	<B>Step 5:</B> If you have no errors or omissions, you will see a page
 	that looks like this:<BR> <BR> <a

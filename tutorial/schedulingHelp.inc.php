@@ -13,7 +13,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -123,10 +124,14 @@
 
 
 
+
+
 	
 	
 	<li>To remove a person from a shift, select <strong>Remove
 			Person/Create Vacancy</strong> on the worksheet shown in <B>Step 3</B>.
+
+
 
 
 

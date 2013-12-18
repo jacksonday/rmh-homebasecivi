@@ -13,7 +13,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -37,7 +38,8 @@
 		class="image" title="generateWeekHelp_manage_weeks.png"
 		target="tutorial/screenshots/generateWeekHelp_manage_weeks.png"> <img
 		src="tutorial/screenshots/generateWeekHelp_manage_weeks.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_manage_weeks.png"
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_manage_weeks.png"
 		width="10%" border="1px"> </a>
 </p>
 <p>
@@ -47,7 +49,8 @@
 		target="tutorial/screenshots/generateWeekHelp_week_manager_view.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
 		width="10%" border="1px" align="center"> </a>
 <p>
 	Each calendar week in this list has the status <i>archived</i>, <i>published</i>,
@@ -95,9 +98,9 @@
 		target="tutorial/screenshots/generateWeekHelp_week_initialize_calendar.png">
 		&nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/generateWeekHelp_initialize_calendar.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_initialize_calendar.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_initialize_calendar.png"
+		width="10%" border="1px" align="middle"> </a>
 <p>
 	This form asks you to select the Month, Day, Year, Weekday Group, and
 	Weekend Group that will be used to populate the <i>very first</i> week
@@ -114,9 +117,9 @@
 		target="tutorial/screenshots/generateWeekHelp_week_newly_added.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/generateWeekHelp_newly_added.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_newly_added.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_newly_added.png"
+		width="10%" border="1px" align="middle"> </a>
 <p>
 	<B>Step 1:</B> At any time in the future, you can use the <strong>Add
 		new week</strong> button to generate and populate the next successive
@@ -127,9 +130,9 @@
 		target="tutorial/screenshots/generateWeekHelp_add_new_week.png">
 		&nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/generateWeekHelp_add_new_week.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_add_new_week.png"
-		width="10%" border="1px" align="bottom">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_add_new_week.png"
+		width="10%" border="1px" align="bottom"> </a>
 <p>
 	<B>Step 2:</B> So here is the result of adding the next calendar week
 	following the week of September 29.
@@ -140,9 +143,9 @@
 		target="tutorial/screenshots/generateWeekHelp_week_manager_view.png">
 		&nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_week_manager_view.png"
+		width="10%" border="1px" align="middle"> </a>
 <p>
 	&nbsp&nbsp&nbsp Notice that this new week is populated with a different
 	Weekday/Weekend/Family Room group from the Master Schedule. Since there
@@ -174,7 +177,8 @@
 		target="tutorial/screenshots/generateWeekHelp_view_archive.png">
 		&nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/generateWeekHelp_view_archive.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_view_archive.png"
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_view_archive.png"
 		width="10%" border="1px" align="middle"> </a>
 <p>
 	&nbsp&nbsp&nbsp The <strong> View Archive/Hide Archive</strong> button
@@ -185,9 +189,9 @@
 		target="tutorial/screenshots/generateWeekHelp_archived_view.png">
 		&nbsp&nbsp&nbsp&nbsp <img
 		src="tutorial/screenshots/generateWeekHelp_archived_view.png"
-		rel="popover" data-img="tutorial/screenshots/generateWeekHelp_archived_view.png"
-		width="10%" border="1px" align="middle">
-	</a>
+		rel="popover"
+		data-img="tutorial/screenshots/generateWeekHelp_archived_view.png"
+		width="10%" border="1px" align="middle"> </a>
 <p>
 	<B>Step 3:</B> You can now choose to <b>view</b>, <b>edit</b>, <b>publish</b>,
 	or <b>remove</b> this week from the calendar using the buttons on the

@@ -12,7 +12,8 @@
 ?>
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -29,15 +30,13 @@
 	<strong>Navigate to Different Weeks</strong>
 <p>
 	Click the <b>Next Week</b> or <b>Previous Week</b> to navigate to
-	different weeks: <br>
-	<br>
-	<a
+	different weeks: <br> <br> <a
 		href="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png"
 		class="image" title="navigateThroughWeeksHelp_navigate_weeks.png"
 		horizontalalign="center"
 		target="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png" width="10%" 
-		rel="popover" data-img="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png"
-		border="1px" align="center">
-	</a>
+		src="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png"
+		width="10%" rel="popover"
+		data-img="tutorial/screenshots/navigateThroughWeeksHelp_navigate_weeks.png"
+		border="1px" align="center"> </a>

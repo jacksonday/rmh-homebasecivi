@@ -13,7 +13,8 @@
 
 <script src="lib/jquery-1.9.1.js"></script>
 <script src="lib/jquery-ui.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script
+	src="lib/bootstrap/js/bootstrap.js"></script>
 
 <script>
 	$(function () {
@@ -32,17 +33,17 @@
 	appear.
 <p>
 	<B>If you are a volunteer or a manager</B> and you've never changed
-	your password, you will see the following display: <BR>
-	<BR> <a href="tutorial/screenshots/homeHelp2.png" class="image"
+	your password, you will see the following display: <BR> <BR> <a
+		href="tutorial/screenshots/homeHelp2.png" class="image"
 		title="homeHelp2.png" target="tutorial/screenshots/homeHelp2.png">
 		&nbsp&nbsp&nbsp&nbsp<img src="tutorial/screenshots/homeHelp2.png"
-		width="10%" border="1px" rel="popover" data-img="tutorial/screenshots/homeHelp2.png"		
-		align="center">
-	</a> <br> You may change your password by entering it and then entering
-	your new password twice. After you change your password in this way, it
-	will be known only to you. If you forget your password, please contact
-	the house manager. Until you change your password, this display
-	continue to appear here.
+		width="10%" border="1px" rel="popover"
+		data-img="tutorial/screenshots/homeHelp2.png" align="center"> </a> <br>
+	You may change your password by entering it and then entering your new
+	password twice. After you change your password in this way, it will be
+	known only to you. If you forget your password, please contact the
+	house manager. Until you change your password, this display continue to
+	appear here.
 <p>
 	<B>If you are a volunteer</B>, you will see a display of your upcoming
 	scheduled shifts, which looks like this: <a
@@ -51,10 +52,10 @@
 		target="tutorial/screenshots/indexHelp_upcoming_shifts.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/indexHelp_upcoming_shifts.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/indexHelp_upcoming_shifts.png"		
-		border="1px" align="center">
-	</a> <br> If you need to cancel a shift, please call the front desk
-	(302-656-4847).
+		rel="popover"
+		data-img="tutorial/screenshots/indexHelp_upcoming_shifts.png"
+		border="1px" align="center"> </a> <br> If you need to cancel a shift,
+	please call the front desk (302-656-4847).
 <p>
 	<B>If you are a manager</B>, you will also see the following current
 	information displayed:
@@ -65,19 +66,18 @@
 		target="tutorial/screenshots/indexHelp_recent_changes.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/indexHelp_recent_changes.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/indexHelp_recent_changes.png"		
-		border="1px" align="center">
-	</a> <br> If you select <b>View full log</b> you will see a full
-	listing of all schedule changes, like this: <a
+		rel="popover"
+		data-img="tutorial/screenshots/indexHelp_recent_changes.png"
+		border="1px" align="center"> </a> <br> If you select <b>View full log</b>
+	you will see a full listing of all schedule changes, like this: <a
 		href="tutorial/screenshots/indexHelp_full_log.png" class="image"
 		title="indexHelp_full_log.png"
 		target="tutorial/screenshots/indexHelp_full_log.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/indexHelp_full_log.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/indexHelp_full_log.png"		
-		border="1px" align="center">
-	</a> <br> This full log allows you to delete some or all of its
-	entries, once they are no longer useful.
+		rel="popover" data-img="tutorial/screenshots/indexHelp_full_log.png"
+		border="1px" align="center"> </a> <br> This full log allows you to
+	delete some or all of its entries, once they are no longer useful.
 <p>
 	A list of upcoming birthdays and volunteer anniversaries, which looks
 	like this: <a
@@ -85,22 +85,22 @@
 		class="image" title="indexHelp_upcoming_birthdays.png"
 		target="tutorial/screenshots/indexHelp_upcoming_birthdays.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/indexHelp_upcoming_birthdays.png" width="10%" 
-		rel="popover" data-img="tutorial/screenshots/indexHelp_upcoming_birthdays.png"		
-		border="1px" align="center">
-	</a>
+		src="tutorial/screenshots/indexHelp_upcoming_birthdays.png"
+		width="10%" rel="popover"
+		data-img="tutorial/screenshots/indexHelp_upcoming_birthdays.png"
+		border="1px" align="center"> </a>
 <p>
 	A list of upcoming calendar vacancies, which looks like this: <a
 		href="tutorial/screenshots/indexHelp_upcoming_vacancies.png"
 		class="image" title="indexHelp_upcoming_vacancies.png"
 		target="tutorial/screenshots/indexHelp_upcoming_vacancies.png">
 		&nbsp&nbsp&nbsp&nbsp<img
-		src="tutorial/screenshots/indexHelp_upcoming_vacancies.png"	width="10%" 
-		rel="popover" data-img="tutorial/screenshots/indexHelp_upcoming_vacancies.png"		
-		border="1px" align="center">
-	</a> <br> Selecting any of the vacancies in this list takes you
-	directly to that shift on the calendar, so that you can examine its sub
-	call list or other details.
+		src="tutorial/screenshots/indexHelp_upcoming_vacancies.png"
+		width="10%" rel="popover"
+		data-img="tutorial/screenshots/indexHelp_upcoming_vacancies.png"
+		border="1px" align="center"> </a> <br> Selecting any of the vacancies
+	in this list takes you directly to that shift on the calendar, so that
+	you can examine its sub call list or other details.
 <p>
 	A list of all open applications, which looks like this: <a
 		href="tutorial/screenshots/indexHelp_open_applications.png"
@@ -108,9 +108,9 @@
 		target="tutorial/screenshots/indexHelp_open_applications.png">
 		&nbsp&nbsp&nbsp&nbsp<img
 		src="tutorial/screenshots/indexHelp_open_applications.png" width="10%"
-		rel="popover" data-img="tutorial/screenshots/indexHelp_open_applications.png"		
-		border="1px" align="center">
-	</a> <br> An "open" application signifies an applicant whose status has
-	not yet been changed to "active". Only "active" volunteers can be
-	scheduled for a shift. <br> If an application has been viewed, the link
-	text will appear grey.
+		rel="popover"
+		data-img="tutorial/screenshots/indexHelp_open_applications.png"
+		border="1px" align="center"> </a> <br> An "open" application signifies
+	an applicant whose status has not yet been changed to "active". Only
+	"active" volunteers can be scheduled for a shift. <br> If an
+	application has been viewed, the link text will appear grey.
