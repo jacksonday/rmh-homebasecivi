@@ -313,6 +313,49 @@ function get_all_shifts() {
 
     return $shifts;
 }
+// this function is for exporting volunteer data
+function get_all_people_in_past_shifts() {
+    $today = date('m-d-y');
+    $people_in_shifts = array();
+    $all_shifts = get_all_shifts();
+    foreach ($all_shifts as $a_shift){
+        if (substr($a_shift->get_id(),6,2)>=substr($today,6,2) && substr($a_shift->get_id(),0,5)>=substr($today,0,5))
+            continue; // skip present and future shifts
+        // okay, this is a past shift, so add person-shift pairs 
+       $persons = explode('*',$a_shift->get_persons());
+  //     if (!$persons[0])  // skip vacant shifts
+  //        array_shift($persons);
+       foreach ($persons as $a_person)
+         if (strpos($a_person,"+")>0)
+           $people_in_shifts[] = substr($a_person,0,strpos($a_person,"+")).",". $a_shift->get_id() ;
+    }
+    sort($people_in_shifts);
+    return $people_in_shifts;
+}
+// this function is for reporting volunteer data
+function get_all_peoples_histories() {
+    $today = date('m-d-y');
+    $histories = array();
+    $all_shifts = get_all_shifts();
+    foreach ($all_shifts as $a_shift){
+       $persons = explode('*',$a_shift->get_persons());
+       if (!$persons[0])  // skip vacant shifts
+          array_shift($persons);
+       if (count($persons)>0) {
+         foreach ($persons as $a_person) {
+           if (strpos($a_person,"+")>0) {
+             $person_id = substr($a_person,0,strpos($a_person,"+"));
+             if (array_key_exists($person_id, $histories))
+                 $histories[$person_id] .= ",". $a_shift->get_id();
+             else 
+                 $histories[$person_id] = $a_shift->get_id();
+           }
+         }
+       }
+    }
+    ksort($histories);
+    return $histories;
+}
 
 
 ?>

@@ -37,7 +37,7 @@ if ($_POST['_form_submit'] != 1 && $_POST['_form_submit'] != 2 && $_POST['_form_
 include('dataSearch.inc.php'); // the form has not been submitted, so show it
 
 process_form();
-pull_shift_data();
+//pull_shift_data();
 include('footer.inc');
 
 function process_form() {
@@ -126,7 +126,7 @@ function process_form() {
 		error_log("Exporting data step 3");
 		$_POST['export_attr'][] = 'id';
 		$all_attrs_concat = implode(", ", $_POST['export_attr']);
-		
+		echo $all_attrs_concat;
 		error_log("All attributes = " .$all_attrs_concat);
 		foreach ($_POST['export_attr'] as $attr) { error_log("attr to be exported ".$attr); }
 		
@@ -137,16 +137,17 @@ function process_form() {
 		$export_data = array();
 		while ($result_row = mysql_fetch_assoc($result)) {
 			if (in_array($result_row['id'], $_SESSION['selected_people'])){
-				$temp_person = array();
+				$temp_person = array($result_row['id']);
 				foreach($result_row as $row) {
-					if (!isset($row) || $row == "") $row = "unspecified";
+					if (!isset($row) || $row == "") $row = "";
 					$temp_person[] = $row;
 				}
-				$export_data[] = $temp_person;
+				$export_data[] = array_slice($temp_person,0,count($temp_person)-1);
 			}
 		}
-		$current_time = array("Export date: " . date("F j, Y, g:i a"));
-		export_data($current_time, $_POST['export_attr'], $export_data);
+		date_default_timezone_set('America/New_York');
+        $current_time = array("Export date: " . date("F j, Y, g:i a"));
+		export_data($current_time, array_merge(array("id"),$_POST['export_attr']), $export_data);
 	}
 }
 
@@ -155,8 +156,13 @@ function export_data($current_time, $search_attr, $export_data) {
 	$handle = fopen($filename, "w");
 	fputcsv($handle, $current_time);
 	fputcsv($handle, $search_attr, ',');
-	foreach ($export_data as $person_data) {
-		fputcsv($handle, $person_data, ',');
+	foreach ($export_data as $person_data) 
+	   if (count($person_data)>1 && $person_data[1]!="") // anything more than the id, export it, otherwise skip it
+	       fputcsv($handle, $person_data, ',','"');
+	if (in_array("history",$search_attr)) { // split history into several lines per person 
+	   $people_in_past_shifts = get_all_peoples_histories();
+	   foreach ($people_in_past_shifts as $p=>$history) 
+	        fputcsv($handle, array($p,$history),',','"');  
 	}
 	fclose($handle);
 }

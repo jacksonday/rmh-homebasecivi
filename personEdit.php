@@ -72,7 +72,7 @@ if ($id == 'new') {
                                         $_POST['emergency_contact'], $_POST['emergency_phone'], implode(',', $_POST['type']), $_POST['screening_type'], implode(',', $_POST['screening_status']),
                                         $_POST['status'], $_POST['occupation'], $_POST['refs'], "yes",
                                         $_POST['motivation'], $_POST['specialties'],
-                                        $ima, $_POST['schedule'], $_POST['history'],
+                                        $ima, $_POST['schedule'], 
                                         $birthday,
                                         $start_date,
                                         $_POST['notes'], $_POST['old_pass']);
@@ -140,7 +140,6 @@ if ($id == 'new') {
                         $availability = "";
                     // these two are not visible for editing, so they go in and out unchanged
                     $schedule = $_POST['schedule'];
-                    $history = $_POST['history'];
                     //concatenate birthday and start_date strings
                     if ($_POST['DateOfBirth_Year'] == "")
                         $birthday = $_POST['DateOfBirth_Month'] . '-' . $_POST['DateOfBirth_Day'] . '-XX';
@@ -194,7 +193,7 @@ if ($id == 'new') {
                                         $contact_preference, $emergency_contact, $clean_emergency_phone, $type, $screening_type, $screening_status,
                                         $status, $occupation, $refs, $maywecontact,
                                         $motivation, $specialties,
-                                        $availability, $schedule, $history,
+                                        $availability, $schedule, 
                                         $birthday, $start_date,
                                         $notes, md5($pass));
                         $result = add_person($newperson);
@@ -216,7 +215,7 @@ if ($id == 'new') {
                                             $contact_preference, $emergency_contact, $clean_emergency_phone, $type, $screening_type, $screening_status,
                                             $status, $occupation, $refs, $maywecontact,
                                             $motivation, $specialties,
-                                            $availability, $schedule, $history,
+                                            $availability, $schedule, 
                                             $birthday, $start_date,
                                             $notes, md5($id));
                             $result = add_person($newperson);
@@ -241,7 +240,7 @@ if ($id == 'new') {
                                             $contact_preference, $emergency_contact, $clean_emergency_phone, $type, $screening_type, $screening_status,
                                             $status, $occupation, $refs, $maywecontact,
                                             $motivation, $specialties,
-                                            $availability, $schedule, $history,
+                                            $availability, $schedule, 
                                             $birthday, $start_date,
                                             $notes, md5($pass));
                             $result = add_person($newperson);

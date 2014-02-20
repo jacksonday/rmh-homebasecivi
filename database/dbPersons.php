@@ -25,7 +25,7 @@ function create_dbPersons() {
             "    email TEXT, contact_preference TEXT, emergency_contact TEXT, emergency_phone TEXT, " .
             "    type TEXT, screening_type TEXT, screening_status TEXT, status TEXT, occupation TEXT, refs TEXT, maywecontact TEXT," .
             "    motivation TEXT, specialties TEXT, " .
-            "    availability TEXT, schedule TEXT, history TEXT, " .
+            "    availability TEXT, schedule TEXT, " .
             "    birthday TEXT, start_date TEXT, notes TEXT, password TEXT)");
     if (!$result)
         echo mysql_error() . "Error creating dbPersons table<br>";
@@ -70,7 +70,6 @@ function add_person($person) {
                 $person->get_specialties() . '","' .
                 implode(',', $person->get_availability()) . '","' .
                 implode(',', $person->get_schedule()) . '","' .
-                implode(',', $person->get_history()) . '","' .
                 $person->get_birthday() . '","' .
                 $person->get_start_date() . '","' .
                 $person->get_notes() . '","' .
@@ -154,15 +153,6 @@ function set_county($id, $county) {
     return $result;
 }
 
-function update_history($id, $history) {
-	connect();
-	$query = 'UPDATE dbPersons SET history = "'. $history . '" WHERE id = "' . $id . '"';
-	$result = mysql_query($query);
-	mysql_close();
-	return $result;
-}
-
-
 /*
  * @return all rows from dbPersons table ordered by last name
  * if none there, return false
@@ -230,7 +220,6 @@ function make_a_person($result_row) {
                     $result_row['specialties'],
                     $result_row['availability'],
                     $result_row['schedule'],
-                    $result_row['history'],
                     $result_row['birthday'],
                     $result_row['start_date'],
                     $result_row['notes'],

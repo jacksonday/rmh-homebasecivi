@@ -31,9 +31,9 @@ include_once('header.php');
 include_once('reports.inc.php');
 include_once('database/dbPersons.php');
 include_once('domain/Person.php');
+include_once('database/dbShifts.php');
+include_once('domain/Shift.php');
 
-
-pull_shift_data();
 ?> 
 </div>
 

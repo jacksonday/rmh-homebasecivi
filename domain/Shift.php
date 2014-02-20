@@ -243,13 +243,18 @@ function report_shifts_staffed_vacant($from, $to) {
     				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
 		'overnight' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
     				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
+		'total' => array('Mon' => array(0, 0), 'Tue' => array(0, 0), 'Wed' => array(0, 0), 'Thu' => array(0, 0),
+    				'Fri' => array(0, 0), 'Sat' => array(0, 0), 'Sun' => array(0, 0)),
 	);
 	$all_shifts = get_all_shifts();
 	foreach ($all_shifts as $s) {
 		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
-		if ($shift_date >= $from_date && $shift_date <= $to_date) {
-			$reports[$s->get_time_of_day()][$s->get_day()][0] += count($s->get_persons());
+		if ($shift_date >= $from_date && $shift_date <= $to_date && 
+		    (strlen($s->get_persons())>0 || $s->get_vacancies()>0)) {
+		    $reports[$s->get_time_of_day()][$s->get_day()][0] += 1;
 			$reports[$s->get_time_of_day()][$s->get_day()][1] += $s->get_vacancies();
+			$reports['total'][$s->get_day()][0] += 1;
+			$reports['total'][$s->get_day()][1] += $s->get_vacancies();
 		}
 	}
 	return $reports;

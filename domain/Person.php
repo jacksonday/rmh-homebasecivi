@@ -51,7 +51,6 @@ class Person {
     private $specialties;  // App: special interests and hobbies related to RMH
     private $availability; // array of frequency:week:day:shift quads; e.g., weekly:odd:Mon:morning
     private $schedule;     // array of scheduled shifts; e.g.,  weekly:odd:Mon:morning
-    private $history;     // array of shifts worked; e.g., 03-12-08-9-12, 08-21-13-overnight
     private $birthday;     // format: 03-12-64
     private $start_date;   // format: 03-12-99
     private $notes;        // notes that only the manager can see and edit
@@ -61,7 +60,7 @@ class Person {
      * constructor for all persons
      */
 
-    function __construct($f, $l, $g, $a, $c, $s, $z, $co, $p1, $p2, $e, $cp, $ec, $ep, $t, $screening_type, $screening_status, $st, $oc, $re, $mwc, $mot, $spe, $av, $sch, $hist, $bd, $sd, $notes, $pass) {
+    function __construct($f, $l, $g, $a, $c, $s, $z, $co, $p1, $p2, $e, $cp, $ec, $ep, $t, $screening_type, $screening_status, $st, $oc, $re, $mwc, $mot, $spe, $av, $sch, $bd, $sd, $notes, $pass) {
         $this->id = $f . $p1;
         $this->first_name = $f;
         $this->last_name = $l;
@@ -104,10 +103,7 @@ class Person {
             $this->schedule = explode(',', $sch);
         else
             $this->schedule = array();
-        if ($hist !== "")
-            $this->history = explode(',', $hist);
-        else
-            $this->history = array();
+        
 
         $this->birthday = $bd;
         $this->start_date = $sd;
@@ -225,10 +221,6 @@ class Person {
         return $this->schedule;
     }
 
-    function get_history() {
-        return $this->history;
-    }
-
     function get_birthday() {
         return $this->birthday;
     }
@@ -247,17 +239,7 @@ class Person {
     function set_county ($county){
         $this->county = $county;
     }
-    function set_history($history){
-    	$this->history = $history;
-    	update_history($this->id, implode(",", $history));
-    }
-    function add_to_history($shift_id){
-    	if (!in_array($shift_id, $this->history)) {
-	    	$this->history[] = $shift_id;
-	    	$history = implode(",", $this->history);
-	    	update_history($this->id, $history);
-    	}
-    }
+    
     function compute_county () {
         if ($this->state=="ME") {
             $countydata = false;
@@ -273,20 +255,12 @@ class Person {
         }
         return "";
     }
-    // return an integer representing the total number of hours the person have worked.
-    function total_hours_worked () {
-    	$total = 0;
-    	foreach ($this->history as $shift_id) {
-    		$s = select_dbShifts($shift_id);
-    		$total += $s->duration();
-    	}
-    	return $total;
-    }
+    
     // return a dictionary reporting total number hours worked by days of the week with
     // a given date range. $from and $to are strings of the form 'm/d/y', if one of the strings
     // is the empty string, then the range is unbounded in that direction.
     // the dictionary is of the form {'Mon' => , 'Tue' => }.
-    function report_hours ($from, $to) {
+function report_hours ($histories, $from, $to) {
     	$min_date = "01/01/1000";
     	$max_date = "01/01/3000";
     	if ($from == '') $from = $min_date;
@@ -297,18 +271,21 @@ class Person {
     	$to_date   = date_create_from_format("m/d/Y", $to);
     	$report = array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0, 
     					'Fri' => 0, 'Sat' => 0, 'Sun' => 0);
-    	foreach ($this->history as $shift_id) {
+    	if (array_key_exists($this->get_id(), $histories)) {
+    	  $hid = explode(',',$histories[$this->id]);
+    	  foreach ($hid as $shift_id) {
     		$s = select_dbShifts($shift_id);
     		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
     		if ($shift_date >= $from_date && $shift_date <= $to_date) {
     			$report[$s->get_day()] += $s->duration();
     		}
+    	  }
     	}
     	return $report;
     }
 }
 
-function report_hours_by_day($persons, $from, $to) {
+function report_hours_by_day($histories, $from, $to) {
 	$min_date = "01/01/1000";
 	$max_date = "01/01/3000";
 	if ($from == '') $from = $min_date;
@@ -327,54 +304,24 @@ function report_hours_by_day($persons, $from, $to) {
 		'evening' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
     				'Fri' => 0, 'Sat' => 0, 'Sun' => 0),
 		'overnight' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
+    				'Fri' => 0, 'Sat' => 0, 'Sun' => 0),
+		'total' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
     				'Fri' => 0, 'Sat' => 0, 'Sun' => 0)
 	);
-	foreach($persons as $person) {
-		foreach ($person->get_history() as $shift_id) {
+	
+	foreach($histories as $person_id => $person_shifts) {
+	    $ps = explode(',',$person_shifts);
+		foreach ($ps as $shift_id) {
 			$s = select_dbShifts($shift_id);
 			$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
 			if ($shift_date >= $from_date && $shift_date <= $to_date) {
 				$reports[$s->get_time_of_day()][$s->get_day()] += $s->duration();
+				$reports['total'][$s->get_day()] += $s->duration();
     		}
 		}
 	}
 	return $reports;
 }
 
-
-
-
-// Making use of this function is not a good choice, for any kind of report has to call this function
-// to make sure the database is up-to-date. TODO: keeping the databse up-to-date on the fly i.e. instead of
-// using this function, change the database when the shift table in the database is edited.
-function pull_shift_data() {
-	connect();
-	$query = "SELECT id, persons, data_saved FROM dbShifts";
-	$result = mysql_query($query);
-	if (!$result) {
-		echo 'Could not run query2: ' . mysql_error();
-	} else {
-		while($result_row = mysql_fetch_row($result)) {
-			$shift_id = $result_row[0];
-			$shift_persons = $result_row[1];
-			$data_saved = $result_row[2];
-			if ($data_saved != "yes" && $shift_persons != null) {
-				$shift = select_dbShifts($shift_id);
-				$shift->set_datasaved("yes");
-				update_dbShifts($shift);
-				$persons = explode("*", $shift_persons);
-				foreach($persons as $p) {
-					$person_id_and_name = explode("+", $p);
-					$person_id = $person_id_and_name[0];
-					error_log("Updating history for ". $person_id ." with shift id ". $shift_id);
-					$person = retrieve_person($person_id);
-					if ($person != null) $person->add_to_history($shift_id);
-				}
-			} else {
-				error_log("shift ".$shift_id." already saved or doesn't have any person.");
-			}
-		}
-	}
-}
 
 ?>

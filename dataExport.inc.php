@@ -74,7 +74,7 @@ td {
 
 <body>
 <form id="export-attr" name="export_data" method="post"><input type="hidden" name="_form_submit" value="3" />
-	<p style="margin-left: 20px"><b>Select the attributes to be exported for these people, and then hit 'Export to CSV': </b></p>
+	<p style="margin-left: 20px"><b>Select the attributes to be exported for these people, and then hit 'Export Data': </b></p>
 	<table>
 		<td valign="top">
 		<table>
@@ -98,20 +98,9 @@ td {
 				Date</td>
 			</tr>
 			<tr>
-				<td><input type="checkbox" id="e_check7" name="export_attr[]" value="history"/> Shifts worked</td>
+				<td><input type="checkbox" id="e_check7" name="export_attr[]" value="history"/> Past shifts worked</td>
 			</tr>
-			<tr>
-				<td><input disabled type="checkbox" id="e_check8" name="export_attr[]" />
-				Day of the week</td>
-			</tr>
-			<tr>
-				<td><input disabled type="checkbox" id="e_check9" name="export_attr[]" />
-				Month</td>
-			</tr>
-			<tr>
-				<td><input disabled type="checkbox" id="e_check10" name="export_attr[]" />
-				Employer/School</td>
-			</tr>
+			
 		</table>
 		</td>
 		<td valign="top">

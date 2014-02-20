@@ -98,7 +98,7 @@
             echo('<strong>volunteers :</strong> <a href="' . $path . 'personSearch.php">search</a>, 
 			        <a href="personEdit.php?id=' . 'new' . '">add, </a> <a href="viewScreenings.php?type=new">screenings</a>');
             echo(' | <strong><a href="' . $path . 'reports.php">reports</a> </strong>');
-            echo(' | <strong>data :</strong> <a href="' . $path . 'dataSearch.php">search and export</a> ');
+        //    echo(' | <strong>data :</strong> <a href="' . $path . 'dataSearch.php">search and export</a> ');
         }
         echo(' | <a href="' . $path . 'logout.php"><b>logout</b></a>');
     }
