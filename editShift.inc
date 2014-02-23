@@ -90,7 +90,6 @@ include_once('database/dbLog.php');
 	}
 
 	function process_add_volunteer($post,$shift,$venue) {
-		$shift->data_saved = "no";
 		update_dbShifts($shift);
 		if(!array_key_exists('_submit_add_volunteer',$post))
 			return false;
@@ -125,7 +124,6 @@ include_once('database/dbLog.php');
 	}
 
 	function process_unfill_shift($post,$shift,$venue) {
-		$shift->data_saved = "no";
 		update_dbShifts($shift);
 		$persons=$shift->get_persons();
 		if(!$persons[0])
@@ -178,7 +176,7 @@ include_once('database/dbLog.php');
 			   		    $_SESSION['l_name'].'</a> deleted a <a href=\"subCallList.php?shift='.$shift->get_id().'\">sub call list</a> for the shift: <a href=\"editShift.php?shift='.
 			   		    $shift->get_id().'\">'.get_shift_name_from_id($shift->get_id()).'</a>.');
 			}
-			$shift = new Shift($shift->get_id(), "weekly", $shift->num_slots(), null, null, "", "", "no");
+			$shift = new Shift($shift->get_id(), "weekly", $shift->num_slots(), null, null, "", "");
 			update_dbShifts($shift);
 			add_log_entry('<a href=\"personEdit.php?id='.$_SESSION['_id'].'\">'.$_SESSION['f_name'].' '.
 			    $_SESSION['l_name'].'</a> cleared the shift: <a href=\"editShift.php?shift='.$shift->get_id().'\">'.

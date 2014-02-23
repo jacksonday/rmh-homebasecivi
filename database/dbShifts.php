@@ -35,14 +35,13 @@ include_once('dbinfo.php');
  * 5 persons: list of people ids, followed by their name, ie "max1234567890+Max+Palmer"
  * 6 sub_call_list: yes/no if shift has SCL
  * 7 notes: shift notes
- * 8 datasaved: "yes" for all shifts whose data has been saved in dbPersons records
  */
 function create_dbShifts() {
     connect();
     mysql_query("DROP TABLE IF EXISTS dbShifts");
     $result = mysql_query("CREATE TABLE dbShifts (id CHAR(20) NOT NULL, " .
             "start_time INT, end_time INT, venue TEXT, vacancies INT, " .
-            "persons TEXT, removed_persons TEXT, sub_call_list TEXT, notes TEXT, datasaved TEXT, PRIMARY KEY (id))");
+            "persons TEXT, removed_persons TEXT, sub_call_list TEXT, notes TEXT, PRIMARY KEY (id))");
     if (!$result) {
         echo mysql_error();
         return false;
@@ -72,7 +71,7 @@ function insert_dbShifts($s) {
             $s->get_start_time() . "\",\"" . $s->get_end_time() . "\",\"" . $s->get_venue() . "\"," .
             $s->num_vacancies() . ",\"" .
             implode("*", $s->get_persons()) . "\",\"" .implode("*", $s->get_removed_persons()) . "\",\"" .
-            $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\",\"" . $s->get_datasaved(). "\")";
+            $s->get_sub_call_list() . "\",\"" . $s->get_notes() . "\")";
     $result = mysql_query($query);
     if (!$result) {
         echo "unable to insert into dbShifts " . $s->get_id() . mysql_error();
@@ -137,7 +136,7 @@ function select_dbShifts($id) {
             	$persons = explode("*", $result_row[5]);
             if ($result_row[6] != "")
             	$removed_persons = explode("*", $result_row[6]);
-        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, $removed_persons, null, $result_row[8], $result_row[9]);
+        	$s = new Shift($result_row[0], $result_row[3], $result_row[4], $persons, $removed_persons, null, $result_row[8]);
         }
     }
     return $s;
@@ -289,8 +288,7 @@ function make_a_shift($result_row) {
                     $result_row['persons'],
                     $result_row['removed_persons'],
                     $result_row['sub_call_list'],
-                    $result_row['notes'],
-                    $result_row['data_saved']
+                    $result_row['notes']
                  );
 
     return $the_shift;

@@ -12,7 +12,7 @@
 
 
 /*
- * class Shift characterizes a time interval in a day
+ * class Shift characterizes a time interval in a day new Shift
  * for scheduling volunteers
  * @version May 1, 2008, modified 9/15/08, 2/14/10
  * @author Allen Tucker and Maxwell Palmer
@@ -35,13 +35,12 @@ class Shift {
     private $day;         // string name of day "Monday"...
     private $id;            // "mm-dd-yy-ss-ee" is a unique key for this shift
     private $notes;  // notes written by the manager
-    private $datasaved;		// "yes" if this shift's data has been saved to the volunteer records
 
     /*
      * construct an empty shift with a certain number of vacancies
      */
 
-    function __construct($id, $venue, $vacancies, $persons, $removed_persons, $sub_call_list, $notes, $data_saved) {
+    function __construct($id, $venue, $vacancies, $persons, $removed_persons, $sub_call_list, $notes) {
     	$this->mm_dd_yy = substr($id, 0, 8);
         $this->name = substr($id, 9);
         $i = strpos($this->name, "-");
@@ -61,7 +60,6 @@ class Shift {
         $this->day = date("D", mktime(0, 0, 0, substr($this->mm_dd_yy, 0, 2), substr($this->mm_dd_yy, 3, 2), "20" . substr($this->mm_dd_yy, 6, 2)));
         $this->id = $id;
         $this->notes = $notes;	
-        $this->datasaved = $data_saved;
     }
 
     /**
@@ -187,11 +185,7 @@ class Shift {
         return $this->notes;
     }
 
-	function get_datasaved() {
-        return $this->datasaved;
-    }
-    
-    function get_vacancies() {
+	function get_vacancies() {
     	return $this->vacancies;
     }
     
@@ -200,10 +194,6 @@ class Shift {
         $this->notes = $notes;
     }
     
-    function set_datasaved ($ds) {
-    	$this->datasaved = $ds;
-    }
-
     function assign_persons($p) {
     	foreach ($this->persons as $person) {
     		if (!in_array($person, $p)) {

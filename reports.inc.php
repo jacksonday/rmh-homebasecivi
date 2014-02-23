@@ -48,8 +48,6 @@
 		</div>
 		<div class = "search-description"> Date</div>
 		<div>
-			<input type="radio" name="date" value="last-week">Last Week<br>
-			<input type="radio" name="date" value="last-month">Last Month<br>
 			<input type="radio" name="date" value="date-range">Date Range
 			<div id="fromto"> from : <input name = "from" type="text" id="from"> 
 								to : <input name = "to" type="text" id="to"></div>

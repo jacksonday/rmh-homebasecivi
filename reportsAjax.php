@@ -32,11 +32,11 @@ function show_report($histories) {
 	$to = "";
 	if(isset($_POST['date']) && $_POST['date'] != "") {
 		if ($_POST['date'] == "last-week") {
-			$from = date("m/d/y", strtotime("last week"));
-			$to   = date("m/d/y", strtotime("this week"));
+			$from = date("m/d/y", strtotime("2 weeks ago"));
+			$to   = date("m/d/y", strtotime("last week"));
 		} else if ($_POST['date'] == "last-month") {
-			$from = date("m/d/y", strtotime("last month"));
-			$to   = date("m/d/y", strtotime("this month"));
+			$from = date("m/d/y", strtotime("2 months ago"));
+			$to   = date("m/d/y", strtotime("last month"));
 		} else {
 			$from = $_POST["from"];
 			$to   = $_POST["to"];
