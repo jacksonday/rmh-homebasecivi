@@ -27,36 +27,34 @@
 <link rel="stylesheet" href="reports.css" type="text/css" />
 <div id = "content">
 <div id = "report-table">
-	<div id="search-fields-container">
+	<p id="search-fields-container">
 	<form id = "search-fields" method="post">
 		<input type="hidden" name="_form_submit" value="report" />
-		<div class = "search-description" id="today"> Today is <?php echo Date("l F d, Y");?></div>
-		<div class = "search-description"> Report Type</div>
-		<div >
-			<select multiple name="report-types[]" id = "report-type">
-	  		<option value="volunteer-names">Individual Volunteer Hours</option>
-	  		<option value="volunteer-hours">Total Volunteer Hours</option>
+		<p class = "search-description" id="today"> <b>House Volunteer Hours, Shifts, and Vacancies</b><br> Report date: <?php echo Date("F d, Y");?></p>
+	<table>	<tr>
+		<td class = "search-description" valign="top"> Select Report Type: 
+		<p>	<select multiple name="report-types[]" id = "report-type">
+	  		<option value="volunteer-names">Individual Hours</option>
+	  		<option value="volunteer-hours">Total Hours</option>
 	  		<option value="shifts-staffed-vacant">Shifts/Vacancies</option>
 			</select>
-		</div>
-		<div class = "search-description" >
-			<span>Volunteer name(s)</span>
-			<button id="add-more">add more</button>
-		</div>
-		<div id="volunteer-name-inputs">
-			<div class="ui-widget"> <input type="text" name="volunteer-names[]" class="volunteer-name" id="1"></div>
-		</div>
-		<div class = "search-description"> Date</div>
-		<div>
-			<input type="radio" name="date" value="date-range">Date Range
-			<div id="fromto"> from : <input name = "from" type="text" id="from"> 
-								to : <input name = "to" type="text" id="to"></div>
-		</div>
-		<div><input type="submit" value="submit" id ="report-submit" class ="btn"s></div>
+		</p>
+		</td>
+		<td class = "search-description" > Select Individuals  (optional):
+		<p id="volunteer-name-inputs"
+			class="ui-widget"> <input type="text" name="volunteer-names[]" class="volunteer-name" id="1"></p>
+		<button id="add-more">add more</button><br><br>
+		</td>
+		<td class = "search-description" valign="top"> Select Date Range: 
+			<input type="radio" name="date" value="date-range"> 
+			<p id="fromto"> from : <input name = "from" type="text" id="from">
+								to : <input name = "to" type="text" id="to"></p>
+		</td>
+	</tr></table>
+	And hit <input type="submit" value="submit" id ="report-submit" class ="btn">
 	</form>
-	</div>
-	<div id="outputs">
+	<p id="outputs">
 
-	</div>
+	</p>
 </div>
 </div>
