@@ -275,8 +275,7 @@ function getonlythose_dbPersons($type, $status, $name, $day, $shift) {
     $query = "SELECT * FROM dbPersons WHERE type ".$string1. $type . $string2 .
             " AND status LIKE '%" . $status . "%'" .
             " AND (first_name LIKE '%" . $name . "%' OR last_name LIKE'%" . $name . "%')" .
-            " AND availability LIKE '%" . $day . ":" . $shift .
-            "%' ORDER BY last_name,first_name";
+            " ORDER BY last_name,first_name";
     $result = mysql_query($query);
     $thePersons = array();
     while ($result_row = mysql_fetch_assoc($result)) {
