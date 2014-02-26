@@ -355,5 +355,11 @@ function get_all_peoples_histories() {
     return $histories;
 }
 
+function date_create_from_mm_dd_yyyy ($mm_dd_yyyy) {
+    if (strpos($mm_dd_yyyy,"/")>0)
+        return mktime(0,0,0,substr($mm_dd_yyyy,0,2),substr($mm_dd_yyyy,3,2),substr($mm_dd_yyyy,6,4));
+    else
+        return mktime(0,0,0,substr($mm_dd_yyyy,0,2),substr($mm_dd_yyyy,3,2),"20".substr($mm_dd_yyyy,6,2));
+}
 
 ?>

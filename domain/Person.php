@@ -261,21 +261,21 @@ class Person {
     // is the empty string, then the range is unbounded in that direction.
     // the dictionary is of the form {'Mon' => , 'Tue' => }.
 function report_hours ($histories, $from, $to) {
-    	$min_date = "01/01/1000";
-    	$max_date = "01/01/3000";
+    	$min_date = "01/01/2000";
+    	$max_date = "12/31/2020";
     	if ($from == '') $from = $min_date;
     	if ($to == '') $to = $max_date;
     	error_log("from date = " . $from);
     	error_log("to date = ". $to);
-    	$from_date = date_create_from_format("m/d/Y", $from); 
-    	$to_date   = date_create_from_format("m/d/Y", $to);
+    	$from_date = date_create_from_mm_dd_yyyy($from); 
+    	$to_date   = date_create_from_mm_dd_yyyy($to);
     	$report = array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0, 
     					'Fri' => 0, 'Sat' => 0, 'Sun' => 0);
     	if (array_key_exists($this->get_id(), $histories)) {
     	  $hid = explode(',',$histories[$this->id]);
     	  foreach ($hid as $shift_id) {
     		$s = select_dbShifts($shift_id);
-    		$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
+    		$shift_date = date_create_from_mm_dd_yyyy($s->get_mm_dd_yy());
     		if ($shift_date >= $from_date && $shift_date <= $to_date) {
     			$report[$s->get_day()] += $s->duration();
     		}
@@ -286,14 +286,14 @@ function report_hours ($histories, $from, $to) {
 }
 
 function report_hours_by_day($histories, $from, $to) {
-	$min_date = "01/01/1000";
-	$max_date = "01/01/3000";
+	$min_date = "01/01/2000";
+	$max_date = "12/31/2020";
 	if ($from == '') $from = $min_date;
 	if ($to == '') $to = $max_date;
 	error_log("from date = " . $from);
 	error_log("to date = ". $to);
-	$from_date = date_create_from_format("m/d/Y", $from);
-	$to_date   = date_create_from_format("m/d/Y", $to);
+	$from_date = date_create_from_mm_dd_yyyy($from);
+	$to_date   = date_create_from_mm_dd_yyyy($to);
 	$reports = array(
 		'morning' => array('Mon' => 0, 'Tue' => 0, 'Wed' => 0, 'Thu' => 0,
     				'Fri' => 0, 'Sat' => 0, 'Sun' => 0), 
@@ -313,7 +313,7 @@ function report_hours_by_day($histories, $from, $to) {
 	    $ps = explode(',',$person_shifts);
 		foreach ($ps as $shift_id) {
 			$s = select_dbShifts($shift_id);
-			$shift_date = date_create_from_format("m-d-y", $s->get_mm_dd_yy());
+			$shift_date = date_create_from_mm_dd_yyyy($s->get_mm_dd_yy());
 			if ($shift_date >= $from_date && $shift_date <= $to_date) {
 				$reports[$s->get_time_of_day()][$s->get_day()] += $s->duration();
 				$reports['total'][$s->get_day()] += $s->duration();
