@@ -214,7 +214,7 @@ function do_day_notes($days, $edit, $year, $doy) {
 
 function process_edit_notes($week, $venue, $post) {
     $days = $week->get_dates();
-    for ($i = date("N")-1; $i < 7; ++$i) {
+    for ($i = 0; $i < 7; ++$i) {
         $shifts = $days[$i]->get_shifts();
         foreach ($shifts as $key => $shift) {
        //   if ($shift->get_venue()==$venue) {
