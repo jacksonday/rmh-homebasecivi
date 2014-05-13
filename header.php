@@ -85,7 +85,7 @@
         if ($_SESSION['access_level'] >= 1) {
             echo(' | <strong>calendars:</strong> <a href="' . $path . 'calendar.php?venue=house">house, </a>');
             echo('<a href="' . $path . 'calendar.php?venue=guestchef">guest chef, </a>');
-            echo('<a href="' . $path . 'calendar.php?venue=parking">parking, </a>');
+         //   echo('<a href="' . $path . 'calendar.php?venue=parking">parking, </a>');
             echo('<a href="' . $path . 'calendar.php?venue=activities">activities | </a>');
             echo('<a href="https://sites.google.com/site/rmhvolunteersite"><strong>around the house</strong> </a>');
         }

@@ -6,7 +6,7 @@
  * This program is part of RMH Homebase, which is free software.  It comes with 
  * absolutely no warranty. You can redistribute and/or modify it under the terms 
  * of the GNU General Public License as published by the Free Software Foundation
- * (see <http://www.gnu.org/licenses/ for more information).
+ * (see <http://www.gnu.org/licenses/ for more information). Show
  * 
  */
 
@@ -34,7 +34,7 @@
 					include_once('database/dbLog.php');
 					include_once('database/dbPersons.php');
 					$id=$_GET['shift'];
-					generate_scl($_POST['_shiftid']);
+					generate_scl($id);
 					if(array_key_exists('_submit_generate_scl',$_POST)) {
 						$id=$_POST['_shiftid'];
 					}
@@ -95,11 +95,13 @@
 			}
 		}
 		$new_scl=new SCL($id, $persons, "open", $vacancies, get_sub_call_list_timestamp($id));
-		if (select_dbSCL($id))
-		   delete_dbSCL($new_scl);
-		insert_dbSCL($new_scl);
-		$shift->open_sub_call_list();
-		update_dbShifts($shift);
+		if (!select_dbSCL($id)){
+		   insert_dbSCL($new_scl);
+		   $shift->open_sub_call_list();
+		   update_dbShifts($shift);
+		}
+		else $new_scl = select_dbSCL($id);
+		
 		add_log_entry('<a href=\"personEdit.php?id='.$_SESSION['_id'].'\">'.$_SESSION['f_name'].' '.
 		    $_SESSION['l_name'].'</a> generated a <a href=\"subCallList.php?shift='.$shift->get_id().'\">sub call list</a> for the shift: <a href=\"editShift.php?shift='.
 		    $shift->get_id().'&venue='.$venue.'\">'.get_shift_name_from_id($shift->get_id()).'</a>.');
@@ -117,8 +119,8 @@
 		$cur_date=date("Ymd",time());
 		if(array_key_exists('_shiftid',$_POST))
 			show_back_navigation($_POST['_shiftid'],494,$venue);
-		echo "<p><table width=\"600\" align=\"center\" border=\"1px\"><tr><td align=\"center\" colspan=\"3\"><b>Index of Sub Call Lists with Vacancies</b></td></tr>
-		<tr><td>&nbsp;Shift<br>&nbsp;</td><td>&nbsp;Vacancies<br>&nbsp;</td><td>&nbsp;Status <br>&nbsp;</td></tr>";
+		echo "<p><table width=\"600\" align=\"center\" border=\"1px\"><tr><td align=\"center\" colspan=\"2\"><b>Index of Sub Call Lists with Vacancies</b></td></tr>
+		<tr><td>&nbsp;Shift<br>&nbsp;</td><td>&nbsp;Vacancies<br>&nbsp;</td></tr>";
 		for($i=0;$i<mysql_num_rows($result);++$i) {
 			$row=mysql_fetch_row($result);
 			$scl_date_formatted=substr($row[4], 0, strlen(date("Ymd",time())));
@@ -133,14 +135,14 @@
 				echo "<tr><td>&nbsp;<a href=\"subCallList.php?shift=".$row[0]."\">"
 				.get_shift_name_from_id($row[0]).
 				"</a></td>
-					<td>&nbsp;".$row[3]."</td><td>&nbsp;".$row[2]."</td></tr>";
+					<td>&nbsp;".$row[3]."</td></tr>";
 			}
 		}
-		echo "<tr><td colspan=\"3\" align=\"center\">";
-		if($_GET['archive']=="true")
-			echo "<br><a href=\"subCallList.php?archive=false\">Hide \"Closed\" Sub Call Lists</a>";
-		else
-			echo "<br><a href=\"subCallList.php?archive=true\">Show \"Closed\" Sub Call Lists</a>";
+		echo "<tr><td colspan=\"2\" align=\"center\">";
+	//	if($_GET['archive']=="true")
+	//		echo "<br><a href=\"subCallList.php?archive=false\">Hide \"Closed\" Sub Call Lists</a>";
+	//	else
+	//		echo "<br><a href=\"subCallList.php?shift=".$id."&archive=true\">Show \"Closed\" Sub Call Lists</a>";
 		echo "</td></tr></table></p>";
 	} 
 

@@ -269,9 +269,7 @@ function getall_available($type, $day, $shift) {
 // retrieve only those persons that match the criteria given in the arguments
 function getonlythose_dbPersons($type, $status, $name, $day, $shift) {
     connect();
-    if ($type=="manager")
-        {$string1 = " = '"; $string2 = "'";}
-    else {$string1 = " LIKE '%"; $string2 = "%'";}
+    $string1 = " LIKE '%"; $string2 = "%'";
     $query = "SELECT * FROM dbPersons WHERE type ".$string1. $type . $string2 .
             " AND status LIKE '%" . $status . "%'" .
             " AND (first_name LIKE '%" . $name . "%' OR last_name LIKE'%" . $name . "%')" .
