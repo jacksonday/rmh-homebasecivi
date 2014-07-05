@@ -40,6 +40,7 @@
 							if(!process_fill_vacancy($_POST,$shift,$venue) &&
 							   !process_add_volunteer($_POST,$shift,$venue) &&
 							   !process_move_shift($_POST, $shift) &&
+							   !process_delete_shift($_POST, $shift) &&
 							   !process_change_times($_POST, $shift)){
 								if (process_unfill_shift($_POST,$shift,$venue))
 									$shift=select_dbShifts($shiftid);
@@ -57,17 +58,23 @@
 								
 										echo ("<form method=\"POST\" style=\"margin-bottom:0;\">
 											<input type=\"hidden\" name=\"_submit_add_slot\" value=\"1\"><br>
-											<input type=\"submit\" value=\"Add Slot\" style=\"width: 150px\"
+											<input type=\"submit\" value=\"Add a Slot\" style=\"width: 150px\"
 											name=\"submit\" >
 											</form>");
 										echo ("<form method=\"POST\" style=\"margin-bottom:0;\">
 											<input type=\"hidden\" name=\"_submit_clear_shift\" value=\"1\">
-											<input type=\"submit\" value=\"Clear Entire Shift\" style=\"width: 150px\"
+											<input type=\"submit\" value=\"Clear this Shift\" style=\"width: 150px\"
 											name=\"submit\" >
 											</form>");
 										echo ("<form method=\"POST\" style=\"margin-bottom:0;\">
 											<input type=\"hidden\" name=\"_submit_move_shift\" value=\"1\">
-											<input type=\"submit\" value=\"Move Shift\" style=\"width: 150px\"
+											<input type=\"submit\" value=\"Move this Shift\" style=\"width: 150px\"
+											name=\"submit\" >
+											</form>");
+										if ($shift->num_slots()==0)
+											echo ("<form method=\"POST\" style=\"margin-bottom:0;\">
+											<input type=\"hidden\" name=\"_submit_delete_shift\" value=\"1\">
+											<input type=\"submit\" value=\"Delete this Shift\" style=\"width: 150px\"
 											name=\"submit\" >
 											</form>");
 									echo "<br></td></tr>";

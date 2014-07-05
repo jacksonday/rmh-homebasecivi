@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
+ * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook,old_s_id
  * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
  * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
  * This program is part of RMH Homebase, which is free software.  It comes with 
@@ -208,6 +208,26 @@ include_once('database/dbLog.php');
 		<br><a href=\"editShift.php?shift=".$shift->get_id()."\">Back to Shift</a><br></td></tr></table>";
 		return true;
     }
+    function process_delete_shift($post,$shift) {
+    	if(!array_key_exists('_submit_delete_shift',$post))
+    	    return false;
+    	else if ($shift->num_slots()==0){
+			delete_dbShifts($shift);
+			fix_SCL($shift);
+			add_log_entry('<a href=\"personEdit.php?id='.$_SESSION['_id'].'\">'.$_SESSION['f_name'].' '.
+			    $_SESSION['l_name'].'</a> deleted the shift: <a href=\"editShift.php?shift='.$shift->get_id().'\">'.
+			    get_shift_name_from_id($shift->get_id()).'</a>.');
+			echo "<p>Shift ".get_shift_name_from_id($shift->get_id())." deleted.";
+			echo "<p><a href=\"calendar.php?id=".substr($shiftid,0,8)."&edit=true&venue=house"."\">
+									Back to Calendar</a>";
+			return true;
+		}
+		else {
+			echo "<p>Shift ".get_shift_name_from_id($shift->get_id())." not deleted (because it has more than 0 slots).";
+			return false;
+		}
+    }
+    
     function get_all_times(){
     	$s="";
 		for ($hour=9; $hour < 22; $hour++) {
