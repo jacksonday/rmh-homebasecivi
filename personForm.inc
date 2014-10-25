@@ -105,13 +105,16 @@ foreach ($states as $st) {
         $dd = substr($person->get_birthday(), 3, 2);
         $yy = substr($person->get_birthday(), 6, 2);
         select_date($mm, $dd, $yy, "DateOfBirth_Month", "DateOfBirth_Day", "DateOfBirth_Year");
-        if ($person->get_start_date()!="") {
-        	echo "&nbsp;&nbsp;&nbsp;&nbsp;Start Date:";
+        if ($id=="new") {
+        	echo "&nbsp;&nbsp;&nbsp;&nbsp;Application Date:";
+        	$mm = date("m"); $dd = date("d"); $yy = date("y");
+        }
+        else { echo "&nbsp;&nbsp;&nbsp;&nbsp;Start Date:";
         	$mm = substr($person->get_start_date(), 0, 2);
         	$dd = substr($person->get_start_date(), 3, 2);
         	$yy = substr($person->get_start_date(), 6, 2);
-        	select_date($mm, $dd, $yy, "DateOfStart_Month", "DateOfStart_Day", "DateOfStart_Year");
         }
+        select_date($mm, $dd, $yy, "DateOfStart_Month", "DateOfStart_Day", "DateOfStart_Year");
 
         echo('<p>Gender:&nbsp;&nbsp;');
         echo('<select name="gender">');

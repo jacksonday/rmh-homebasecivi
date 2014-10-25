@@ -184,13 +184,15 @@ session_cache_expire(30);
                             }
                             //active applicants
                             connect();
-                            $app_query = "SELECT first_name,last_name,id FROM dbPersons WHERE status LIKE '%applicant%' order by last_name";
+                            $app_query = "SELECT first_name,last_name,id,start_date FROM dbPersons WHERE status LIKE '%applicant%' order by start_date desc";
                             $applicants_tab = mysql_query($app_query);
                             $numLines = 0;
                          //   if (mysql_num_rows($applicants_tab) > 0) {
-                                echo('<div class="applicantsBox"><p><strong>Open Applications:</strong><ul>');
+                                echo('<div class="applicantsBox"><p><strong>Open Applications / Dates:</strong><ul>');
                                 while ($thisRow = mysql_fetch_array($applicants_tab, MYSQL_ASSOC)) {
-                                    echo('<li type="circle"><a href="' . $path . 'personEdit.php?id=' . $thisRow['id'] .'" id = "appLink">' . $thisRow['first_name'] . ' ' . $thisRow['last_name'] . '</a></li>');
+                                    echo('<li type="circle"><a href="' . $path . 'personEdit.php?id=' . $thisRow['id'] .'" id = "appLink">' . 
+                                          $thisRow['last_name'] . ', ' . $thisRow['first_name'] . '</a> / '.
+                                          $thisRow['start_date'] . '</li>');
                                 }
                                 echo('</ul></p></div><br>');
                         //    }
