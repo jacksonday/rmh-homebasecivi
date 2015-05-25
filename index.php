@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2013 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
+ * Copyright 2015 by Jerrick Hoang, Ivy Xing, Sam Roberts, James Cook, 
  * Johnny Coster, Judy Yang, Jackson Moniaga, Oliver Radwan, 
  * Maxwell Palmer, Nolan McNair, Taylor Talmage, and Allen Tucker. 
  * This program is part of RMH Homebase, which is free software.  It comes with 
