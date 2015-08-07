@@ -87,7 +87,7 @@
             echo('<a href="' . $path . 'calendar.php?venue=guestchef">guest chef, </a>');
          //   echo('<a href="' . $path . 'calendar.php?venue=parking">parking, </a>');
             echo('<a href="' . $path . 'calendar.php?venue=activities">activities | </a>');
-            echo('<a href="https://sites.google.com/site/rmhvolunteersite"><strong>around the house</strong> </a>');
+            echo('<a href="https://sites.google.com/site/rmhvolunteersite" target="_BLANK"><strong>around the house</strong> </a>');
         }
         if ($_SESSION['access_level'] == 1.5) {
             echo('<br>');
